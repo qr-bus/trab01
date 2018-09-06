@@ -4,7 +4,7 @@ Trabalho desenvolvido durante a disciplina de BD1
 # Sumário
 
 ### 1. COMPONENTES<br>
-Integrantes do grupo<br>
+Integrantes do grupo:<br><br>
 Ewerson Vieira Nascimento: ewersonv@gmail.com<br>
 Giuliano de Paulo Demoner: giuliano.demoner@gmail.com<br>
 Lorran Gabriel Araújo: lorrangabriel20@gmail.com<br>
