@@ -6,7 +6,9 @@ Trabalho desenvolvido durante a disciplina de BD1
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
 Ewerson Vieira Nascimento: ewersonv@gmail.com<br>
-segundo_componente_do_grupo:email_segundo_componente@dominio.com<br>
+Giuliano de Paulo Demoner: giuliano.demoner@gmail.com<br>
+Lorran Gabriel Araújo: lorrangabriel20@gmail.com<br>
+Marcos Antônio Carneiro de Paula: cardepaula@gmail.com<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
 <br>QR-Bus</b><br><br>
