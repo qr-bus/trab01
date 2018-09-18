@@ -64,7 +64,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
         
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
+    [Grupo01]: Grupo do Marcelo (não informou nome do trabalho nem dos integrantes do grupo)
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.2 DECISÕES DE PROJETO
