@@ -55,16 +55,16 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    
 >## Marco de Entrega 02 em: (17/09/2018)<br>
 #### 5.3 DESCRIÇÃO DOS DADOS 
-   <b>USUARIO:</b> Tabela que armazena informações relacionadas ao usuário do sistema.
-   <b>CARTAO DE CREDITO:</b> Tabela que contém dados do cartão de passagem do usuário.
-   <b>HISTORICO:</b> Tabela que armazena o histórico de pagamentos em datas e horarios específicos.
-   <b>LINHA:</b> Contém informações sobre a linha do ônibus.
-   <b>HORÁRIO:</b> Contém dados sobre horarios das linhas.
-   <b>TIPO_HORARIO:</b> Tabela que armazena os tipos de horário (dias úteis, feriados, atípicos entre feriados ou fins de semana).
-   <b>ITINERARIO:</b> Armazena informações sobre o sentido da linha (ida ou volta) e a sequência de logradouros que ela percorrerá.
-   <b>LOGRADOURO:</b> Armazena informações sobre o logradouro (CEP, tipo e nome).
-   <b>BAIRRO:</b> Armazena informações sobre o bairro (nome e ID).
-   <b>CIDADE:</b> Armazena informações sobre a cidade (nome e ID).
+   <b>USUARIO:</b> Tabela que armazena informações relacionadas ao usuário do sistema.<br>
+   <b>CARTAO DE CREDITO:</b> Tabela que contém dados do cartão de passagem do usuário.<br>
+   <b>HISTORICO:</b> Tabela que armazena o histórico de pagamentos em datas e horarios específicos.<br>
+   <b>LINHA:</b> Contém informações sobre a linha do ônibus.<br>
+   <b>HORÁRIO:</b> Contém dados sobre horarios das linhas.<br>
+   <b>TIPO_HORARIO:</b> Tabela que armazena os tipos de horário (dias úteis, feriados, atípicos entre feriados ou fins de semana).<br>
+   <b>ITINERARIO:</b> Armazena informações sobre o sentido da linha (ida ou volta) e a sequência de logradouros que ela percorrerá.<br>
+   <b>LOGRADOURO:</b> Armazena informações sobre o logradouro (CEP, tipo e nome).<br>
+   <b>BAIRRO:</b> Armazena informações sobre o bairro (nome e ID).<br>
+   <b>CIDADE:</b> Armazena informações sobre a cidade (nome e ID).<br>
 
 ### 6	MODELO LÓGICO<br>
         a) inclusão do modelo lógico do banco de dados
