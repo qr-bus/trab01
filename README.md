@@ -10,7 +10,7 @@ Giuliano de Paulo Demoner: giuliano.demoner@gmail.com<br>
 Lorran Gabriel Araújo: lorrangabriel20@gmail.com<br>
 Marcos Antônio Carneiro de Paula: cardepaula@gmail.com<br>
 
-### 2.INTRODUÇÃO E MOTIVAÇAO<br><br>
+### 2.INTRODUÇÃO E MOTIVAÇAO<br>
 #### QR-Bus</b><br><br>
 A bilhetagem eletrônica já é uma realidade nos transportes públicos do nosso estado a algum tempo, diversas pessoas fazem uso do seu cartão para se movimentar durante o dia-a-dia, seja de uso particular ou vinculado ao trabalho. Podemos dizer que a solução existente dá conta do recado e atende bem ao seu propósito, mas somente isso. Ainda temos que enfrentar diversos problemas com o uso do cartão como meio de pagamento, como a recarga em que temos que enfrentar uma fila enorme, taxas por perda ou quebra do cartão, complicado monitoramento de saldo e falta de segurança devido as fraudes.<br>
 
@@ -19,14 +19,14 @@ A partir dessa visão começamos a buscar por alternativas que poderiam atuar co
 Através de tecnologias presentes nesses dispositivos seria possível efetuar o pagamento da mesma forma que já conhecemos, apenas o aproximando do leitor, ou até mesmo com um qrcode gerado e lido por câmeras já presentes nos coletivos, mas que tem como finalidade a identificação de fraudes por comparação facial. Além das funções de pagamento de um cartão comum, esse novo método traria os benefícios da internet, facilitando a recarga de nossas passagens através de cartões de credito ou boletos bancários. Como essas funções teriam que ser controlados por meio de um software, ainda poderíamos ter um controle de nossos gastos, com históricos de transações, linhas utilizadas e muito mais.<br>
  
 
-### 3.MINI-MUNDO Novo<br>
+### 3.MINI-MUNDO<br>
 
 O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serão armazenados o nome completo, data de nascimento, cpf, endereço, e-mail e senha, sendo esse dois ultimos para efetuar login no sistema. O saldo será informado de acordo com o valor obtido nas operações de recarga e pagamento de passagens, sendo atualizado a cada nova operação realizada. Só poderá existir um único cadastro para cada CPF. Dos meios de pagamento, serão armazenados dados de cartões de credito salvos, contendo o número do cartão, nome do titular e data de validade. Os dados armazenados pertinentes ao cartão de credito deverão seguir as regras do PCI Security Standards Council visando a confiabilidade do sistema. Um usuário pode ter mais de um cartão de crédito. O histórico de uso do aplicativo também deve ter seus dados armazenados, que são as linhas usadas, junto com a data, horário e valor debitado da conta. Os dados dos horários de onibus serão obitidos por API, que devem possuir número da linha, descrição e os horários semanais e diários de origem e destino. O itinerário também será obtido por API, com linha, sentido da linha, ponto de origem, pontos de passagem e ponto de destino da linha. O saldo do usuário deve ser sincronizado com a empresa responsável pelo seu uso (companhia de transporte).<br>
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 ![Mockup feito com Balsamiq](/arquivos/Mockup.pdf)
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-> A Empresa QR-Bus precisa inicialmente dos seguintes relatórios:
+   <b>A Empresa QR-Bus precisa inicialmente dos seguintes relatórios:</b>
 * Relatório que informe ao usuário seu histórico de viagens, com dias e horários em que usou o sistema, assim como as linhas utilizadas.
 * Relatório que informe as linhas mais utilizadas e as menos utilizadas dependendo do horário.
 * Relatório direcionado ao usuário informando as melhores opções de linhas para sair de sua origem à seu destino.
@@ -40,11 +40,6 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 >## Marco de Entrega 01 em: (06/09/2018)<br>
 
 ### 5.MODELO CONCEITUAL<br>
-    A) NOTACAO ENTIDADE RELACIONAMENTO 
-        * Para nosso prótótipo limitaremos o modelo conceitual nas 6 principais entidades do escopo
-        * O protótipo deve possui no mínimo duas relações N para N
-        * o mínimo de entidades do modelo conceitual será igual a 5
-        
 ![img](arquivos/ModeloConceitual.png) 
      
         
@@ -54,8 +49,9 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <br><b>[Grupo02]:</b> Grupo do Wallace (não informou nome do trabalho nem dos integrantes do grupo)
 
 #### 5.2 DECISÕES DE PROJETO
-   Tipo_Horario: Essa tabela foi criada com o intuito de identificar qual o tipo de horario será seguido por aquela linha, dias úteis, feriados,atípicos entre feriados ou fins de semana.<br>
-   Cartão: A tabela cartão possui relação (0,n) com usuário, pois decidimos que o usuário pode ou não ter um cartão de crédito para usar o app.<br>
+   <b>Tipo_Horario:</b> Essa tabela foi criada com o intuito de identificar qual o tipo de horario será seguido por aquela linha, dias úteis, feriados,atípicos entre feriados ou fins de semana.<br>
+   
+   <b>Cartão:</b> A tabela cartão possui relação (0,n) com usuário, pois decidimos que o usuário pode ou não ter um cartão de crédito para usar o app.<br>
    
 >## Marco de Entrega 02 em: (17/09/2018)<br>
 #### 5.3 DESCRIÇÃO DOS DADOS 
