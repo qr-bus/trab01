@@ -49,18 +49,22 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <br><b>[Grupo02]:</b> Grupo do Wallace (não informou nome do trabalho nem dos integrantes do grupo)
 
 #### 5.2 DECISÕES DE PROJETO
-   <b>Tipo_Horario:</b> Essa tabela foi criada com o intuito de identificar qual o tipo de horario será seguido por aquela linha, dias úteis, feriados,atípicos entre feriados ou fins de semana.<br>
+   <b>Tipo_Horario:</b> Essa tabela foi criada com o intuito de identificar qual o tipo de horario será seguido por aquela linha, dias úteis, feriados, atípicos entre feriados ou fins de semana.<br>
    
    <b>Cartão:</b> A tabela cartão possui relação (0,n) com usuário, pois decidimos que o usuário pode ou não ter um cartão de crédito para usar o app.<br>
    
 >## Marco de Entrega 02 em: (17/09/2018)<br>
 #### 5.3 DESCRIÇÃO DOS DADOS 
-    [objeto]: [descrição do objeto]
-    
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
-
+   <b>USUARIO:</b> Tabela que armazena informações relacionadas ao usuário do sistema.
+   <b>CARTAO DE CREDITO:</b> Tabela que contém dados do cartão de passagem do usuário.
+   <b>HISTORICO:</b> Tabela que armazena o histórico de pagamentos em datas e horarios específicos.
+   <b>LINHA:</b> Contém informações sobre a linha do ônibus.
+   <b>HORÁRIO:</b> Contém dados sobre horarios das linhas.
+   <b>TIPO_HORARIO:</b> Tabela que armazena os tipos de horário (dias úteis, feriados, atípicos entre feriados ou fins de semana).
+   <b>ITINERARIO:</b> Armazena informações sobre o sentido da linha (ida ou volta) e a sequência de logradouros que ela percorrerá.
+   <b>LOGRADOURO:</b> Armazena informações sobre o logradouro (CEP, tipo e nome).
+   <b>BAIRRO:</b> Armazena informações sobre o bairro (nome e ID).
+   <b>CIDADE:</b> Armazena informações sobre a cidade (nome e ID).
 
 ### 6	MODELO LÓGICO<br>
         a) inclusão do modelo lógico do banco de dados
