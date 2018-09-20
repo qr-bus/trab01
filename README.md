@@ -26,9 +26,6 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 ![Mockup feito com Balsamiq](/arquivos/Mockup.pdf)
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
-    b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
-
 > A Empresa QR-Bus precisa inicialmente dos seguintes relatórios:
 * Relatório que informe ao usuário seu histórico de viagens, com dias e horários em que usou o sistema, assim como as linhas utilizadas.
 * Relatório que informe as linhas mais utilizadas e as menos utilizadas dependendo do horário.
@@ -38,11 +35,6 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 * Relatório direcionado ao usuário para controle de seu saldo, com quantidade de viagens feitas por dia/semana/mês, valor de cada viagem e gasto total no período definido.
  
 #### 4.2 TABELA DE DADOS DO SISTEMA:
-    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
-    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
-    e deve ser criada antes do modelo conceitual
-    c) Após criada esta tabela não deve ser modificada, pois será comparada com os resultados finais na conclusão do trabalho
-    
 ![Tabela de dados QR-Bus](https://github.com/qr-bus/trab01/tree/master/arquivos/Tabelao_qr-bus.xlsx?raw=true "Tabela - Empresa QR-Bus")
     
 >## Marco de Entrega 01 em: (06/09/2018)<br>
@@ -54,28 +46,17 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
         * o mínimo de entidades do modelo conceitual será igual a 5
         
 ![img](arquivos/ModeloConceitual.png) 
-    
-    B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
-    C) QUALIDADE 
-        Garantir que a semântica dos atributos seja clara no esquema
-        Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
-        e tuplas falsas
-    
+     
         
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: Psicultura Inteligente (André Altivo, Gabriela Piffer, Lucca Machado e Marcelo Mendes)
-    [Grupo02]: Grupo do Wallace (não informou nome do trabalho nem dos integrantes do grupo)
+   [Grupo01]: Psicultura Inteligente (André Altivo, Gabriela Piffer, Lucca Machado e Marcelo Mendes)
+   [Grupo02]: Grupo do Wallace (não informou nome do trabalho nem dos integrantes do grupo)
 
 #### 5.2 DECISÕES DE PROJETO
    Tipo_Horario: Essa tabela foi criada com o intuito de identificar qual o tipo de horario será seguido por aquela linha, dias úteis, feriados,atípicos entre feriados ou fins de semana.<br>
    Cartão: A tabela cartão possui relação (0,n) com usuário, pois decidimos que o usuário pode ou não ter um cartão de crédito para usar o app.<br>
-    
-    EXEMPLO:
-    a) Campo endereço: em nosso projeto optamos por um campo multivalorado e composto, pois a empresa 
-    pode possuir para cada departamento mais de uma localização... 
-    b) justifique!
-
+   
 >## Marco de Entrega 02 em: (17/09/2018)<br>
 #### 5.3 DESCRIÇÃO DOS DADOS 
     [objeto]: [descrição do objeto]
