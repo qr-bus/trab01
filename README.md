@@ -67,9 +67,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <b>CIDADE:</b> Armazena informações sobre a cidade (nome e ID).<br>
 
 ### 6	MODELO LÓGICO<br>
-        a) inclusão do modelo lógico do banco de dados
-        b) verificação de correspondencia com o modelo conceitual 
-        (não serão aceitos modelos que não estejam em conformidade)
+        ![img]https://github.com/qr-bus/trab01/blob/master/arquivos/Modelo%20Lógico.png
 
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas DDL 
