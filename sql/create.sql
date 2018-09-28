@@ -88,6 +88,23 @@ create table if not exists cidade(
 	PRIMARY KEY(id_cidade)
 );
 
+create table historico_linha (
+    FK_LINHA_numero_linha smallserial,
+    FK_HISTORICO_id_historico serial
+);
+
+create table usuario_cartao (
+    FK_USUÁRIO_id_usuario serial,
+    FK_CARTAO DE CREDITO_numero char(16)
+);
+
+create table itinerario_logradouro (
+    FK_LOGRADOURO_id_logradouro char(8),
+    FK_ITINERÁRIO_id_itinerario serial
+);
+
+
+
 /* adicionar chaves estrangeiras */
 alter table cartao add constraint FK_CARTAO_ID FOREIGN KEY(usuario_id) references usuario(usuario_id) MATCH FULL on delete cascade on update cascade;
 alter table historico add constraint FK_HISTORICO_ID FOREIGN KEY(usuario_id) references usuario(usuario_id) MATCH FULL on delete cascade on update cascade;
@@ -96,3 +113,9 @@ alter table horario add constraint FK_HORARIO_LINHA FOREIGN KEY(horario_numero_l
 alter table usuario add constraint FK_USUARIO_LOGRADOURO FOREIGN KEY(usuario_cep) references logradouro(log_cep);
 alter table logradouro add constraint FK_LOG_BAIRRO FOREIGN KEY(bairro_id) references bairro(bairro_id);
 alter table bairro add constraint FK_BAIRRO_CIDADE FOREIGN KEY(cidade_id) references cidade(cidade_id);
+alter table historico_linha add constraint FK_HISTORICO_LINHA_0 FOREIGN KEY (FK_LINHA_numero_linha) references LINHA (numero_linha) on delete restrict on update restrict;
+alter table historico_linha add constraint FK_HISTORICO_LINHA_1 FOREIGN KEY (FK_HISTORICO_id_historico) references historico (id_historico) on delete set null on update cascade;
+alter table usuario_cartao add constraint fk_usuario_cartao_0 FOREIGN KEY (FK_USUÁRIO_id_usuario) references usuario (id_usuario) ON DELETE RESTRICT ON UPDATE RESTRICT;
+alter table usuario_cartao add constraint FK_USUARIO_CARTAO_1 FOREIGN KEY (FK_CARTAO DE CREDITO_numero)   references cartao (numero) on delete set null on update cascade;
+alter table itinerario_logradouro add constraint FK_ITINERARIO_LOGRADOURO_0 FOREIGN KEY (FK_LOGRADOURO_id_logradouro) references logradouro (id_logradouro) on delete restrict on update restrict;
+alter table itinerario_logradouro add constraint FK_ITINERARIO_LOGRADOURO_1 FOREIGN KEY (FK_ITINERÁRIO_id_itinerario) references itinerario (id_itinerario) on delete restrict on update restrict;
