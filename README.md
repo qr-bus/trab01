@@ -71,7 +71,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    ![img](images/ModeloLogico.png) 
 
 ### 7	MODELO FÍSICO<br>
-   ![Modelo Fisico](arquivos/ModeloFisico.sql)         
+   [Modelo Fisico](arquivos/ModeloFisico.sql)         
         
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
