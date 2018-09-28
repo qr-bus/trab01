@@ -95,7 +95,7 @@ create table if not exists historico_linha (
 
 create table if not exists usuario_cartao (
     FK_USUÁRIO_id_usuario serial,
-    FK_CARTAO DE CREDITO_numero char(16)
+    FK_CARTAO_DE_CREDITO_numero char(16)
 );
 
 create table if not exists itinerario_logradouro (
