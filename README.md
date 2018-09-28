@@ -68,7 +68,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <b>CIDADE:</b> Armazena informações sobre a cidade (nome e ID).<br>
 
 ### 6	MODELO LÓGICO<br>
-   ![img](arquivos/ModeloLogico.png) 
+   ![img](imagens/ModeloLogico.png) 
 
 ### 7	MODELO FÍSICO<br>
    ![Modelo Fisico](arquivos/ModeloFisico.sql)         
