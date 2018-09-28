@@ -41,6 +41,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 
 ### 5.MODELO CONCEITUAL<br>
 ![img](arquivos/ModeloConceitual.png) 
+
      
         
     
@@ -67,7 +68,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <b>CIDADE:</b> Armazena informações sobre a cidade (nome e ID).<br>
 
 ### 6	MODELO LÓGICO<br>
-        ![img](trab01/arquivos/Modelo Lógico.png )
+   ![img](arquivos/ModeloLogico.png) 
 
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas DDL 
