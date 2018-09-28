@@ -50,7 +50,6 @@ create table if not exists horario(
 	horario_terminal_seq int,
 	horario_numero_linha smallserial,
 	horario_desc_terminal varchar(150),
-	linha_numero,
 	PRIMARY KEY(horario_id)
 );
 
