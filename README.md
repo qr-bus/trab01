@@ -71,8 +71,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    ![img](arquivos/ModeloLogico.png) 
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas DDL 
-        (criação de tabelas, alterações, etc..)          
+   ![Modelo Fisico](arquivos/ModeloFisico.txt)         
         
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
