@@ -8,7 +8,9 @@ drop table if exists linha;
 drop table if exists bairro;
 drop table if exists cidade;
 drop table if exists logradouro;
-
+drop table if exists historico_linha;
+drop table if exists usuario_cartao;
+drop table if exists itinerario_logradouro;
 
 /* criacao de estruturas */
 create table if not exists usuario (
@@ -87,17 +89,17 @@ create table if not exists cidade(
 	PRIMARY KEY(id_cidade)
 );
 
-create table historico_linha (
+create table if not exists historico_linha (
     FK_LINHA_numero_linha smallserial,
     FK_HISTORICO_id_historico serial
 );
 
-create table usuario_cartao (
+create table if not exists usuario_cartao (
     FK_USUÁRIO_id_usuario serial,
     FK_CARTAO DE CREDITO_numero char(16)
 );
 
-create table itinerario_logradouro (
+create table if not exists itinerario_logradouro (
     FK_LOGRADOURO_id_logradouro char(8),
     FK_ITINERÁRIO_id_itinerario serial
 );
