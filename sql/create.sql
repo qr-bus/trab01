@@ -48,7 +48,6 @@ create table if not exists horario(
 	horario_saida time,
 	horario_tipo_orientacao char(1),
 	horario_data_inicio date,
-	horario_tipo_orientacao char(1);
 	horario_terminal_seq int,
 	horario_numero_linha smallserial,
 	horario_desc_terminal varchar(150),
