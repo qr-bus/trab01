@@ -80,7 +80,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    [Create + Inserts](sql/create_e_insert.sql)
    
 #### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
-   [Drop + Create + Inserts](sql/drop_create_insert.sql.sql)
+   [Drop + Create + Inserts](sql/drop_create_insert.sql)
 >## Marco de Entrega 03 em: (27/09/18) <br>
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
