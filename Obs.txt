@@ -3,3 +3,8 @@ que será substituida por um relacionamento entre estas entidades) ;
 acertar o terminal seq (especificar melhor o que é); verificar e especificar no trbalho se será somente cartão ou outras formas de pagamento; 
 saldo e CEP aparentemente estão incorretos; como estão acontecendo os registros de recarga e pagamento no sistema? ; 
 pela nossa conversa inicial o saldo será o historico de creditos vs historico de uso; com relação aos dados da API incluir no sistema somente os relevantes, previamente tratados  
+
+
+colocar preço no historico de qyuando pega o onibus
+compra SOMENTE por cartão
+colocar preço no historico de compra de credito
