@@ -46,7 +46,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
     
 #### 5.1 Validação do Modelo Conceitual
    <b>[Grupo01]:</b> Psicultura Inteligente (André Altivo, Gabriela Piffer, Lucca Machado e Marcelo Mendes)
-   <br><b>[Grupo02]:</b> Grupo do Wallace (não informou nome do trabalho nem dos integrantes do grupo)
+   <br><b>[Grupo02]:</b> Carga Pesada (Leonardo Sena, Matheus Aguiar, Wallace de Paula e Willian Vaneli)
 
 #### 5.2 DECISÕES DE PROJETO
    <b>Tipo_Horario:</b> Essa tabela foi criada com o intuito de identificar qual o tipo de horario será seguido por aquela linha, dias úteis, feriados, atípicos entre feriados ou fins de semana.<br>
