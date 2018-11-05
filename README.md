@@ -20,7 +20,7 @@ Através de tecnologias presentes nesses dispositivos seria possível efetuar o 
 
 ### 3.MINI-MUNDO<br>
 
-O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serão armazenados o nome completo, data de nascimento, cpf, endereço, e-mail e senha, sendo esse dois ultimos para efetuar login no sistema. O saldo será informado de acordo com o valor referente ao saldo do usuário no próprio sistema da GVBus, sendo atualizado em tempo real a cada nova operação de recarga ou pagamento realizada. Só poderá existir um único cadastro para cada CPF. Dos meios de pagamento, serão armazenados dados de cartões de credito salvos, contendo o número do cartão, nome do titular e data de validade. Os dados armazenados pertinentes ao cartão de credito deverão seguir as regras do PCI Security Standards Council visando a confiabilidade do sistema. Um usuário pode ter mais de um cartão de crédito. O histórico de uso do aplicativo também deve ter seus dados armazenados, que são as linhas usadas, junto com a data, horário e valor debitado da conta. Os dados dos horários de onibus serão obitidos por API, que devem possuir número da linha, descrição e os horários semanais e diários de origem e destino. O itinerário também será obtido por API, com linha, sentido da linha, ponto de origem, pontos de passagem e ponto de destino da linha. O saldo do usuário deve ser sincronizado com a empresa responsável pelo seu uso (companhia de transporte).<br>
+O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serão armazenados o nome completo, data de nascimento, cpf, endereço, e-mail e senha, sendo esse dois ultimos para efetuar login no sistema. O saldo será informado de acordo com o valor obtido nas operações de recarga e pagamento de passagens, sendo atualizado a cada nova operação realizada. Só poderá existir um único cadastro para cada CPF. Dos meios de pagamento, serão armazenados dados de cartões de credito salvos, contendo o número do cartão, nome do titular e data de validade. Os dados armazenados pertinentes ao cartão de credito deverão seguir as regras do PCI Security Standards Council visando a confiabilidade do sistema. Um usuário pode ter mais de um cartão de crédito. O histórico de uso do aplicativo também deve ter seus dados armazenados, que são as linhas usadas, junto com a data, horário e valor debitado da conta. Os dados dos horários de onibus serão obitidos por API, que devem possuir número da linha, descrição e os horários semanais e diários de origem e destino. O itinerário também será obtido por API, com linha, sentido da linha, ponto de origem, pontos de passagem e ponto de destino da linha. O saldo do usuário deve ser sincronizado com a empresa responsável pelo seu uso (companhia de transporte).<br>
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 [Mockup feito com Balsamiq](/arquivos/Mockup.pdf)
@@ -56,10 +56,32 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 >## Marco de Entrega 02 em: (17/09/2018)<br>
 #### 5.3 DESCRIÇÃO DOS DADOS 
    <b>USUARIO:</b> Tabela que armazena informações relacionadas ao usuário do sistema.<br>
-   <b>CARTAO DE CREDITO:</b> Tabela que contém dados do cartão de passagem do usuário.<br>
+       usuario_id: id do usuário, gerado automaticamente.
+	      usuario_cpf: cpf do usuário.
+	      usuario_nome: nome completo do usuário.
+		     usuario_nascimento: data de nascimento do usuário.
+			    usuario_email: email do usuário.
+			    usuario_senha: senha do usuário.
+			    usuario_cep: cep do usuário.
+			    usuario_saldo: saldo do usuário para pagamento de passagens.
+   <b>CARTAO:</b> Tabela que contém dados do cartão de passagem do usuário.<br>
+       cartao_numero: número do cartão do usuário.
+	      cartao_titular: nome do titular do cartão.
+	      cartao_validade: data de validade presente no cartão.
    <b>HISTORICO:</b> Tabela que armazena o histórico de pagamentos em datas e horarios específicos.<br>
+       historico_id: id do histórico, gerado automaticamente.
+	      historico_linha: linha utilizada pelo usuário.
+	      historico_data: data em que o usuário pagou a passagem.
+	      historico_horario: horário em que a passagem foi paga.
+	      historico_valor: valor da passagem paga.
    <b>LINHA:</b> Contém informações sobre a linha do ônibus.<br>
+       linha_numero: número da linha.
+	      linha_desc: descrição (nome) da linha.
    <b>HORÁRIO:</b> Contém dados sobre horarios das linhas.<br>
+       horario_id: id da linha, gerado automaticamente.
+	      horario_saida: horário em que o ônibus sai do terminal.
+	      horario_data_inicio: data em que este horário começou a ser utilizado.
+		     horario_desc_terminal: nome do terminal que o ônibus sairá.
    <b>TIPO_HORARIO:</b> Tabela que armazena os tipos de horário (dias úteis, feriados, atípicos entre feriados ou fins de semana).<br>
    <b>ITINERARIO:</b> Armazena informações sobre o sentido da linha (ida ou volta) e a sequência de logradouros que ela percorrerá.<br>
    <b>LOGRADOURO:</b> Armazena informações sobre o logradouro (CEP, tipo e nome).<br>
