@@ -39,7 +39,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 >## Marco de Entrega 01 em: (06/09/2018)<br>
 
 ### 5.MODELO CONCEITUAL<br>
-![img](arquivos/QR-Bus - modelo conceitual.png) 
+![img](arquivos/QR-Bus\ -\ modelo conceitual.png) 
 
      
         
