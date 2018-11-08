@@ -39,7 +39,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 >## Marco de Entrega 01 em: (06/09/2018)<br>
 
 ### 5.MODELO CONCEITUAL<br>
-![img](arquivos/QR-Bus_-_modelo_conceitual.png) 
+![img](imagens/QR-Bus_-_modelo_conceitual.png) 
 
      
         
@@ -90,7 +90,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <b>CIDADE:</b> Armazena informações sobre a cidade (nome e ID).<br>
 
 ### 6	MODELO LÓGICO<br>
-   ![img](images/QR-Bus - modelo logico.png) 
+   ![img](images/QR-Bus_-_modelo_logico.png) 
 
 ### 7	MODELO FÍSICO<br>
    [Modelo Fisico](arquivos/QR-Bus - modelo fisico.sql)         
