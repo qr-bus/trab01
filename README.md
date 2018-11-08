@@ -39,7 +39,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 >## Marco de Entrega 01 em: (06/09/2018)<br>
 
 ### 5.MODELO CONCEITUAL<br>
-![img](arquivos/ModeloConceitual.png) 
+![img](arquivos/QR-Bus - modelo conceitual.png) 
 
      
         
@@ -83,16 +83,17 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	      horario_data_inicio: data em que este horário começou a ser utilizado.
 		     horario_desc_terminal: nome do terminal que o ônibus sairá.
    <b>TIPO_HORARIO:</b> Tabela que armazena os tipos de horário (dias úteis, feriados, atípicos entre feriados ou fins de semana).<br>
-   <b>ITINERARIO:</b> Armazena informações sobre o sentido da linha (ida ou volta) e a sequência de logradouros que ela percorrerá.<br>
+   <b>ITINERARIO:</b> Armazena informações sobre o sentido da linha (ida ou volta) e a sequência de pontos que ela percorrerá.<br>
+   <b>PONTO:</b> Armazena as coordenas do ponto.<br>
    <b>LOGRADOURO:</b> Armazena informações sobre o logradouro (CEP, tipo e nome).<br>
    <b>BAIRRO:</b> Armazena informações sobre o bairro (nome e ID).<br>
    <b>CIDADE:</b> Armazena informações sobre a cidade (nome e ID).<br>
 
 ### 6	MODELO LÓGICO<br>
-   ![img](images/ModeloLogico.png) 
+   ![img](images/QR-Bus - modelo logico.png) 
 
 ### 7	MODELO FÍSICO<br>
-   [Modelo Fisico](arquivos/ModeloFisico.sql)         
+   [Modelo Fisico](arquivos/QR-Bus - modelo fisico.sql)         
         
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES 
