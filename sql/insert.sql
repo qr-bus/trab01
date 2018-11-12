@@ -147,7 +147,7 @@ INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, numero_linha
     (24,'10:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS');
 
 /* itinerario */
-INSERT TO ITINERARIO (id_itinerartio,numero_linha)
+INSERT INTO ITINERARIO (id_itinerartio,numero_linha)
     VALUES (1, 507),
     (2, 507),
     (3, 509),

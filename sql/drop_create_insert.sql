@@ -372,7 +372,7 @@ INSERT INTO PONTO (id_ponto,id_logradouro,longitude, latitude)
     (10, 5, -20.30220,-40.29821),
 
 /* itinerario_ponto */
-INSERT TO ITINERARIO_PONTO (id_intin_ponto, id_itinerario, id_ponto, pos_sequencia)
+INSERT INTO ITINERARIO_PONTO (id_intin_ponto, id_itinerario, id_ponto, pos_sequencia)
     VALUES (1, 1, 1, 15),
     (2, 1, 3, 16),
     (3, 1, 5, 17),
