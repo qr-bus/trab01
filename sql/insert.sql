@@ -54,16 +54,16 @@ INSERT INTO CIDADE (id_cidade, desc_cidade)
 
 /* bairro */
 INSERT INTO BAIRRO (id_bairro, desc_bairro, id_cidade)
-    VALUES(,'Itapuã',1),
-    (,'Praia da Costa',1),
-    (,'Jardim da Penha',2),
-    (,'Praia do Canto',2),
-    (,'Jardim Camburi',2),
-    (,'Itaparica',1),
-    (,'Laranjeiras',3),
-    (,'Planalto Serrano',3),
-    (,'Itaquari',4),
-    (,'Campo Grande',4);
+    VALUES(1,'Itapuã',1),
+    (2,'Praia da Costa',1),
+    (3,'Jardim da Penha',2),
+    (4,'Praia do Canto',2),
+    (5,'Jardim Camburi',2),
+    (6,'Itaparica',1),
+    (7,'Laranjeiras',3),
+    (8,'Planalto Serrano',3),
+    (9,'Itaquari',4),
+    (10,'Campo Grande',4);
 
 /* logradouro */
 INSERT INTO LOGRADOURO (id_logradouro, cep, desc_tipo, desc_logradouro, id_barro)
