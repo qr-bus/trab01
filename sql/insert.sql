@@ -1,17 +1,17 @@
 ---- Insercao de dados ----
 
 /* usuario */
-INSERT INTO USUARIO (id_usuario, numero_cartao, nome, nascimento, email, senha, id_logradouro, saldo)
-    VALUES(1,'11122233344','Joao da Silva','1992-12-20','joaodasilva@yahoo.com.br','a1b2c3d4','1', 12.80),
-    (2,'11199988822','Jadson Teco','1996-10-10','jadteco@gmail.com','teco78910','2', 13.04),
-    (3,'22233344455','Antonio Santos','1988-10-20','antoniosantos@hotmail.com','123456','3', 17.17),
-    (4,'12332145690','Amaro Neto','1982-07-01','amaroneto@gmail.com','abc123456','7', 18.81),
-    (5,'12345612399','Natalia Vieira','1997-11-17','nataliavieira@gmail.com','aaa123bbb','10', 14.07),
-    (6,'11111122288','Izabela Felix','1995-04-23','izabelafelix@gmail.com','abcd9182','4', 07.14),
-    (7,'22211144477','Gabriel Fernandes','1994-05-11','gabrielfernandes@hotmail.com','lalala721','9', 21.05),
-    (8,'78945612300','Diego Bolsoni','1993-01-04','diegobolsoni@yahoo.com.br','diego123456','8', 13.73),
-    (9,'44412344466','Ingrid Brum','1998-10-21','ingridbrum@gmail.com','brum010203','5', 14.50),
-    (10,'98788455611','Carolina Uliana','1997-06-18','caroluliana@hotmail.com','carol78690','6', 3.40);
+INSERT INTO USUARIO (id_usuario, cpf, nome, nascimento, email, senha, id_logradouro, saldo, num_cartao)
+    VALUES(1,'11122233344','Joao da Silva','1992-12-20','joaodasilva@yahoo.com.br','a1b2c3d4','1', 12.80,'1111222233330000'),
+    (2,'11199988822','Jadson Teco','1996-10-10','jadteco@gmail.com','teco78910','2', 13.04,'1111222233331111'),
+    (3,'22233344455','Antonio Santos','1988-10-20','antoniosantos@hotmail.com','123456','3', 17.17,'1111222233332222'),
+    (4,'12332145690','Amaro Neto','1982-07-01','amaroneto@gmail.com','abc123456','7', 18.81,'1111222233333333'),
+    (5,'12345612399','Natalia Vieira','1997-11-17','nataliavieira@gmail.com','aaa123bbb','10', 14.07,'1111222233334444'),
+    (6,'11111122288','Izabela Felix','1995-04-23','izabelafelix@gmail.com','abcd9182','4', 07.14,'1111222233335555'),
+    (7,'22211144477','Gabriel Fernandes','1994-05-11','gabrielfernandes@hotmail.com','lalala721','9', 21.05,'1111222233336666'),
+    (8,'78945612300','Diego Bolsoni','1993-01-04','diegobolsoni@yahoo.com.br','diego123456','8', 13.73,'1111222233337777'),
+    (9,'44412344466','Ingrid Brum','1998-10-21','ingridbrum@gmail.com','brum010203','5', 14.50,'1111222233338888'),
+    (10,'98788455611','Carolina Uliana','1997-06-18','caroluliana@hotmail.com','carol78690','6', 3.40,'1111222233339999');
 
 /* cartao */
 INSERT INTO CARTAO (numero, titular, validade, id_usuario)
@@ -157,7 +157,7 @@ INSERT INTO ITINERARIO (id_itinerartio,numero_linha)
     (7, 815),
     (8, 815),
     (9, 501),
-    (10, 501),
+    (10, 501);
 /* passagem */
 INSERT INTO PASSAGEM (id_passagem, id_usuario, numero_linha, id_pagamento, data, hora, valor)
     VALUES(1,3,815,10,'2018-10-08','07:30:00', 3.40),
@@ -169,21 +169,20 @@ INSERT INTO PASSAGEM (id_passagem, id_usuario, numero_linha, id_pagamento, data,
     (7,3,815,10,'2018-10-11','07:30:00', 3.40),
     (8,3,815,10,'2018-10-11','12:00:00', 3.40),
     (9,3,815,10,'2018-10-12','07:30:00', 3.40),
-    (10,3,815,10,'2018-10-12','12:00:00', 3.40),
+    (10,3,815,10,'2018-10-12','12:00:00', 3.40);
     
 /* pagamento */
 INSERT INTO PAGAMENTO (id_pagamento,numero_cartao, valor_pagamento, data_pagamento)
-    VALUES(1,'1111222233332222',100.00,'2018-01-08' )
-    (2,'1111222233332222',100.00,'2018-02-08' )
-    (3,'1111222233332222',100.00,'2018-03-08' )
-    (4,'1111222233332222',100.00,'2018-04-08' )
-    (5,'1111222233332222',100.00,'2018-05-08' )
-    (6,'1111222233332222',100.00,'2018-06-08' )
-    (7,'1111222233332222',100.00,'2018-07-08' )
-    (8,'1111222233332222',100.00,'2018-08-08' )
-    (9,'1111222233332222',100.00,'2018-09-08' )
-    (10,'1111222233332222',100.00,'2018-10-08' )
-
+    VALUES(1,'1111222233332222',100.00,'2018-01-08' ),
+    (2,'1111222233332222',100.00,'2018-02-08' ),
+    (3,'1111222233332222',100.00,'2018-03-08' ),
+    (4,'1111222233332222',100.00,'2018-04-08' ),
+    (5,'1111222233332222',100.00,'2018-05-08' ),
+    (6,'1111222233332222',100.00,'2018-06-08' ),
+    (7,'1111222233332222',100.00,'2018-07-08' ),
+    (8,'1111222233332222',100.00,'2018-08-08' ),
+    (9,'1111222233332222',100.00,'2018-09-08' ),
+    (10,'1111222233332222',100.00,'2018-10-08' );
 /* ponto */
 INSERT INTO PONTO (id_ponto,id_logradouro,longitude, latitude)
     VALUES(1, 5, -20.28880,-40.30392),
@@ -195,7 +194,7 @@ INSERT INTO PONTO (id_ponto,id_logradouro,longitude, latitude)
     (7, 5, -20.29821,-40.30000),
     (8, 5, -20.29897,-40.29951),
     (9, 5, -20.30258,-40.29828),
-    (10, 5, -20.30220,-40.29821),
+    (10, 5, -20.30220,-40.29821);
 
 /* itinerario_ponto */
 INSERT TO ITINERARIO_PONTO (id_intin_ponto, id_itinerario, id_ponto, pos_sequencia)
@@ -208,4 +207,4 @@ INSERT TO ITINERARIO_PONTO (id_intin_ponto, id_itinerario, id_ponto, pos_sequenc
     (7, 9, 4, 10),
     (8, 9, 6, 11),
     (9, 9, 8, 12),
-    (10, 9, 10, 13),
+    (10, 9, 10, 13);
