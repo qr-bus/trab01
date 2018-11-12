@@ -261,7 +261,7 @@ INSERT INTO TIPO_HORARIO (id_tipo, desc_horario)
 
 /* horario */
 /* 815 */
-INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, , numero_linha, desc_terminal)
+INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, numero_linha, desc_terminal)
     VALUES(1,'05:30:00',1,'2017-05-28',815,'IFES'),
     (2,'05:54:00',1,'2017-05-28',815,'IFES'),
     (3,'06:05:00',1,'2017-05-28',815,'IFES'),
@@ -294,7 +294,7 @@ INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, , numero_lin
     (30,'21:50:00',1,'2017-05-28',815,'IFES'),
     (31,'22:10:00',1,'2017-05-28',815,'IFES');
 /* 507 */
-INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, , numero_linha, desc_terminal)
+INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, numero_linha, desc_terminal)
     VALUES(1,'05:00:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
     (,'05:20:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
     (2,'05:35:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
