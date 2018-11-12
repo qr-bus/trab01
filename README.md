@@ -124,11 +124,40 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+
+<b>SELECT * FROM cidade;
+
+![img](img/cidade.PNG)
+
+<b>SELECT * FROM bairro;
+
+![img](img/bairro.PNG)
+
+<b>SELECT * FROM logradouro;
+
+![img](img/logradouro.PNG)
+
+<b>SELECT * FROM tipo_horario;
+
+![img](img/tipo_horario.PNG)
+
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+
+<b>SELECT * FROM logradouro WHERE desc_tipo = 'Avenida';</b>
+
+![img](img/select_logradouro_where.PNG)
+
+![img](sql/img-select/select_logradouro_where.PNG)
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
+    
+   <b>SELECT * FROM logradouro WHERE desc_logradouro = 'Rio Branco' OR id_bairro = '2';</b>
+   
+   ![img](img/logradouro_where_riobranco_or_id2.PNG)
+   
     b) Criar no mínimo 3 consultas com operadores aritméticos 
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+    
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
     b) Criar uma consulta para cada tipo de função data apresentada.
@@ -141,7 +170,30 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
         a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
+   
+   <b>SELECT COUNT(cep), desc_tipo FROM logradouro GROUP BY desc_tipo;</b>
+   
+   ![img](img/count_logradouro.PNG)
+   
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
+   <b>SELECT COUNT(bairro.id_bairro), cidade.desc_cidade, cidade.id_cidade
+   FROM bairro
+   LEFT JOIN cidade
+   ON bairro.id_cidade = cidade.id_cidade
+   GROUP BY cidade.id_cidade
+   ORDER BY cidade.id_cidade;</b>
+   
+   ![img](img/count_cidade.PNG)
+   
+   <b>SELECT COUNT(logradouro.cep), bairro.desc_bairro
+   FROM logradouro
+   LEFT JOIN bairro
+   ON logradouro.id_bairro = bairro.id_bairro
+   GROUP BY bairro.desc_bairro
+   ORDER BY bairro.desc_bairro;</b>
+   
+   ![img](img/count_bairro.PNG)
+   
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
