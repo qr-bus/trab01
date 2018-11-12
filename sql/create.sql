@@ -1,107 +1,158 @@
 /* criacao de estruturas */
-create table if not exists usuario (
-	usuario_id serial,
-	usuario_cpf char(11),
-	usuario_nome varchar(150),
-	usuario_nascimento date,
-	usuario_email varchar(100),
-	usuario_senha varchar(64),
-	usuario_cep char(8),
-	usuario_saldo money,
-	PRIMARY KEY (usuario_id)
+CREATE TABLE USUARIO (
+    id_usuario smallserial PRIMARY KEY,
+    numero_cartao char(16),
+    id_logradouro smallserial,
+    saldo money,
+    email varchar(100),
+    senha char(64),
+    nascimento date,
+    cpf char(11),
+    nome varchar(150)
 );
 
-create table if not exists cartao(
-	cartao_numero char(16),
-	cartao_titular varchar(150),
-	cartao_validade char(7),
-	usuario_id serial,
-	PRIMARY KEY(cartao_numero)
+CREATE TABLE LOGRADOURO (
+    id_logradouro smallserial PRIMARY KEY,
+    id_bairro smallserial,
+    cep char(8),
+    desc_logradouro varchar(150),
+    desc_tipo varchar(20)
 );
 
-create table if not exists historico(
-	historico_id serial,
-	historico_linha varchar(4),
-	historico_data date,
-	historico_horario time,
-	historico_valor money,
-	usuario_id serial,
-	PRIMARY KEY(historico_id)
+CREATE TABLE BAIRRO (
+    id_bairro smallserial PRIMARY KEY,
+    id_cidade smallserial,
+    desc_bairro varchar(150)
 );
 
-create table if not exists horario(
-	horario_id serial,
-	horario_saida time,
-	horario_tipo_orientacao char(1),
-	horario_data_inicio date,
-	horario_terminal_seq int,
-	horario_numero_linha smallserial,
-	horario_desc_terminal varchar(150),
-	PRIMARY KEY(horario_id)
+CREATE TABLE CIDADE (
+    id_cidade smallserial PRIMARY KEY,
+    desc_cidade varchar(150)
 );
 
-create table if not exists tipo_horario(
-	tipoh_id smallserial,
-	tipoh_desc_horario varchar(30),
-	PRIMARY KEY(tipo_horario_id));
-
-create table if not exists linha(
-	linha_numero smallserial,
-	linha_desc varchar(150),
-	PRIMARY KEY (numero_linha)
+CREATE TABLE LINHA (
+    numero_linha smallserial PRIMARY KEY,
+    desc_linha varchar(100),
+    sentido char(1)
 );
 
-create table if not exists bairro(
-	bairro_id serial,
-	bairro_desc varchar(150),
-	cidade_id serial,
-	PRIMARY KEY(bairro_id)
+CREATE TABLE HORARIO (
+    id_horario smallserial PRIMARY KEY,
+    numero_linha smallserial,
+    id_tipo smallserial,
+    data_inicio date,
+    hora_saida time,
+    desc_terminal varchar(150)
 );
 
-create table if not exists logradouro (
-	log_id serial,
-	log_cep char(8),
-	log_desc_tipo varchar(20),
-	log_desc_logradouro varchar(150),
-	bairro_id serial,
-	PRIMARY KEY(log_id)
+CREATE TABLE TIPO_HORARIO (
+    id_tipo smallserial PRIMARY KEY,
+    desc_horario varchar(30)
 );
 
-
-create table if not exists cidade(
-	cidade_id serial,
-	cidade_desc varchar(150),
-	PRIMARY KEY(id_cidade)
+CREATE TABLE CARTAO (
+    numero char(16) PRIMARY KEY,
+    id_usuario smallserial,
+    titular varchar(150),
+    validade char(5)
 );
 
-create table if not exists historico_linha (
-    FK_LINHA_numero_linha smallserial,
-    FK_HISTORICO_id_historico serial
+CREATE TABLE ITINERARIO (
+    id_itinerario smallserial PRIMARY KEY,
+    numero_linha smallserial
 );
 
-create table if not exists usuario_cartao (
-    FK_USUÁRIO_id_usuario serial,
-    FK_CARTAO_DE_CREDITO_numero char(16)
+CREATE TABLE PAGAMENTO (
+    id_pagamento serial PRIMARY KEY,
+    numero_cartao char(16),
+    valor_pagamento decimal,
+    data_pagamento date
 );
 
-create table if not exists itinerario_logradouro (
-    FK_LOGRADOURO_id_logradouro char(8),
-    FK_ITINERÁRIO_id_itinerario serial
+CREATE TABLE PASSAGEM (
+    id_passagem smallserial PRIMARY KEY,
+    id_usuario smallserial,
+    numero_linha smallserial,
+    id_pagamento serial,
+    data date,
+    hora time,
+    valor money
 );
 
+CREATE TABLE PONTO (
+    id_ponto smallserial PRIMARY KEY,
+    id_logradouro smallserial,
+    longitude decimal,
+    latitude decimal
+);
+
+CREATE TABLE ITINERARIO_PONTO (
+    id_intin_ponto smallserial PRIMARY KEY,
+    id_itinerario smallserial,
+    id_ponto smallserial,
+    pos_sequencia integer
+);
+ 
+/* adicionar chaves estrangeiras */
+ALTER TABLE USUARIO ADD CONSTRAINT FK_USUÁRIO_2
+    FOREIGN KEY (numero_cartao)
+    REFERENCES CARTAO (numero);
+ 
+ALTER TABLE USUARIO ADD CONSTRAINT FK_USUÁRIO_3
+    FOREIGN KEY (id_logradouro)
+    REFERENCES LOGRADOURO (id_logradouro);
+ 
+ALTER TABLE LOGRADOURO ADD CONSTRAINT FK_LOGRADOURO_2
+    FOREIGN KEY (id_bairro)
+    REFERENCES BAIRRO (id_bairro);
+ 
+ALTER TABLE BAIRRO ADD CONSTRAINT FK_BAIRRO_2
+    FOREIGN KEY (id_cidade)
+    REFERENCES CIDADE (id_cidade);
+ 
+ALTER TABLE HORARIO ADD CONSTRAINT FK_HORARIO_2
+    FOREIGN KEY (numero_linha)
+    REFERENCES LINHA (numero_linha);
+ 
+ALTER TABLE HORARIO ADD CONSTRAINT FK_HORARIO_3
+    FOREIGN KEY (id_tipo)
+    REFERENCES TIPO_HORARIO (id_tipo);
+ 
+ALTER TABLE CARTAO ADD CONSTRAINT FK_CARTAO_2
+    FOREIGN KEY (id_usuario)
+    REFERENCES USUARIO (id_usuario);
+ 
+ALTER TABLE ITINERARIO ADD CONSTRAINT FK_ITINERARIO_2
+    FOREIGN KEY (numero_linha)
+    REFERENCES LINHA (numero_linha);
+ 
+ALTER TABLE PAGAMENTO ADD CONSTRAINT FK_PAGAMENTO_2
+    FOREIGN KEY (numero_cartao)
+    REFERENCES CARTAO (numero);
+ 
+ALTER TABLE PASSAGEM ADD CONSTRAINT FK_PASSAGEM_2
+    FOREIGN KEY (id_usuario)
+    REFERENCES USUARIO (id_usuario);
+ 
+ALTER TABLE PASSAGEM ADD CONSTRAINT FK_PASSAGEM_3
+    FOREIGN KEY (numero_linha)
+    REFERENCES LINHA (numero_linha);
+ 
+ALTER TABLE PASSAGEM ADD CONSTRAINT FK_PASSAGEM_4
+    FOREIGN KEY (id_pagamento)
+    REFERENCES PAGAMENTO (id_pagamento);
+ 
+ALTER TABLE PONTO ADD CONSTRAINT FK_PONTO_1
+    FOREIGN KEY (id_logradouro)
+    REFERENCES LOGRADOURO (id_logradouro);
+ 
+ALTER TABLE ITINERARIO_PONTO ADD CONSTRAINT FK_ITINERARIO_PONTO_1
+    FOREIGN KEY (id_itinerario)
+    REFERENCES ITINERARIO (id_itinerario);
+ 
+ALTER TABLE ITINERARIO_PONTO ADD CONSTRAINT FK_ITINERARIO_PONTO_2
+    FOREIGN KEY (id_ponto)
+    REFERENCES PONTO (id_ponto);
 
 
 /* adicionar chaves estrangeiras */
-alter table cartao add constraint FK_CARTAO_ID FOREIGN KEY(usuario_id) references usuario(usuario_id) MATCH FULL on delete cascade on update cascade;
-alter table historico add constraint FK_HISTORICO_ID FOREIGN KEY(usuario_id) references usuario(usuario_id) MATCH FULL on delete cascade on update cascade;
-alter table horario add constraint FK_HORARIO_TIPOH FOREIGN KEY(horario_tipo_orientacao) references tipo_horario(tipoh_id);
-alter table horario add constraint FK_HORARIO_LINHA FOREIGN KEY(horario_numero_linha) references linha(linha_numero) MATCH FULL on delete cascade on update cascade;
-alter table usuario add constraint FK_USUARIO_LOGRADOURO FOREIGN KEY(usuario_cep) references logradouro(log_cep);
-alter table logradouro add constraint FK_LOG_BAIRRO FOREIGN KEY(bairro_id) references bairro(bairro_id);
-alter table bairro add constraint FK_BAIRRO_CIDADE FOREIGN KEY(cidade_id) references cidade(cidade_id);
-alter table historico_linha add constraint FK_HISTORICO_LINHA_0 FOREIGN KEY (FK_LINHA_numero_linha) references LINHA (numero_linha) on delete restrict on update restrict;
-alter table historico_linha add constraint FK_HISTORICO_LINHA_1 FOREIGN KEY (FK_HISTORICO_id_historico) references historico (id_historico) on delete set null on update cascade;
-alter table usuario_cartao add constraint fk_usuario_cartao_0 FOREIGN KEY (FK_USUÁRIO_id_usuario) references usuario (id_usuario) ON DELETE RESTRICT ON UPDATE RESTRICT;
-alter table usuario_cartao add constraint FK_USUARIO_CARTAO_1 FOREIGN KEY (FK_CARTAO DE CREDITO_numero)   references cartao (numero) on delete set null on update cascade;
-alter table itinerario_logradouro add constraint FK_ITINERARIO_LOGRADOURO_0 FOREIGN KEY (FK_LOGRADOURO_id_logradouro) references logradouro (id_logradouro) on delete restrict on update restrict;
-alter table itinerario_logradouro add constraint FK_ITINERARIO_LOGRADOURO_1 FOREIGN KEY (FK_ITINERÁRIO_id_itinerario) references itinerario (id_itinerario) on delete restrict on update restrict;
