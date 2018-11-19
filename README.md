@@ -184,7 +184,7 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    
    ![img](img/select_operador_aritmetico_2.PNG) <br>
    
-   <b>SELECT cartao.titular ,valor_pagamento,CAST((valor_pagamento / 3.40) AS DECIMAL(2,0)) AS numero_passagens</b><br>
+   <b>SELECT cartao.titular ,valor_pagamento,CAST((valor_pagamento / 3.40) AS DECIMAL(3,0)) AS numero_passagens</b><br>
    <b>FROM PAGAMENTO INNER JOIN cartao ON (cartao.numero = '1111222233333333' OR cartao.numero = '1111222233338888' OR </b><br>
    <b>cartao.numero = '1111222233335555') GROUP BY titular,valor_pagamento;</b><br>
    
