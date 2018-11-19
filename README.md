@@ -202,10 +202,10 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    <b> 2 </b><br>
    <b> Antes </b><br>
    <b>SELECT * FROM linha;</b><br>
-   ![img](img/Update_antes_2.PNG)<br>
+   ![img](img/update_antes_2.PNG)<br>
    <b> DEPOIS </b><br>
    <b> ALTER TABLE LINHA RENAME COLUMN desc_linha TO descricao_linha;</b><br>
-   ![img](img/Update_depois_2.PNG)<br>
+   ![img](img/update_depois_2.PNG)<br>
    
    <b> 3 </b><br>
    <b> Antes </b><br>
