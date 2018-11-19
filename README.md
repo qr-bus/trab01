@@ -217,6 +217,18 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
       
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
+   <b>SELECT numero_linha FROM linha WHERE desc_linha LIKE 'T.LARANJEIRAS%' OR desc_linha LIKE '%T.ITAPARICA VIA T.CARAPINA%';</b><br>
+   ![img](img/select_like_1.PNG)<br>
+   
+   <b> SELECT titular,validade FROM cartao WHERE((numero = '1111222233332222' ) OR (validade LIKE '%2022'));</b><br>
+   ![img](img/select_like_2.PNG)<br>
+   
+   <b> SELECT titular,validade FROM cartao WHERE((numero = '1111222233338888' ) OR (titular LIKE '%Fernandes') OR (titular LIKE 'A%'));</b><br>
+   ![img](img/select_like_3.PNG)<br>
+   
+   <b> SELECT desc_bairro FROM bairro WHERE ((id_cidade = 2) AND ( desc_bairro LIKE 'Jardim%'));</b><br>
+   ![img](img/select_like_4.PNG)<br>   
+    
     b) Criar uma consulta para cada tipo de função data apresentada.
 
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
