@@ -159,7 +159,8 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    
    ![img](img/select_operador_logico_1.PNG)
    
-   <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') AND (numero_linha = 507 OR  numero_linha = 516));</b>
+   <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') ;</b>
+     <b>AND (numero_linha = 507 OR  numero_linha = 516));</b>
    ![img](img/select_operador_logico_2.PNG)
    
    <b>SELECT (desc_tipo|| '. '||desc_logradouro) FROM logradouro WHERE ((id_bairro = 4) OR (id_bairro = 7));</b>
