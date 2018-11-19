@@ -189,8 +189,32 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    <b>cartao.numero = '1111222233335555') GROUP BY titular,valor_pagamento;</b><br>
    
    ![img](img/select_operador_aritmetico_3.PNG) <br>
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
-    
+   c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+   
+   <b> 1 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT nome,email FROM usuario WHERE(id_usuario = 6);</b><br>
+   ![img](img/Update_antes_1.PNG)<br>
+   <b> DEPOIS </b><br>
+   <b> UPDATE usuario SET email = 'izabela_123@gmail.com' WHERE id_usuario = 6; </b><br>
+   ![img](img/Update_depois_1.PNG)<br>
+   
+   <b> 2 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM linha;</b><br>
+   ![img](img/Update_antes_2.PNG)<br>
+   <b> DEPOIS </b><br>
+   <b> ALTER TABLE LINHA RENAME COLUMN desc_linha TO descricao_linha;</b><br>
+   ![img](img/Update_depois_2.PNG)<br>
+   
+   <b> 3 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT desc_cidade FROM cidade where(id_cidade = 6);</b><br>
+   ![img](img/Update_antes_3.PNG)<br>
+   <b> DEPOIS </b><br>
+   <b> UPDATE cidade SET desc_cidade = 'GuaraParis' WHERE id_cidade = 6;</b><br>
+   ![img](img/Update_depois_3.PNG)<br>
+      
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
     b) Criar uma consulta para cada tipo de função data apresentada.
