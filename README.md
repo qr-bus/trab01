@@ -168,7 +168,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    ![img](img/select_operador_logico_3.PNG)
    
    <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') AND (NOT numero_linha = 815));</b>
-   ![img](img/select_operador_logico_4.PNG)
+   ![img](img/select_operador_logico_4.PNG) <br>
    
    
    
@@ -176,19 +176,19 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
     
    <b>SELECT numero_cartao,valor_pagamento,(valor_pagamento - 3.40) AS sobra
 FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
-   ![img](img/select_operador_aritmetico_1.PNG)
+   ![img](img/select_operador_aritmetico_1.PNG) <br>
    
-   <b>SELECT cartao.titular ,valor_pagamento,(valor_pagamento + 90.00) AS sobra</b><br>
-<b>FROM PAGAMENTO INNER JOIN cartao ON (cartao.numero = '1111222233339999' OR cartao.numero = '1111222233338888')</b><br>
-<b>GROUP BY titular,valor_pagamento;</b><br>
+   <b>SELECT cartao.titular ,valor_pagamento,(valor_pagamento + 90.00) AS sobra FROM PAGAMENTO</b><br>
+   <b>INNER JOIN cartao ON (cartao.numero = '1111222233339999' OR cartao.numero = '1111222233338888')</b><br>
+   <b>GROUP BY titular,valor_pagamento;</b><br>
    
-   ![img](img/select_operador_aritmetico_2.PNG)
+   ![img](img/select_operador_aritmetico_2.PNG) <br>
    
    <b>SELECT cartao.titular ,valor_pagamento,CAST((valor_pagamento / 3.40) AS DECIMAL(2,0)) AS numero_passagens</b><br>
- <b>FROM PAGAMENTO INNER JOIN cartao ON (cartao.numero = '1111222233333333' OR cartao.numero = '1111222233338888' OR </b><br>
+   <b>FROM PAGAMENTO INNER JOIN cartao ON (cartao.numero = '1111222233333333' OR cartao.numero = '1111222233338888' OR </b><br>
    <b>cartao.numero = '1111222233335555') GROUP BY titular,valor_pagamento;</b><br>
    
-   ![img](img/select_operador_aritmetico_3.PNG)
+   ![img](img/select_operador_aritmetico_3.PNG) <br>
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
     
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
