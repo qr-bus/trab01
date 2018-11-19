@@ -155,6 +155,22 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    
    ![img](img/logradouro_where_riobranco_or_id2.PNG)
    
+   <b>SELECT hora_saida, numero_linha FROM horario WHERE (hora_saida > '09:09:00' AND numero_linha = 507);</b>
+   
+   ![img](img/select_operador_logico_1.PNG)
+   
+   <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') AND (numero_linha = 507 OR  numero_linha = 516));</b>
+   ![img](img/select_operador_logico_2.PNG)
+   
+   <b>SELECT (desc_tipo|| '. '||desc_logradouro) FROM logradouro WHERE ((id_bairro = 4) OR (id_bairro = 7));</b>
+   
+   ![img](img/select_operador_logico_3.PNG)
+   
+   <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') AND (NOT numero_linha = 815));</b>
+   ![img](img/select_operador_logico_4.PNG)
+   
+   
+   
     b) Criar no mínimo 3 consultas com operadores aritméticos 
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
     
