@@ -242,11 +242,11 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    
    <b> 3 </b><br>
    <b> Antes </b><br>
-   <b>SELECT desc_cidade FROM cidade where(id_cidade = 6);</b><br>
-   ![img](img/Update_antes_3.PNG)<br>
+   <b>SELECT * FROM cidade;</b><br>
+   ![img](images/SELECT_*_FROM_CIDADE.png)<br>
    <b> DEPOIS </b><br>
-   <b> UPDATE cidade SET desc_cidade = 'GuaraParis' WHERE id_cidade = 6;</b><br>
-   ![img](img/Update_depois_3.PNG)<br>
+   <b> ALTER TABLE cidade RENAME COLUMN desc_cidade TO nome_cidade;;</b><br>
+   ![img](img/rename_desc_cidade.PNG)<br>
       
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
