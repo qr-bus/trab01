@@ -137,6 +137,10 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 
 ![img](images/SELECT_*_FROM_CIDADE.png)
 
+<b>SELECT * FROM ITINERARIO_PONTO;
+
+![img](images/SELECT_*_FROM_HORARIO_ITINERARIO_PONTO.png)
+
 <b>SELECT * FROM LINHA;
 
 ![img](images/SELECT_*_FROM_LINHA.png)
@@ -172,10 +176,6 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 <b>SELECT * FROM ITINERARIO;
 
 ![img](images/SELECT_*_FROM_ITINERARIO.png)
-
-<b>SELECT * FROM ITINERARIO_PONTO;
-
-![img](images/SELECT_*_FROM_HORARIO_ITINERARIO_PONTO.png)
 
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
