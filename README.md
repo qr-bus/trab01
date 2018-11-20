@@ -171,11 +171,11 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 
 <b>SELECT * FROM HORARIO;
 
-![img](images/SELECT_*_FROM_HORARIO.png)
+![img](images/horario.png)
 
 <b>SELECT * FROM ITINERARIO;
 
-![img](images/SELECT_*_FROM_ITINERARIO.png)
+![img](images/itinerario.png)
 
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
