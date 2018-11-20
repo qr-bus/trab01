@@ -54,7 +54,7 @@ CREATE TABLE CARTAO (
     numero char(16) PRIMARY KEY,
     id_usuario smallserial,
     titular varchar(150),
-    validade char(5)
+    validade char(7)
 );
 
 CREATE TABLE ITINERARIO (
@@ -96,7 +96,8 @@ CREATE TABLE ITINERARIO_PONTO (
 /* adicionar chaves estrangeiras */
 ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_2
     FOREIGN KEY (numero_cartao)
-    REFERENCES CARTAO (numero);
+    REFERENCES CARTAO (numero)
+    MATCH FULL ON UPDATE CASCADE;
  
 ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_3
     FOREIGN KEY (id_logradouro)
@@ -153,6 +154,3 @@ ALTER TABLE ITINERARIO_PONTO ADD CONSTRAINT FK_ITINERARIO_PONTO_1
 ALTER TABLE ITINERARIO_PONTO ADD CONSTRAINT FK_ITINERARIO_PONTO_2
     FOREIGN KEY (id_ponto)
     REFERENCES PONTO (id_ponto);
-
-
-/* adicionar chaves estrangeiras */
