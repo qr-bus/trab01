@@ -5,7 +5,7 @@ CREATE TABLE USUARIO (
     id_logradouro smallserial,
     saldo money,
     email varchar(100),
-    senha char(64),
+    senha varchar(64),
     nascimento date,
     cpf char(11),
     nome varchar(150)

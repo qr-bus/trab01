@@ -1,12 +1,12 @@
 /* QR-Bus_-_modelo_logico: */
 
-CREATE TABLE USUÁRIO (
+CREATE TABLE USUARIO (
     id_usuario smallserial PRIMARY KEY,
     numero_cartao char(16),
     id_logradouro smallserial,
     saldo money,
     email varchar(100),
-    senha char(64),
+    senha varchar(64),
     nascimento date,
     cpf char(11),
     nome varchar(150)
@@ -94,11 +94,11 @@ CREATE TABLE ITINERARIO_PONTO (
     pos_sequencia integer
 );
  
-ALTER TABLE USUÁRIO ADD CONSTRAINT FK_USUÁRIO_2
+ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_2
     FOREIGN KEY (numero_cartao)
     REFERENCES CARTAO (numero);
  
-ALTER TABLE USUÁRIO ADD CONSTRAINT FK_USUÁRIO_3
+ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_3
     FOREIGN KEY (id_logradouro)
     REFERENCES LOGRADOURO (id_logradouro);
  
@@ -120,7 +120,7 @@ ALTER TABLE HORARIO ADD CONSTRAINT FK_HORARIO_3
  
 ALTER TABLE CARTAO ADD CONSTRAINT FK_CARTAO_2
     FOREIGN KEY (id_usuario)
-    REFERENCES USUÁRIO (id_usuario);
+    REFERENCES USUARIO (id_usuario);
  
 ALTER TABLE ITINERARIO ADD CONSTRAINT FK_ITINERARIO_2
     FOREIGN KEY (numero_linha)
@@ -132,7 +132,7 @@ ALTER TABLE PAGAMENTO ADD CONSTRAINT FK_PAGAMENTO_2
  
 ALTER TABLE PASSAGEM ADD CONSTRAINT FK_PASSAGEM_2
     FOREIGN KEY (id_usuario)
-    REFERENCES USUÁRIO (id_usuario);
+    REFERENCES USUARIO (id_usuario);
  
 ALTER TABLE PASSAGEM ADD CONSTRAINT FK_PASSAGEM_3
     FOREIGN KEY (numero_linha)
