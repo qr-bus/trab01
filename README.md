@@ -299,6 +299,27 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+   
+   <b>CREATE VIEW valor_total_recebido AS(
+   SELECT SUM(valor_pagamento) AS valor_total_recebido FROM pagamento);
+
+   SELECT * FROM valor_total_recebido;</b>
+   
+   ![img](img/valor_total_recebido.PNG)
+   
+   <b>CREATE VIEW total_ruas_bairros_cidades_pontos AS(
+   SELECT COUNT(logradouro.id_logradouro) AS total_ruas, COUNT(bairro.id_bairro) AS total_bairros, COUNT(cidade.id_cidade) AS total_cidades, COUNT(ponto.id_ponto) AS total_pontos
+   FROM logradouro
+   RIGHT JOIN bairro
+   ON logradouro.id_bairro = bairro.id_bairro
+   RIGHT JOIN cidade
+   ON bairro.id_cidade = cidade.id_cidade
+   INNER JOIN ponto
+   ON ponto.id_logradouro = logradouro.id_logradouro);
+
+   SELECT * FROM total_ruas_bairros_cidades_pontos;</b>
+   
+   ![img](img/total_ruas_bairros_cidades_pontos.PNG)
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
