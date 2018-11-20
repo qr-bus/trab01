@@ -228,7 +228,7 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
    
    <b> 1 </b><br>
-   <b> ALTER TABLE CIDADE RENAME TO MUNICIPIO; </b>
+   <b> ALTER TABLE CIDADE RENAME TO MUNICIPIO; </b><br>
    <b> SELECT * FROM MUNICIPIO; </b><br>
    ![img](img/rename_cidade.PNG)<br>
    
