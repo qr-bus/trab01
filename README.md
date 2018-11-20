@@ -184,7 +184,6 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 
 ![img](img/select_logradouro_where.PNG)
 
-![img](sql/img-select/select_logradouro_where.PNG)
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     
@@ -229,12 +228,9 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
    
    <b> 1 </b><br>
-   <b> Antes </b><br>
-   <b>SELECT nome,email FROM usuario WHERE(id_usuario = 6);</b><br>
-   ![img](img/Update_antes_1.PNG)<br>
-   <b> DEPOIS </b><br>
-   <b> UPDATE usuario SET email = 'izabela_123@gmail.com' WHERE id_usuario = 6; </b><br>
-   ![img](img/Update_depois_1.PNG)<br>
+   <b> ALTER TABLE CIDADE RENAME TO MUNICIPIO; </b>
+   <b> SELECT * FROM MUNICIPIO; </b><br>
+   ![img](img/rename_cidade.PNG)<br>
    
    <b> 2 </b><br>
    <b> Antes </b><br>
