@@ -125,21 +125,58 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
-<b>SELECT * FROM cidade;
+<b>SELECT * FROM BAIRRO;
 
-![img](img/cidade.PNG)
+![img](images/SELECT_*_FROM_BAIRRO.png)
 
-<b>SELECT * FROM bairro;
+<b>SELECT * FROM CARTAO;
 
-![img](img/bairro.PNG)
+![img](images/SELECT_*_FROM_CARTAO.png)
 
-<b>SELECT * FROM logradouro;
+<b>SELECT * FROM CIDADE;
 
-![img](img/logradouro.PNG)
+![img](images/SELECT_*_FROM_CIDADE.png)
 
-<b>SELECT * FROM tipo_horario;
+<b>SELECT * FROM LINHA;
 
-![img](img/tipo_horario.PNG)
+![img](images/SELECT_*_FROM_LINHA.png)
+
+<b>SELECT * FROM LOGRADOURO;
+
+![img](images/SELECT_*_FROM_LOGRADOURO.png)
+
+<b>SELECT * FROM PAGAMENTO;
+
+![img](images/SELECT_*_FROM_PAGAMENTO.png)
+
+<b>SELECT * FROM PASSAGEM;
+
+![img](images/SELECT_*_FROM_PASSAGEM.png)
+
+<b>SELECT * FROM PONTO;
+
+![img](images/SELECT_*_FROM_PONTO.png)
+
+<b>SELECT * FROM TIPO_HORARIO;
+
+![img](images/SELECT_*_FROM_TIPO_HORARIO.png)
+
+<b>SELECT * FROM USUARIO;
+
+![img](images/SELECT_*_FROM_USUARIO.png)
+
+<b>SELECT * FROM HORARIO;
+
+![img](images/SELECT_*_FROM_HORARIO.png)
+
+<b>SELECT * FROM ITINERARIO;
+
+![img](images/SELECT_*_FROM_ITINERARIO.png)
+
+<b>SELECT * FROM ITINERARIO_PONTO;
+
+![img](images/SELECT_*_FROM_HORARIO_ITINERARIO_PONTO.png)
+
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 
