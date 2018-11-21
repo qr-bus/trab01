@@ -196,7 +196,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    ![img](images/9.3/9.3.2.png)
    
    <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') </b><br>
-     <b>AND (numero_linha = 507 OR  numero_linha = 516));</b><br>
+     <b>AND (numero_linha = 507 OR  numero_linha = 815));</b><br>
    ![img](images/9.3/9.3.3.png)
    
    <b>SELECT (desc_tipo|| '. '||desc_logradouro) FROM logradouro WHERE ((id_bairro = 4) OR (id_bairro = 7));</b>
