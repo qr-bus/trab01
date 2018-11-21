@@ -243,7 +243,7 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    <b> 3 </b><br>
    <b> Antes </b><br>
    <b>SELECT * FROM cidade;</b><br>
-   ![img](images/SELECT_*_FROM_CIDADE.png)<br>
+   ![img](images/9.1/SELECT_*_FROM_CIDADE.png)<br>
    <b> DEPOIS </b><br>
    <b> ALTER TABLE cidade RENAME COLUMN desc_cidade TO nome_cidade;;</b><br>
    ![img](img/rename_desc_cidade.PNG)<br>
