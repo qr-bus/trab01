@@ -127,84 +127,84 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 
 <b>SELECT * FROM BAIRRO;
 
-![img](images/SELECT_*_FROM_BAIRRO.png)
+![img](images/9.1/SELECT_*_FROM_BAIRRO.png)
 
 <b>SELECT * FROM CARTAO;
 
-![img](images/SELECT_*_FROM_CARTAO.png)
+![img](images/9.1/SELECT_*_FROM_CARTAO.png)
 
 <b>SELECT * FROM CIDADE;
 
-![img](images/SELECT_*_FROM_CIDADE.png)
+![img](images/9.1/SELECT_*_FROM_CIDADE.png)
 
 <b>SELECT * FROM HORARIO;
 
-![img](images/SELECT_*_FROM_HORARIO.png)
+![img](images/9.1/SELECT_*_FROM_HORARIO.png)
 
 <b>SELECT * FROM ITINERARIO;
 
-![img](images/SELECT_*_FROM_ITINERARIO.png)
+![img](images/9.1/SELECT_*_FROM_ITINERARIO.png)
 
 <b>SELECT * FROM ITINERARIO_PONTO;
 
-![img](images/SELECT_*_FROM_ITINERARIO_PONTO.png)
+![img](images/9.1/SELECT_*_FROM_ITINERARIO_PONTO.png)
 
 <b>SELECT * FROM LINHA;
 
-![img](images/SELECT_*_FROM_LINHA.png)
+![img](images/9.1/SELECT_*_FROM_LINHA.png)
 
 <b>SELECT * FROM LOGRADOURO;
 
-![img](images/SELECT_*_FROM_LOGRADOURO.png)
+![img](images/9.1/SELECT_*_FROM_LOGRADOURO.png)
 
 <b>SELECT * FROM PAGAMENTO;
 
-![img](images/SELECT_*_FROM_PAGAMENTO.png)
+![img](images/9.1/SELECT_*_FROM_PAGAMENTO.png)
 
 <b>SELECT * FROM PASSAGEM;
 
-![img](images/SELECT_*_FROM_PASSAGEM.png)
+![img](images/9.1/SELECT_*_FROM_PASSAGEM.png)
 
 <b>SELECT * FROM PONTO;
 
-![img](images/SELECT_*_FROM_PONTO.png)
+![img](images/9.1/SELECT_*_FROM_PONTO.png)
 
 <b>SELECT * FROM TIPO_HORARIO;
 
-![img](images/SELECT_*_FROM_TIPO_HORARIO.png)
+![img](images/9.1/SELECT_*_FROM_TIPO_HORARIO.png)
 
 <b>SELECT * FROM USUARIO;
 
-![img](images/SELECT_*_FROM_USUARIO.png)
+![img](images/9.1/SELECT_*_FROM_USUARIO.png)
 
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 
 <b>SELECT * FROM logradouro WHERE desc_tipo = 'Avenida';</b>
 
-![img](img/select_logradouro_where.PNG)
+![img](images/9.2/9.2.1.png)
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     
    <b>SELECT * FROM logradouro WHERE desc_logradouro = 'Rio Branco' OR id_bairro = '2';</b>
    
-   ![img](img/logradouro_where_riobranco_or_id2.PNG)
+   ![img](images/9.3/9.3.1.png)
    
    <b>SELECT hora_saida, numero_linha FROM horario WHERE (hora_saida > '09:09:00' AND numero_linha = 507);</b>
    
-   ![img](img/select_operador_logico_1.PNG)
+   ![img](images/9.3/9.3.2.png)
    
    <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') </b><br>
      <b>AND (numero_linha = 507 OR  numero_linha = 516));</b><br>
-   ![img](img/select_operador_logico_2.PNG)
+   ![img](images/9.3/9.3.3.png)
    
    <b>SELECT (desc_tipo|| '. '||desc_logradouro) FROM logradouro WHERE ((id_bairro = 4) OR (id_bairro = 7));</b>
    
-   ![img](img/select_operador_logico_3.PNG)
+   ![img](images/9.3/9.3.4.png)
    
    <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') AND (NOT numero_linha = 815));</b>
-   ![img](img/select_operador_logico_4.PNG) <br>
+   ![img]images/9.3/9.3.5.png) <br>
    
    
    
@@ -212,19 +212,19 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
     
    <b>SELECT numero_cartao,valor_pagamento,(valor_pagamento - 3.40) AS sobra
 FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
-   ![img](img/select_operador_aritmetico_1.PNG) <br>
+   ![img](images/9.3/9.3.6.png) <br>
    
    <b>SELECT cartao.titular ,valor_pagamento,(valor_pagamento + 90.00) AS sobra FROM PAGAMENTO</b><br>
    <b>INNER JOIN cartao ON (cartao.numero = '1111222233339999' OR cartao.numero = '1111222233338888')</b><br>
    <b>GROUP BY titular,valor_pagamento;</b><br>
    
-   ![img](img/select_operador_aritmetico_2.PNG) <br>
+   ![img](images/9.3/9.3.7.png) <br>
    
    <b>SELECT cartao.titular ,valor_pagamento,CAST((valor_pagamento / 3.40) AS DECIMAL(3,0)) AS numero_passagens</b><br>
    <b>FROM PAGAMENTO INNER JOIN cartao ON (cartao.numero = '1111222233333333' OR cartao.numero = '1111222233338888' OR </b><br>
    <b>cartao.numero = '1111222233335555') GROUP BY titular,valor_pagamento;</b><br>
    
-   ![img](img/select_operador_aritmetico_3.PNG) <br>
+   ![img](images/9.3/9.3.8.png) <br>
    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
    
    <b> 1 </b><br>
