@@ -139,11 +139,11 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 
 <b>SELECT * FROM HORARIO;
 
-![img](images/SELECT_*_FROM_HORARIO.PNG)
+![img](images/SELECT_*_FROM_HORARIO.png)
 
 <b>SELECT * FROM ITINERARIO;
 
-![img](images/SELECT_*_FROM_ITINERARIO.PNG)
+![img](images/SELECT_*_FROM_ITINERARIO.png)
 
 <b>SELECT * FROM ITINERARIO_PONTO;
 
