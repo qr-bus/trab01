@@ -32,8 +32,7 @@ CREATE TABLE CIDADE (
 
 CREATE TABLE LINHA (
     numero_linha smallserial PRIMARY KEY,
-    desc_linha varchar(100),
-    sentido char(1)
+    desc_linha varchar(100)
 );
 
 CREATE TABLE HORARIO (
@@ -59,7 +58,9 @@ CREATE TABLE CARTAO (
 
 CREATE TABLE ITINERARIO (
     id_itinerario smallserial PRIMARY KEY,
-    numero_linha smallserial
+    numero_linha smallserial,
+    destino varchar(50),
+    sentido char(1)
 );
 
 CREATE TABLE PAGAMENTO (
@@ -96,8 +97,7 @@ CREATE TABLE ITINERARIO_PONTO (
 /* adicionar chaves estrangeiras */
 ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_2
     FOREIGN KEY (numero_cartao)
-    REFERENCES CARTAO (numero)
-    MATCH FULL ON UPDATE CASCADE;
+    REFERENCES CARTAO (numero);
  
 ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_3
     FOREIGN KEY (id_logradouro)

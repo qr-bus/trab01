@@ -32,8 +32,7 @@ CREATE TABLE CIDADE (
 
 CREATE TABLE LINHA (
     numero_linha smallserial PRIMARY KEY,
-    desc_linha varchar(100),
-    sentido char(1)
+    desc_linha varchar(100)
 );
 
 CREATE TABLE HORARIO (
@@ -59,7 +58,9 @@ CREATE TABLE CARTAO (
 
 CREATE TABLE ITINERARIO (
     id_itinerario smallserial PRIMARY KEY,
-    numero_linha smallserial
+    numero_linha smallserial,
+    destino varchar(50),
+    sentido char(1)
 );
 
 CREATE TABLE PAGAMENTO (
@@ -96,8 +97,7 @@ CREATE TABLE ITINERARIO_PONTO (
 /* adicionar chaves estrangeiras */
 ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_2
     FOREIGN KEY (numero_cartao)
-    REFERENCES CARTAO (numero)
-    MATCH FULL ON UPDATE CASCADE;
+    REFERENCES CARTAO (numero);
  
 ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_3
     FOREIGN KEY (id_logradouro)
@@ -219,17 +219,17 @@ INSERT INTO TIPO_HORARIO (id_tipo, desc_horario)
     (4,'ATÍPICOS ENTRE FERIADOS');
 
 /* linha */
-INSERT INTO LINHA (numero_linha, desc_linha, sentido)
-    VALUES(815,'IFES / T. LARANJEIRAS',1),
-    (507,'T. LARANJEIRAS / T. IBES VIA 3ª PONTE/RETA DA PENHA',2),
-    (650,'T.VILA VELHA/T.IBES VIA PRAIA DE ITAPOÃ',1),
-    (611,'T.ITAPARICA/PRAIA DA COSTA VIA ITAPOÃ/CREFES',1),
-    (662,'T.VILA VELHA/PRAIA DA COSTA VIA CREFES - CIRCULAR',2),
-    (508,'T.LARANJEIRAS/T.ITAPARICA VIA T.VILA VELHA/3ª PONTE/CAMBURI',2),
-    (551,'T.JACARAIPE/T.ITAPARICA VIA T.CARAPINA/3ª PONTE',1),
-    (501,'T.JACARAIPE/T.ITAPARICA VIA T.CARAPINA/3ª PONTE/T.VILA VELHA',1),
-    (560,'T.LARANJEIRAS/T.ITAPARICA VIA CAMBURI/3ª PONTE',2),
-    (520,'T.CARAPINA/T.VILA VELHA VIA RETA DA PENHA/3ª PONTE',1);
+INSERT INTO LINHA (numero_linha, desc_linha)
+    VALUES(815,'IFES / T. LARANJEIRAS'),
+    (507,'T. LARANJEIRAS / T.IBES VIA 3ª PONTE/RETA DA PENHA'),
+    (650,'T.VILA VELHA/T.IBES VIA PRAIA DE ITAPOÃ'),
+    (611,'T.ITAPARICA/PRAIA DA COSTA VIA ITAPOÃ/CREFES'),
+    (662,'T.VILA VELHA/PRAIA DA COSTA VIA CREFES - CIRCULAR'),
+    (508,'T.LARANJEIRAS/T.ITAPARICA VIA T.VILA VELHA/3ª PONTE/CAMBURI'),
+    (551,'T.JACARAIPE/T.ITAPARICA VIA T.CARAPINA/3ª PONTE'),
+    (501,'T.JACARAIPE/T.ITAPARICA VIA T.CARAPINA/3ª PONTE/T.VILA VELHA'),
+    (560,'T.LARANJEIRAS/T.ITAPARICA VIA CAMBURI/3ª PONTE'),
+    (520,'T.CARAPINA/T.VILA VELHA VIA RETA DA PENHA/3ª PONTE');
 
 /* horario */
 /* 815 */
@@ -293,25 +293,25 @@ INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, numero_linha
     (64,'10:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS');
 
 /* itinerario */
-INSERT INTO ITINERARIO (id_itinerario, numero_linha)
-    VALUES (1, 507),
-    (2, 507),
-    (3, 815),
-    (4, 815),
-    (5, 611),
-    (6, 611),
-    (7, 662),
-    (8, 662),
-    (9, 501),
-    (10, 501),
-    (11, 508),
-    (12, 508),
-    (13, 551),
-    (14, 551),
-    (15, 560),
-    (16, 560),
-    (17, 520),
-    (18, 520);
+INSERT INTO ITINERARIO (id_itinerario, numero_linha, destino, sentido)
+    VALUES (1, 507, 'T. LARANJEIRAS',1),
+    (2, 507, 'T. IBES',2),
+    (3, 815, 'IFES',1),
+    (4, 815, 'T. LARANJEIRAS',2),
+    (5, 611, 'T.ITAPARICA',1),
+    (6, 611, 'PRAIA DA COSTA',2),
+    (7, 662, 'T.VILA VELHA',1),
+    (8, 662, 'PRAIA DA COSTA',2),
+    (9, 501, 'T.JACARAIPE',1),
+    (10, 501, 'T.ITAPARICA',2),
+    (11, 508, 'T.LARANJEIRAS',1),
+    (12, 508, 'T.ITAPARICA',2),
+    (13, 551, 'T.JACARAIPE',1),
+    (14, 551, 'T.ITAPARICA',2),
+    (15, 560, 'T.LARANJEIRAS',1),
+    (16, 560, 'T.ITAPARICA',2),
+    (17, 520, 'T.CARAPINA',1),
+    (18, 520, 'T.VILA VELHA',2);
 
 /* itinerario_ponto */
 INSERT INTO ITINERARIO_PONTO (id_intin_ponto, id_itinerario, id_ponto, pos_sequencia)

@@ -1,4 +1,4 @@
-/* QR-Bus_-_modelo_logico: */
+/* Modelo Físico */
 
 CREATE TABLE USUARIO (
     id_usuario smallserial PRIMARY KEY,
@@ -33,8 +33,7 @@ CREATE TABLE CIDADE (
 
 CREATE TABLE LINHA (
     numero_linha smallserial PRIMARY KEY,
-    desc_linha varchar(100),
-    sentido char(1)
+    desc_linha varchar(100)
 );
 
 CREATE TABLE HORARIO (
@@ -60,7 +59,9 @@ CREATE TABLE CARTAO (
 
 CREATE TABLE ITINERARIO (
     id_itinerario smallserial PRIMARY KEY,
-    numero_linha smallserial
+    numero_linha smallserial,
+    destino varchar(50),
+    sentido char(1)
 );
 
 CREATE TABLE PAGAMENTO (
