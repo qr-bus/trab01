@@ -207,7 +207,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    ![img](images/9.3/9.3.4.png)
    
    <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') AND (NOT numero_linha = 815));</b>
-   ![img]images/9.3/9.3.5.png) <br>
+   ![img](images/9.3/9.3.5.png) <br>
    
    
    
