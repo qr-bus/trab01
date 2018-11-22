@@ -335,20 +335,20 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
    
-   <b>SELECT COUNT(cep), desc_tipo FROM logradouro GROUP BY desc_tipo;</b>
-   ![img](img/count_logradouro.PNG)
+   <b>SELECT COUNT(cep), desc_tipo FROM logradouro GROUP BY desc_tipo;</b><br>
+   ![img](img/count_logradouro.PNG)<br>
    
-   <b>SELECT COUNT(id_horario) as qtd_horarios, desc_terminal FROM horario GROUP BY desc_terminal ORDER BY qtd_horarios desc;</b>
-   ![img](images/9.7/2.JPG)
+   <b>SELECT COUNT(id_horario) as qtd_horarios, desc_terminal FROM horario GROUP BY desc_terminal ORDER BY qtd_horarios desc;</b><br>
+   ![img](images/9.7/2.JPG)<br>
    
-   <b>SELECT COUNT(id_passagem) as passagem_vendida, data FROM passagem GROUP BY data;</b>
-   ![img](images/9.7/3.JPG)
+   <b>SELECT COUNT(id_passagem) as passagem_vendida, data FROM passagem GROUP BY data;</b><br>
+   ![img](images/9.7/3.JPG)<br>
    
-   <b>SELECT COUNT(id_itinerario) as onibus_com_mesmo_destino, destino FROM itinerario GROUP BY destino;</b>
-   ![img](imgaes/9.7/4.JPG)
+   <b>SELECT COUNT(id_itinerario) as onibus_com_mesmo_destino, destino FROM itinerario GROUP BY destino;</b><br>
+   ![img](imgaes/9.7/4.JPG)<br>
    
-   <b>SELECT COUNT(id_bairro) as qtd_bairros, id_cidade FROM bairro GROUP BY id_cidade;</b>
-   ![img](imgaes/9.7/5.JPG)
+   <b>SELECT COUNT(id_bairro) as qtd_bairros, id_cidade FROM bairro GROUP BY id_cidade;</b><br>
+   ![img](imgaes/9.7/5.JPG)<br>
    
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
    <b>SELECT COUNT(bairro.id_bairro), cidade.desc_cidade, cidade.id_cidade
