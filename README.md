@@ -88,7 +88,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    		id_itinerario: id do itinerário atrelado a cada rua que a linha percorrerá, gerado automaticamente.<br>
 		sentido: informa o sentido que a linha percorrerá (ida ou volta).<br>
 		sequencia: cada rua pela qual o ônibus passará.<br>
-   <b>ITINERARIO_PONTO<b> Faz o intermédio entre a entidade Intenario e a Ponto.<br>
+   <b>ITINERARIO_PONTO</b> Faz o intermédio entre a entidade Intenario e a Ponto.<br>
 		id_intin_ponto: id do itinerario_ponto.<br>
 		pos_sequencia: posiçao na sequencia de pontos que o itinerário possui.<br>
    <b>PONTO:</b> Armazena as coordenas do ponto.<br>
