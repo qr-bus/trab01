@@ -193,7 +193,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    ![img](images/9.2/9.2.3.JPG)
    
    <b>SELECT * FROM logradouro WHERE desc_tipo = 'Rua';</b>
-   ![img](images/9.2/9.2.4JPG)
+   ![img](images/9.2/9.2.4.JPG)
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
