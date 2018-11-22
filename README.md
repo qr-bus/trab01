@@ -76,7 +76,6 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <b>LINHA:</b> Contém informações sobre a linha do ônibus.<br>
    		numero_linha: número da linha.<br>
 		desc_linha: descrição (nome) da linha.<br>
-		sentido: informa o sentido que a linha percorrerá (ida ou volta).<br>
    <b>HORÁRIO:</b> Contém dados sobre horarios das linhas.<br>
    		id_horario: id da linha, gerado automaticamente.<br>
 		hora_saida: horário em que o ônibus sai do terminal.<br>
@@ -85,16 +84,20 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <b>TIPO_HORARIO:</b> Tabela que armazena os tipos de horário.<br>
    		id_tipo: id do tipo de horário, gerado automaticamente.<br>
 		desc_horario: descrição do tipo (dias úteis, feriados, atípicos entre feriados ou fins de semana).<br>
-   <b>ITINERARIO:</b> Armazena informações sobre o sentido da linha (ida ou volta) e a sequência de pontos que ela percorrerá.<br>
+   <b>ITINERARIO:</b> Armazena informações sobre o sentido da linha (ida ou volta).<br>
    		id_itinerario: id do itinerário atrelado a cada rua que a linha percorrerá, gerado automaticamente.<br>
+		sentido: informa o sentido que a linha percorrerá (ida ou volta).<br>
 		sequencia: cada rua pela qual o ônibus passará.<br>
+   <b>ITINERARIO_PONTO<b> Faz o intermédio entre a entidade Intenario e a Ponto.<br>
+		id_intin_ponto: id do itinerario_ponto.<br>
+		pos_sequencia: posiçao na sequencia de pontos que o itinerário possui.<br>
    <b>PONTO:</b> Armazena as coordenas do ponto.<br>
    		id_ponto: id do ponto, gerado automaticamente.<br>
 		latitude: latitude para posição geográfica do ponto.<br>
 		longitude: longitude para posição geográfica do ponto.<br>
    <b>LOGRADOURO:</b> Armazena informações sobre o logradouro (CEP, tipo e nome).<br>
    		id_logradouro: id do logradouro, gerado automaticamente.<br>
-		cep: <br>
+		cep: número CEP.<br>
 		desc_tipo: descrição do tipo de logradouro (rua, avenida, travessa...).<br>
 		desc_logradouro: nome do logradouro.<br>
    <b>BAIRRO:</b> Armazena informações sobre o bairro (nome e ID).<br>
