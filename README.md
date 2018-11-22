@@ -351,23 +351,36 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    ![img](images/9.7/5.JPG)<br>
    
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
-   <b>SELECT COUNT(bairro.id_bairro), cidade.desc_cidade, cidade.id_cidade
-   FROM bairro
-   LEFT JOIN cidade
-   ON bairro.id_cidade = cidade.id_cidade
-   GROUP BY cidade.id_cidade
-   ORDER BY cidade.id_cidade;</b>
+   <b>SELECT COUNT(bairro.id_bairro), cidade.desc_cidade, cidade.id_cidade<br>
+   FROM bairro<br>
+   LEFT JOIN cidade<br>
+   ON bairro.id_cidade = cidade.id_cidade<br>
+   GROUP BY cidade.id_cidade<br>
+   ORDER BY cidade.id_cidade;</b><br>
+   ![img](img/count_cidade.PNG)<br>
    
-   ![img](img/count_cidade.PNG)
+   <b>SELECT COUNT(logradouro.cep), bairro.desc_bairro<br>
+   FROM logradouro<br>
+   LEFT JOIN bairro<br>
+   ON logradouro.id_bairro = bairro.id_bairro<br>
+   GROUP BY bairro.desc_bairro<br>
+   ORDER BY bairro.desc_bairro;</b><br>
+   ![img](img/count_bairro.PNG)<br>
    
-   <b>SELECT COUNT(logradouro.cep), bairro.desc_bairro
-   FROM logradouro
-   LEFT JOIN bairro
-   ON logradouro.id_bairro = bairro.id_bairro
-   GROUP BY bairro.desc_bairro
-   ORDER BY bairro.desc_bairro;</b>
+   <b>SELECT COUNT(passagem.id_passagem) AS passagens_vendidas, linha.desc_linha AS linha<br>
+   FROM passagem<br>
+   LEFT JOIN linha<br>
+   ON passagem.numero_linha = linha.numero_linha<br>
+   GROUP BY linha.desc_linha<br>
+   ORDER BY passagens_vendidas desc;</b><br>
+   ![img](images/9.8/3.JPG)<br>
    
-   ![img](img/count_bairro.PNG)
+   <b>SELECT cartao.numero AS cartao, usuario.email AS enviar_email_para<br>
+   FROM cartao<br>
+   LEFT JOIN usuario<br>
+   ON cartao.titular = usuario.nome<br>
+   GROUP BY cartao.numero, usuario.email;</b><br>
+   ![img](images/9.8/4.JPG)<br>
    
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join
