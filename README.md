@@ -266,7 +266,7 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    ![img](img/select_like_4.PNG)<br>
    
    <b> SELECT nome, nascimento FROM usuario WHERE nome ILIKE 'J%' OR nome ILIKE 'A%' order by nascimento desc;</b><br>
-   ![img](images/9.4/9.4.a.5.png) <br>
+   ![img](images/9.4/9.4.a.5.JPG) <br>
     
     b) Criar uma consulta para cada tipo de função data apresentada.
 
