@@ -271,6 +271,54 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
     b) Criar uma consulta para cada tipo de função data apresentada.
 
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
+   
+   <b> 1 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM passagem;</b><br>
+   ![img](images/9.5/1.1.JPG)<br>
+   <b> DEPOIS </b><br>
+   <b> UPDATE passagem SET valor = 1.70 WHERE hora = '07:30:00';</b><br>
+   ![img](images/9.5/1.2.JPG)<br>
+   
+   <b> 2 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM cartao;</b><br>
+   ![img](images/9.5/2.1.JPG)<br>
+   <b> DEPOIS </b><br>
+   <b> UPDATE cartao SET titular = 'Joao da Silva Junior' WHERE titular = 'Joao da Silva';</b><br>
+   ![img](images/9.5/2.2.JPG)<br>
+
+   <b> 3 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM pagamento;</b><br>
+   ![img](images/9.5/3.1.JPG)<br>
+   <b> DEPOIS </b><br>
+   <b> UPDATE pagamento SET valor_pagamento = 150.00 WHERE data_pagamento = '2018-02-08' OR data_pagamento = '2018-06-08';</b><br>
+   ![img](images/9.5/3.2.JPG)<br>
+   
+   <b> 4 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM passagem;</b><br>
+   ![img](images/9.5/4.1.JPG)<br>
+   <b> DEPOIS </b><br>
+   <b> DELETE FROM passagem WHERE data = '2018-10-09';</b><br>
+   ![img](images/9.5/4.2.JPG)<br>
+   
+   <b> 5 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM pagamento;</b><br>
+   ![img](images/9.5/5.1.JPG)<br>
+   <b> DEPOIS </b><br>
+   <b> DELETE FROM pagamento WHERE id_pagamento = 7;</b><br>
+   ![img](images/9.5/5.2.JPG)<br>
+   
+   <b> 6 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM itinerario;</b><br>
+   ![img](images/9.5/6.1.JPG)<br>
+   <b> DEPOIS </b><br>
+   <b> DELETE FROM itinerario WHERE numero_linha = 611;</b><br>
+   ![img](images/9.5/6.2.JPG)<br>
 
 >## Marco de Entrega 04 em: (18/10/2017)<br>
 
