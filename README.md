@@ -345,10 +345,10 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    ![img](images/9.7/3.JPG)<br>
    
    <b>SELECT COUNT(id_itinerario) as onibus_com_mesmo_destino, destino FROM itinerario GROUP BY destino;</b><br>
-   ![img](imgaes/9.7/4.JPG)<br>
+   ![img](images/9.7/4.JPG)<br>
    
    <b>SELECT COUNT(id_bairro) as qtd_bairros, id_cidade FROM bairro GROUP BY id_cidade;</b><br>
-   ![img](imgaes/9.7/5.JPG)<br>
+   ![img](images/9.7/5.JPG)<br>
    
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
    <b>SELECT COUNT(bairro.id_bairro), cidade.desc_cidade, cidade.id_cidade
