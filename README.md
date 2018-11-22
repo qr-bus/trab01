@@ -183,9 +183,17 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 
-<b>SELECT * FROM logradouro WHERE desc_tipo = 'Avenida';</b>
-
-![img](images/9.2/9.2.1.png)
+   <b>SELECT * FROM logradouro WHERE desc_tipo = 'Avenida';</b>
+   ![img](images/9.2/9.2.1.png)
+   
+   <b>SELECT * FROM itinerario WHERE destino = 'T.JACARAIPE';</b>
+   ![img](images/9.2/9.2.2.JPG)
+   
+   <b>SELECT * FROM horario WHERE hora_saida > '07:00:00' AND hora_saida < '07:50:00';</b>
+   ![img](images/9.2/9.2.3.JPG)
+   
+   <b>SELECT * FROM logradouro WHERE desc_tipo = 'Rua';</b>
+   ![img](images/9.2/9.2.4JPG)
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
