@@ -336,8 +336,19 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
    
    <b>SELECT COUNT(cep), desc_tipo FROM logradouro GROUP BY desc_tipo;</b>
-   
    ![img](img/count_logradouro.PNG)
+   
+   <b>SELECT COUNT(id_horario) as qtd_horarios, desc_terminal FROM horario GROUP BY desc_terminal ORDER BY qtd_horarios desc;</b>
+   ![img](images/9.7/2.JPG)
+   
+   <b>SELECT COUNT(id_passagem) as passagem_vendida, data FROM passagem GROUP BY data;</b>
+   ![img](images/9.7/3.JPG)
+   
+   <b>SELECT COUNT(id_itinerario) as onibus_com_mesmo_destino, destino FROM itinerario GROUP BY destino;</b>
+   ![img](imgaes/9.7/4.JPG)
+   
+   <b>SELECT COUNT(id_bairro) as qtd_bairros, id_cidade FROM bairro GROUP BY id_cidade;</b>
+   ![img](imgaes/9.7/5.JPG)
    
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
    <b>SELECT COUNT(bairro.id_bairro), cidade.desc_cidade, cidade.id_cidade
