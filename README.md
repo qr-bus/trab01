@@ -425,6 +425,13 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
         a) Uma junção que envolva Self Join
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
    
+   <b>SELECT COUNT(a.id_passagem) AS passagens, a.data<br>
+   FROM passagem A, passagem B<br>
+   WHERE A.id_passagem <> B.id_passagem<br>
+   AND A.data = B.data<br>
+   GROUP BY a.data;</b><br>
+   ![img](images/9.9/1.JPG)<br>
+   
    <b>CREATE VIEW valor_total_recebido AS(
    SELECT SUM(valor_pagamento) AS valor_total_recebido FROM pagamento);
 
