@@ -463,6 +463,9 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    <b>SELECT COUNT(id_bairro) as qtd_bairros, id_cidade FROM bairro GROUP BY id_cidade;</b><br>
    ![img](images/9.7/5.JPG)<br>
    
+   <b>SELECT COUNT(id_pagamento) AS qtd_pagamento, valor_pagamento AS valor_pago FROM pagamento GROUP BY valor_pago;</b><br>
+   ![img](images/9.7/6.JPG)<br>
+   
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
    <b>SELECT COUNT(bairro.id_bairro), municipio.nome_municipio, municipio.id_municipio
    FROM BAIRRO
@@ -498,6 +501,13 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+   
+   <b>SELECT COUNT(a.id_passagem) AS passagens, a.data<br>
+   FROM passagem A, passagem B<br>
+   WHERE A.id_passagem <> B.id_passagem<br>
+   AND A.data = B.data<br>
+   GROUP BY a.data;</b><br>
+   ![img](images/9.9/1.JPG)<br>
    
    <b>CREATE VIEW valor_total_recebido AS(
    SELECT SUM(valor_pagamento) AS valor_total_recebido FROM pagamento);
