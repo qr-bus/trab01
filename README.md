@@ -88,7 +88,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    		id_itinerario: id do itinerário atrelado a cada rua que a linha percorrerá, gerado automaticamente.<br>
 		sentido: informa o sentido que a linha percorrerá (ida ou volta).<br>
 		sequencia: cada rua pela qual o ônibus passará.<br>
-   <b>ITINERARIO_PONTO<b> Faz o intermédio entre a entidade Intenario e a Ponto.<br>
+   <b>ITINERARIO_PONTO</b> Faz o intermédio entre a entidade Intenario e a Ponto.<br>
 		id_intin_ponto: id do itinerario_ponto.<br>
 		pos_sequencia: posiçao na sequencia de pontos que o itinerário possui.<br>
    <b>PONTO:</b> Armazena as coordenas do ponto.<br>
@@ -183,9 +183,17 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 
-<b>SELECT * FROM logradouro WHERE desc_tipo = 'Avenida';</b>
-
-![img](images/9.2/9.2.1.png)
+   <b>SELECT * FROM logradouro WHERE desc_tipo = 'Avenida';</b>
+   ![img](images/9.2/9.2.1.png)
+   
+   <b>SELECT * FROM itinerario WHERE destino = 'T.JACARAIPE';</b>
+   ![img](images/9.2/9.2.2.JPG)
+   
+   <b>SELECT * FROM horario WHERE hora_saida > '07:00:00' AND hora_saida < '07:50:00';</b>
+   ![img](images/9.2/9.2.3.JPG)
+   
+   <b>SELECT * FROM logradouro WHERE desc_tipo = 'Rua';</b>
+   ![img](images/9.2/9.2.4.JPG)
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
@@ -263,11 +271,62 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    ![img](img/select_like_3.PNG)<br>
    
    <b> SELECT desc_bairro FROM bairro WHERE ((id_cidade = 2) AND ( desc_bairro LIKE 'Jardim%'));</b><br>
-   ![img](img/select_like_4.PNG)<br>   
+   ![img](img/select_like_4.PNG)<br>
+   
+   <b> SELECT nome, nascimento FROM usuario WHERE nome ILIKE 'J%' OR nome ILIKE 'A%' order by nascimento desc;</b><br>
+   ![img](images/9.4/9.4.a.5.JPG) <br>
     
     b) Criar uma consulta para cada tipo de função data apresentada.
 
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
+   
+   <b> 1 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM passagem;</b><br>
+   ![img](images/9.5/1.1.JPG)<br>
+   <b> DEPOIS </b><br>
+   <b> UPDATE passagem SET valor = 1.70 WHERE hora = '07:30:00';</b><br>
+   ![img](images/9.5/1.2.JPG)<br>
+   
+   <b> 2 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM cartao;</b><br>
+   ![img](images/9.5/2.1.JPG)<br>
+   <b> DEPOIS </b><br>
+   <b> UPDATE cartao SET titular = 'Joao da Silva Junior' WHERE titular = 'Joao da Silva';</b><br>
+   ![img](images/9.5/2.2.JPG)<br>
+
+   <b> 3 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM pagamento;</b><br>
+   ![img](images/9.5/3.1.JPG)<br>
+   <b> DEPOIS </b><br>
+   <b> UPDATE pagamento SET valor_pagamento = 150.00 WHERE data_pagamento = '2018-02-08' OR data_pagamento = '2018-06-08';</b><br>
+   ![img](images/9.5/3.2.JPG)<br>
+   
+   <b> 4 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM passagem;</b><br>
+   ![img](images/9.5/4.1.JPG)<br>
+   <b> DEPOIS </b><br>
+   <b> DELETE FROM passagem WHERE data = '2018-10-09';</b><br>
+   ![img](images/9.5/4.2.JPG)<br>
+   
+   <b> 5 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM pagamento;</b><br>
+   ![img](images/9.5/5.1.JPG)<br>
+   <b> DEPOIS </b><br>
+   <b> DELETE FROM pagamento WHERE id_pagamento = 7;</b><br>
+   ![img](images/9.5/5.2.JPG)<br>
+   
+   <b> 6 </b><br>
+   <b> Antes </b><br>
+   <b>SELECT * FROM itinerario;</b><br>
+   ![img](images/9.5/6.1.JPG)<br>
+   <b> DEPOIS </b><br>
+   <b> DELETE FROM itinerario WHERE numero_linha = 611;</b><br>
+   ![img](images/9.5/6.2.JPG)<br>
 
 >## Marco de Entrega 04 em: (18/10/2017)<br>
 
@@ -276,28 +335,52 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
    
-   <b>SELECT COUNT(cep), desc_tipo FROM logradouro GROUP BY desc_tipo;</b>
+   <b>SELECT COUNT(cep), desc_tipo FROM logradouro GROUP BY desc_tipo;</b><br>
+   ![img](img/count_logradouro.PNG)<br>
    
-   ![img](img/count_logradouro.PNG)
+   <b>SELECT COUNT(id_horario) as qtd_horarios, desc_terminal FROM horario GROUP BY desc_terminal ORDER BY qtd_horarios desc;</b><br>
+   ![img](images/9.7/2.JPG)<br>
+   
+   <b>SELECT COUNT(id_passagem) as passagem_vendida, data FROM passagem GROUP BY data;</b><br>
+   ![img](images/9.7/3.JPG)<br>
+   
+   <b>SELECT COUNT(id_itinerario) as onibus_com_mesmo_destino, destino FROM itinerario GROUP BY destino;</b><br>
+   ![img](images/9.7/4.JPG)<br>
+   
+   <b>SELECT COUNT(id_bairro) as qtd_bairros, id_cidade FROM bairro GROUP BY id_cidade;</b><br>
+   ![img](images/9.7/5.JPG)<br>
    
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
-   <b>SELECT COUNT(bairro.id_bairro), cidade.desc_cidade, cidade.id_cidade
-   FROM bairro
-   LEFT JOIN cidade
-   ON bairro.id_cidade = cidade.id_cidade
-   GROUP BY cidade.id_cidade
-   ORDER BY cidade.id_cidade;</b>
+   <b>SELECT COUNT(bairro.id_bairro), cidade.desc_cidade, cidade.id_cidade<br>
+   FROM bairro<br>
+   LEFT JOIN cidade<br>
+   ON bairro.id_cidade = cidade.id_cidade<br>
+   GROUP BY cidade.id_cidade<br>
+   ORDER BY cidade.id_cidade;</b><br>
+   ![img](img/count_cidade.PNG)<br>
    
-   ![img](img/count_cidade.PNG)
+   <b>SELECT COUNT(logradouro.cep), bairro.desc_bairro<br>
+   FROM logradouro<br>
+   LEFT JOIN bairro<br>
+   ON logradouro.id_bairro = bairro.id_bairro<br>
+   GROUP BY bairro.desc_bairro<br>
+   ORDER BY bairro.desc_bairro;</b><br>
+   ![img](img/count_bairro.PNG)<br>
    
-   <b>SELECT COUNT(logradouro.cep), bairro.desc_bairro
-   FROM logradouro
-   LEFT JOIN bairro
-   ON logradouro.id_bairro = bairro.id_bairro
-   GROUP BY bairro.desc_bairro
-   ORDER BY bairro.desc_bairro;</b>
+   <b>SELECT COUNT(passagem.id_passagem) AS passagens_vendidas, linha.desc_linha AS linha<br>
+   FROM passagem<br>
+   LEFT JOIN linha<br>
+   ON passagem.numero_linha = linha.numero_linha<br>
+   GROUP BY linha.desc_linha<br>
+   ORDER BY passagens_vendidas desc;</b><br>
+   ![img](images/9.8/3.JPG)<br>
    
-   ![img](img/count_bairro.PNG)
+   <b>SELECT cartao.numero AS cartao, usuario.email AS enviar_email_para<br>
+   FROM cartao<br>
+   LEFT JOIN usuario<br>
+   ON cartao.titular = usuario.nome<br>
+   GROUP BY cartao.numero, usuario.email;</b><br>
+   ![img](images/9.8/4.JPG)<br>
    
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join
