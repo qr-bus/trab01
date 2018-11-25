@@ -463,9 +463,6 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    <b>SELECT COUNT(id_bairro) as qtd_bairros, id_cidade FROM bairro GROUP BY id_cidade;</b><br>
    ![img](images/9.7/5.JPG)<br>
    
-   <b>SELECT COUNT(id_pagamento) AS qtd_pagamento, valor_pagamento AS valor_pago FROM pagamento GROUP BY valor_pago;</b><br>
-   ![img](images/9.7/6.JPG)<br>
-   
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
    <b>SELECT COUNT(bairro.id_bairro), municipio.nome_municipio, municipio.id_municipio
    FROM BAIRRO
@@ -492,22 +489,15 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    ![img](images/9.8/9.8.3.png)<br>
    
    <b>SELECT cartao.numero AS cartao, usuario.email AS enviar_email_para<br>
-   FROM cartao<br>
-   LEFT JOIN usuario<br>
-   ON cartao.titular = usuario.nome<br>
+   FROM CARTAO<br>
+   LEFT JOIN USUARIO<br>
+   ON cartao.numero = usuario.numero_cartao<br>
    GROUP BY cartao.numero, usuario.email;</b><br>
    ![img](images/9.8/4.JPG)<br>
    
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
-   
-   <b>SELECT COUNT(a.id_passagem) AS passagens, a.data<br>
-   FROM passagem A, passagem B<br>
-   WHERE A.id_passagem <> B.id_passagem<br>
-   AND A.data = B.data<br>
-   GROUP BY a.data;</b><br>
-   ![img](images/9.9/1.JPG)<br>
    
    <b>CREATE VIEW valor_total_recebido AS(
    SELECT SUM(valor_pagamento) AS valor_total_recebido FROM pagamento);
@@ -516,15 +506,18 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    
    ![img](img/valor_total_recebido.PNG)
    
-   <b>CREATE VIEW total_ruas_bairros_cidades_pontos AS(
-   SELECT COUNT(logradouro.id_logradouro) AS total_ruas, COUNT(bairro.id_bairro) AS total_bairros, COUNT(cidade.id_cidade) AS total_cidades, COUNT(ponto.id_ponto) AS total_pontos
-   FROM logradouro
-   RIGHT JOIN bairro
-   ON logradouro.id_bairro = bairro.id_bairro
-   RIGHT JOIN cidade
-   ON bairro.id_cidade = cidade.id_cidade
-   INNER JOIN ponto
-   ON ponto.id_logradouro = logradouro.id_logradouro);
+   <b>CREATE VIEW total_ruas_bairros_cidades_pontos AS(<br>
+   SELECT COUNT(logradouro.id_logradouro) AS total_ruas,<br>
+   COUNT(bairro.id_bairro) AS total_bairros,<br>
+   COUNT(municipio.id_municipio) AS total_cidades,<br>
+   COUNT(ponto.id_ponto) AS total_pontos<br>
+   FROM LOGRADOURO<br>
+   RIGHT JOIN BAIRRO<br>
+   ON logradouro.id_bairro = bairro.id_bairro<br>
+   RIGHT JOIN MUNICIPIO<br>
+   ON bairro.id_cidade = municipio.id_municipio<br>
+   INNER JOIN PONTO<br>
+   ON ponto.id_logradouro = logradouro.id_logradouro);<br>
 
    SELECT * FROM total_ruas_bairros_cidades_pontos;</b>
    
