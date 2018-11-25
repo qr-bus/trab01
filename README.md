@@ -455,7 +455,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    ![img](images/9.7/9.7.2.png)<br>
    
    <b>SELECT COUNT(id_passagem) as passagem_vendida, data FROM passagem GROUP BY data;</b><br>
-   ![img](images/9.7/9.7.3.JPG)<br>
+   ![img](images/9.7/9.7.3.png)<br>
    
    <b>SELECT COUNT(id_itinerario) as onibus_com_mesmo_destino, destino FROM itinerario GROUP BY destino;</b><br>
    ![img](images/9.7/4.JPG)<br>
