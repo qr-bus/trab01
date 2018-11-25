@@ -214,7 +214,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    
    ![img](images/9.3/9.3.4.png)
    
-   <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') AND (NOT numero_linha = 815));</b>
+   <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') AND (NOT numero_linha = 815));</b><br>
    ![img](images/9.3/9.3.5.png) <br>
    
    
@@ -246,37 +246,73 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    <b> 2 </b><br>
    <b> Antes </b><br>
    <b>SELECT * FROM linha;</b><br>
-   ![img](img/update_antes_2.PNG)<br>
+   ![img](images/9.1/SELECT_*_FROM_LINHA.png)<br>
    <b> DEPOIS </b><br>
    <b> ALTER TABLE LINHA RENAME COLUMN desc_linha TO descricao_linha;</b><br>
-   ![img](img/update_depois_2.PNG)<br>
+   ![img](images/9.3/9.3.c.2.2.png)<br>
    
    <b> 3 </b><br>
    <b> Antes </b><br>
-   <b>SELECT * FROM cidade;</b><br>
+   <b>SELECT * FROM MUNICIPIO;</b><br>
    ![img](images/9.1/SELECT_*_FROM_CIDADE.png)<br>
    <b> DEPOIS </b><br>
-   <b> ALTER TABLE cidade RENAME COLUMN desc_cidade TO nome_cidade;;</b><br>
-   ![img](img/rename_desc_cidade.PNG)<br>
+   <b> ALTER TABLE MUNICIPIO RENAME COLUMN desc_cidade TO nome_municipio;</b><br>
+   <b> ALTER TABLE MUNICIPIO RENAME COLUMN id_cidade TO id_municipio;</b><br>
+   ![img](images/9.3/9.3.c.3.1.png)<br>
       
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
-   <b>SELECT numero_linha FROM linha WHERE desc_linha LIKE 'T.LARANJEIRAS%' OR desc_linha LIKE '%T.ITAPARICA VIA T.CARAPINA%';</b><br>
-   ![img](img/select_like_1.PNG)<br>
+   <b>SELECT numero_linha FROM LINHA WHERE descricao_linha LIKE 'T.LARANJEIRAS%' OR descricao_linha LIKE '%T.ITAPARICA VIA T.CARAPINA%';</b><br>
+   ![img](images/9.4/9.4.a.1.png)<br>
    
    <b> SELECT titular,validade FROM cartao WHERE((numero = '1111222233332222' ) OR (validade LIKE '%2022'));</b><br>
-   ![img](img/select_like_2.PNG)<br>
+   ![img](images/9.4/9.4.a.2.png)<br>
    
    <b> SELECT titular,validade FROM cartao WHERE((numero = '1111222233338888' ) OR (titular LIKE '%Fernandes') OR (titular LIKE 'A%'));</b><br>
-   ![img](img/select_like_3.PNG)<br>
+   ![img](images/9.4/9.4.a.3.png)<br>
    
-   <b> SELECT desc_bairro FROM bairro WHERE ((id_cidade = 2) AND ( desc_bairro LIKE 'Jardim%'));</b><br>
-   ![img](img/select_like_4.PNG)<br>
+   <b> SELECT desc_bairro FROM bairro WHERE ((id_cidade = 2) AND ( desc_bairro ILIKE 'jardim%'));</b><br>
+   ![img](images/9.4/9.4.a.4.png)<br>
    
    <b> SELECT nome, nascimento FROM usuario WHERE nome ILIKE 'J%' OR nome ILIKE 'A%' order by nascimento desc;</b><br>
    ![img](images/9.4/9.4.a.5.JPG) <br>
     
     b) Criar uma consulta para cada tipo de função data apresentada.
+
+   <b>SELECT numero_linha, age(current_date, horario.data_inicio) as "Tempo sem modificar o horario" 
+   FROM HORARIO
+   GROUP BY numero_linha, age(current_date, horario.data_inicio);</b><br>
+
+   ![img](images/9.4/9.4.b.1.png) <br>
+
+   <b>SELECT numero_linha, 
+   current_time(0) AS "hora atual", 
+   hora_saida AS "próximos horarios"
+   FROM HORARIO
+   WHERE numero_linha = 815 
+   AND hora_saida > current_time(0);</b><br>
+
+   ![img](images/9.4/9.4.b.2.png) <br>
+
+   <b>SELECT nome, 
+   nascimento,
+   date_part('year', age(now(), nascimento)) AS idade
+   FROM usuario;</b><br>
+
+   ![img](images/9.4/9.4.b.3.png) <br>
+
+   <b>SELECT usuario.nome, 
+   extract('month' FROM pagamento.data_pagamento) AS "Meses de compra passagem"
+   FROM PAGAMENTO
+   INNER JOIN CARTAO
+   ON (cartao.numero = pagamento.numero_cartao)
+   INNER JOIN USUARIO
+   ON (usuario.numero_cartao = cartao.numero);</b><br>
+
+   ![img](images/9.4/9.4.b.4.png) <br>
+
+
+
 
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
    

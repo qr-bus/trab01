@@ -220,8 +220,8 @@ INSERT INTO TIPO_HORARIO (id_tipo, desc_horario)
 
 /* linha */
 INSERT INTO LINHA (numero_linha, desc_linha)
-    VALUES(815,'IFES / T. LARANJEIRAS'),
-    (507,'T. LARANJEIRAS / T.IBES VIA 3ª PONTE/RETA DA PENHA'),
+    VALUES(815,'IFES / T.LARANJEIRAS'),
+    (507,'T.LARANJEIRAS / T.IBES VIA 3ª PONTE/RETA DA PENHA'),
     (650,'T.VILA VELHA/T.IBES VIA PRAIA DE ITAPOÃ'),
     (611,'T.ITAPARICA/PRAIA DA COSTA VIA ITAPOÃ/CREFES'),
     (662,'T.VILA VELHA/PRAIA DA COSTA VIA CREFES - CIRCULAR'),
@@ -294,10 +294,10 @@ INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, numero_linha
 
 /* itinerario */
 INSERT INTO ITINERARIO (id_itinerario, numero_linha, destino, sentido)
-    VALUES (1, 507, 'T. LARANJEIRAS',1),
-    (2, 507, 'T. IBES',2),
+    VALUES (1, 507, 'T.LARANJEIRAS',1),
+    (2, 507, 'T.IBES',2),
     (3, 815, 'IFES',1),
-    (4, 815, 'T. LARANJEIRAS',2),
+    (4, 815, 'T.LARANJEIRAS',2),
     (5, 611, 'T.ITAPARICA',1),
     (6, 611, 'PRAIA DA COSTA',2),
     (7, 662, 'T.VILA VELHA',1),
