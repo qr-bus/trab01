@@ -221,8 +221,8 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    
     b) Criar no mínimo 3 consultas com operadores aritméticos 
     
-   <b>SELECT numero_cartao,valor_pagamento,(valor_pagamento - 3.40) AS sobra
-FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
+   <b>SELECT numero_cartao,valor_pagamento,(valor_pagamento - 3.40) AS sobra<br>
+   FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    ![img](images/9.3/9.3.6.png) <br>
    
    <b>SELECT cartao.titular ,valor_pagamento,(valor_pagamento + 90.00) AS sobra FROM PAGAMENTO</b><br>
@@ -279,34 +279,34 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
     
     b) Criar uma consulta para cada tipo de função data apresentada.
 
-   <b>SELECT numero_linha, age(current_date, horario.data_inicio) as "Tempo sem modificar o horario" 
-   FROM HORARIO
+   <b>SELECT numero_linha, age(current_date, horario.data_inicio) as "Tempo sem modificar o horario"<br>
+   FROM HORARIO<br>
    GROUP BY numero_linha, age(current_date, horario.data_inicio);</b><br>
 
    ![img](images/9.4/9.4.b.1.png) <br>
 
-   <b>SELECT numero_linha, 
-   current_time(0) AS "hora atual", 
-   hora_saida AS "próximos horarios"
-   FROM HORARIO
-   WHERE numero_linha = 815 
+   <b>SELECT numero_linha,<br>
+   current_time(0) AS "hora atual",<br>
+   hora_saida AS "próximos horarios"<br>
+   FROM HORARIO<br>
+   WHERE numero_linha = 815 <br>
    AND hora_saida > current_time(0);</b><br>
 
    ![img](images/9.4/9.4.b.2.png) <br>
 
-   <b>SELECT nome, 
-   nascimento,
-   date_part('year', age(now(), nascimento)) AS idade
+   <b>SELECT nome, <br>
+   nascimento,<br>
+   date_part('year', age(now(), nascimento)) AS idade<br>
    FROM usuario;</b><br>
 
    ![img](images/9.4/9.4.b.3.png) <br>
 
-   <b>SELECT usuario.nome, 
-   extract('month' FROM pagamento.data_pagamento) AS "Meses de compra passagem"
-   FROM PAGAMENTO
-   INNER JOIN CARTAO
-   ON (cartao.numero = pagamento.numero_cartao)
-   INNER JOIN USUARIO
+   <b>SELECT usuario.nome, <br>
+   extract('month' FROM pagamento.data_pagamento) AS "Meses de compra passagem"<br>
+   FROM PAGAMENTO<br>
+   INNER JOIN CARTAO<br>
+   ON (cartao.numero = pagamento.numero_cartao)<br>
+   INNER JOIN USUARIO<br>
    ON (usuario.numero_cartao = cartao.numero);</b><br>
 
    ![img](images/9.4/9.4.b.4.png) <br>
@@ -371,77 +371,77 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
 
    <b>INSERT PARA O PRÓXIMO JOIN</b><br>
 
-   <b>INSERT INTO PASSAGEM (id_passagem, id_usuario, numero_linha, id_pagamento, data, hora, valor)
-    VALUES (11,3,507,10,'2018-10-15','12:30:00', 3.40),
-    (12,3,507,10,'2018-10-15','18:00:00', 3.40),
-    (13,3,507,10,'2018-10-16','12:30:00', 3.40),
-    (14,3,507,10,'2018-10-16','18:00:00', 3.40),
-    (15,3,507,10,'2018-10-17','12:30:00', 3.40),
-    (16,3,507,10,'2018-10-17','18:00:00', 3.40),
-    (17,3,507,10,'2018-10-18','12:30:00', 3.40),
-    (18,3,507,10,'2018-10-18','18:00:00', 3.40),
-    (19,3,507,10,'2018-10-19','12:30:00', 3.40),
-    (20,3,507,10,'2018-10-19','18:00:00', 3.40);
+   <b>INSERT INTO PASSAGEM (id_passagem, id_usuario, numero_linha, id_pagamento, data, hora, valor)<br>
+    VALUES (11,3,507,10,'2018-10-15','12:30:00', 3.40),<br>
+    (12,3,507,10,'2018-10-15','18:00:00', 3.40),<br>
+    (13,3,507,10,'2018-10-16','12:30:00', 3.40),<br>
+    (14,3,507,10,'2018-10-16','18:00:00', 3.40),<br>
+    (15,3,507,10,'2018-10-17','12:30:00', 3.40),<br>
+    (16,3,507,10,'2018-10-17','18:00:00', 3.40),<br>
+    (17,3,507,10,'2018-10-18','12:30:00', 3.40),<br>
+    (18,3,507,10,'2018-10-18','18:00:00', 3.40),<br>
+    (19,3,507,10,'2018-10-19','12:30:00', 3.40),<br>
+    (20,3,507,10,'2018-10-19','18:00:00', 3.40);<br>
 
-   INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, numero_linha, desc_terminal)
-    VALUES (67,'10:30:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
-    (68,'10:50:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
-    (69,'11:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
-    (70,'11:25:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
-    (71,'11:40:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
-    (72,'11:55:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
-    (73,'12:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
-    (74,'12:25:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
-    (75,'12:40:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
-    (76,'12:55:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
-    (77,'13:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
-    (78,'13:25:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+   INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, numero_linha, desc_terminal)<br>
+    VALUES (67,'10:30:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
+    (68,'10:50:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
+    (69,'11:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
+    (70,'11:25:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
+    (71,'11:40:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
+    (72,'11:55:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
+    (73,'12:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
+    (74,'12:25:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
+    (75,'12:40:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
+    (76,'12:55:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
+    (77,'13:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
+    (78,'13:25:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
     (79,'13:45:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS');</b><br>
 
    <b>JOIN COM TODAS AS TABELAS</b><br>
 
-   <b>SELECT usuario.nome,
-   cartao.numero AS "Cartao de credito",
-   pagamento.data_pagamento AS "Data recarga", 
-   passagem.data AS "Data da passagem",
-   passagem.hora AS "Horario da passagem",
-   linha.descricao_linha AS "Linha",
-   horario.hora_saida,
-   tipo_horario.desc_horario AS "Tipo de horario",
-   itinerario.destino AS "Destino do onibus",
-   itinerario_ponto.pos_sequencia,
-   ponto.id_ponto,
-   logradouro.desc_tipo AS "Itinerario - Tipo logradouro",
-   logradouro.desc_logradouro AS "Itinerario - Nome logradouro",
-   bairro.desc_bairro AS "Itinerario - Bairro", 
-   municipio.nome_municipio AS "Itinerario - Cidade"
-   FROM USUARIO
-   INNER JOIN CARTAO
-   ON (usuario.numero_cartao = cartao.numero)
-   INNER JOIN PAGAMENTO 
-   ON (cartao.numero = pagamento.numero_cartao)
-   INNER JOIN PASSAGEM
-   ON (passagem.id_usuario = usuario.id_usuario)
-   INNER JOIN LINHA 
-   ON (passagem.numero_linha = linha.numero_linha)
-   INNER JOIN HORARIO
-   ON (linha.numero_linha = horario.numero_linha)
-   INNER JOIN TIPO_HORARIO
-   ON (horario.id_tipo = tipo_horario.id_tipo)
-   INNER JOIN ITINERARIO
-   ON (itinerario.numero_linha = linha.numero_linha)
-   INNER JOIN ITINERARIO_PONTO 
-   ON (itinerario.id_itinerario = itinerario_ponto.id_itinerario)
-   INNER JOIN PONTO
-   ON (ponto.id_ponto = itinerario_ponto.id_ponto)
-   INNER JOIN LOGRADOURO
-   ON (ponto.id_logradouro = logradouro.id_logradouro)
-   INNER JOIN BAIRRO
-   ON (logradouro.id_bairro = bairro.id_bairro)
-   INNER JOIN MUNICIPIO
-   ON (bairro.id_cidade = municipio.id_municipio)
-   WHERE passagem.hora = '12:30:00'
-   AND horario.hora_saida = '12:25:00'
+   <b>SELECT usuario.nome,<br>
+   cartao.numero AS "Cartao de credito",<br>
+   pagamento.data_pagamento AS "Data recarga", <br>
+   passagem.data AS "Data da passagem",<br>
+   passagem.hora AS "Horario da passagem",<br>
+   linha.descricao_linha AS "Linha",<br>
+   horario.hora_saida,<br>
+   tipo_horario.desc_horario AS "Tipo de horario",<br>
+   itinerario.destino AS "Destino do onibus",<br>
+   itinerario_ponto.pos_sequencia,<br>
+   ponto.id_ponto,<br>
+   logradouro.desc_tipo AS "Itinerario - Tipo logradouro",<br>
+   logradouro.desc_logradouro AS "Itinerario - Nome logradouro",<br>
+   bairro.desc_bairro AS "Itinerario - Bairro", <br>
+   municipio.nome_municipio AS "Itinerario - Cidade"<br>
+   FROM USUARIO<br>
+   INNER JOIN CARTAO<br>
+   ON (usuario.numero_cartao = cartao.numero)<br>
+   INNER JOIN PAGAMENTO <br>
+   ON (cartao.numero = pagamento.numero_cartao)<br>
+   INNER JOIN PASSAGEM<br>
+   ON (passagem.id_usuario = usuario.id_usuario)<br>
+   INNER JOIN LINHA <br>
+   ON (passagem.numero_linha = linha.numero_linha)<br>
+   INNER JOIN HORARIO<br>
+   ON (linha.numero_linha = horario.numero_linha)<br>
+   INNER JOIN TIPO_HORARIO<br>
+   ON (horario.id_tipo = tipo_horario.id_tipo)<br>
+   INNER JOIN ITINERARIO<br>
+   ON (itinerario.numero_linha = linha.numero_linha)<br>
+   INNER JOIN ITINERARIO_PONTO <br>
+   ON (itinerario.id_itinerario = itinerario_ponto.id_itinerario)<br>
+   INNER JOIN PONTO<br>
+   ON (ponto.id_ponto = itinerario_ponto.id_ponto)<br>
+   INNER JOIN LOGRADOURO<br>
+   ON (ponto.id_logradouro = logradouro.id_logradouro)<br>
+   INNER JOIN BAIRRO<br>
+   ON (logradouro.id_bairro = bairro.id_bairro)<br>
+   INNER JOIN MUNICIPIO<br>
+   ON (bairro.id_cidade = municipio.id_municipio)<br>
+   WHERE passagem.hora = '12:30:00'<br>
+   AND horario.hora_saida = '12:25:00'<br>
    AND ponto.id_ponto = 1</b><br>
    ![img](images/9.6/9.6.a.1.png)<br>
 
@@ -464,11 +464,11 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    ![img](images/9.7/5.JPG)<br>
    
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
-   <b>SELECT COUNT(bairro.id_bairro), municipio.nome_municipio, municipio.id_municipio
-   FROM BAIRRO
-   LEFT JOIN MUNICIPIO
-   ON bairro.id_cidade = municipio.id_municipio
-   GROUP BY municipio.id_municipio
+   <b>SELECT COUNT(bairro.id_bairro), municipio.nome_municipio, municipio.id_municipio<br>
+   FROM BAIRRO<br>
+   LEFT JOIN MUNICIPIO<br>
+   ON bairro.id_cidade = municipio.id_municipio<br>
+   GROUP BY municipio.id_municipio<br>
    ORDER BY municipio.id_municipio;</b><br>
    ![img](images/9.8/9.8.1.png)<br>
    
@@ -499,10 +499,10 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
         a) Uma junção que envolva Self Join
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
    
-   <b>CREATE VIEW valor_total_recebido AS(
-   SELECT SUM(valor_pagamento) AS valor_total_recebido FROM pagamento);
+   <b>CREATE VIEW valor_total_recebido AS(<br>
+   SELECT SUM(valor_pagamento) AS valor_total_recebido FROM pagamento);<br>
 
-   SELECT * FROM valor_total_recebido;</b>
+   SELECT * FROM valor_total_recebido;</b><br>
    
    ![img](img/valor_total_recebido.PNG)
    
@@ -521,7 +521,8 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
 
    SELECT * FROM total_ruas_bairros_cidades_pontos;</b>
    
-   ![img](img/total_ruas_bairros_cidades_pontos.PNG)
+   ![img](img/total_ruas_bairros_cidades_pontos.PNG)<br>
+   
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
