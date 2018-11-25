@@ -368,14 +368,91 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
 
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
         a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
+
+   <b>INSERT PARA O PRÓXIMO JOIN</b><br>
+
+   <b>INSERT INTO PASSAGEM (id_passagem, id_usuario, numero_linha, id_pagamento, data, hora, valor)
+    VALUES (11,3,507,10,'2018-10-15','12:30:00', 3.40),
+    (12,3,507,10,'2018-10-15','18:00:00', 3.40),
+    (13,3,507,10,'2018-10-16','12:30:00', 3.40),
+    (14,3,507,10,'2018-10-16','18:00:00', 3.40),
+    (15,3,507,10,'2018-10-17','12:30:00', 3.40),
+    (16,3,507,10,'2018-10-17','18:00:00', 3.40),
+    (17,3,507,10,'2018-10-18','12:30:00', 3.40),
+    (18,3,507,10,'2018-10-18','18:00:00', 3.40),
+    (19,3,507,10,'2018-10-19','12:30:00', 3.40),
+    (20,3,507,10,'2018-10-19','18:00:00', 3.40);
+
+   INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, numero_linha, desc_terminal)
+    VALUES (67,'10:30:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+    (68,'10:50:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+    (69,'11:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+    (70,'11:25:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+    (71,'11:40:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+    (72,'11:55:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+    (73,'12:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+    (74,'12:25:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+    (75,'12:40:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+    (76,'12:55:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+    (77,'13:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+    (78,'13:25:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),
+    (79,'13:45:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS');</b><br>
+
+   <b>JOIN COM TODAS AS TABELAS</b><br>
+
+   <b>SELECT usuario.nome,
+   cartao.numero AS "Cartao de credito",
+   pagamento.data_pagamento AS "Data recarga", 
+   passagem.data AS "Data da passagem",
+   passagem.hora AS "Horario da passagem",
+   linha.descricao_linha AS "Linha",
+   horario.hora_saida,
+   tipo_horario.desc_horario AS "Tipo de horario",
+   itinerario.destino AS "Destino do onibus",
+   itinerario_ponto.pos_sequencia,
+   ponto.id_ponto,
+   logradouro.desc_tipo AS "Itinerario - Tipo logradouro",
+   logradouro.desc_logradouro AS "Itinerario - Nome logradouro",
+   bairro.desc_bairro AS "Itinerario - Bairro", 
+   municipio.nome_municipio AS "Itinerario - Cidade"
+   FROM USUARIO
+   INNER JOIN CARTAO
+   ON (usuario.numero_cartao = cartao.numero)
+   INNER JOIN PAGAMENTO 
+   ON (cartao.numero = pagamento.numero_cartao)
+   INNER JOIN PASSAGEM
+   ON (passagem.id_usuario = usuario.id_usuario)
+   INNER JOIN LINHA 
+   ON (passagem.numero_linha = linha.numero_linha)
+   INNER JOIN HORARIO
+   ON (linha.numero_linha = horario.numero_linha)
+   INNER JOIN TIPO_HORARIO
+   ON (horario.id_tipo = tipo_horario.id_tipo)
+   INNER JOIN ITINERARIO
+   ON (itinerario.numero_linha = linha.numero_linha)
+   INNER JOIN ITINERARIO_PONTO 
+   ON (itinerario.id_itinerario = itinerario_ponto.id_itinerario)
+   INNER JOIN PONTO
+   ON (ponto.id_ponto = itinerario_ponto.id_ponto)
+   INNER JOIN LOGRADOURO
+   ON (ponto.id_logradouro = logradouro.id_logradouro)
+   INNER JOIN BAIRRO
+   ON (logradouro.id_bairro = bairro.id_bairro)
+   INNER JOIN MUNICIPIO
+   ON (bairro.id_cidade = municipio.id_municipio)
+   WHERE passagem.hora = '12:30:00'
+   AND horario.hora_saida = '12:25:00'
+   AND ponto.id_ponto = 1</b><br>
+   ![img](images/9.6/9.6.a.1.png)<br>
+
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
    
    <b>SELECT COUNT(cep), desc_tipo FROM logradouro GROUP BY desc_tipo;</b><br>
-   ![img](img/count_logradouro.PNG)<br>
+   ![img](images/9.7/9.7.1.png)<br>
    
    <b>SELECT COUNT(id_horario) as qtd_horarios, desc_terminal FROM horario GROUP BY desc_terminal ORDER BY qtd_horarios desc;</b><br>
-   ![img](images/9.7/2.JPG)<br>
+   ![img](images/9.7/9.7.2.png)<br>
    
    <b>SELECT COUNT(id_passagem) as passagem_vendida, data FROM passagem GROUP BY data;</b><br>
    ![img](images/9.7/3.JPG)<br>
@@ -387,29 +464,29 @@ FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
    ![img](images/9.7/5.JPG)<br>
    
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
-   <b>SELECT COUNT(bairro.id_bairro), cidade.desc_cidade, cidade.id_cidade<br>
-   FROM bairro<br>
-   LEFT JOIN cidade<br>
-   ON bairro.id_cidade = cidade.id_cidade<br>
-   GROUP BY cidade.id_cidade<br>
-   ORDER BY cidade.id_cidade;</b><br>
-   ![img](img/count_cidade.PNG)<br>
+   <b>SELECT COUNT(bairro.id_bairro), municipio.nome_municipio, municipio.id_municipio
+   FROM BAIRRO
+   LEFT JOIN MUNICIPIO
+   ON bairro.id_cidade = municipio.id_municipio
+   GROUP BY municipio.id_municipio
+   ORDER BY municipio.id_municipio;</b><br>
+   ![img](images/9.8/9.8.1.png)<br>
    
    <b>SELECT COUNT(logradouro.cep), bairro.desc_bairro<br>
-   FROM logradouro<br>
-   LEFT JOIN bairro<br>
+   FROM LOGRADOURO<br>
+   LEFT JOIN BAIRRO<br>
    ON logradouro.id_bairro = bairro.id_bairro<br>
    GROUP BY bairro.desc_bairro<br>
    ORDER BY bairro.desc_bairro;</b><br>
-   ![img](img/count_bairro.PNG)<br>
+   ![img](images/9.8/9.8.2.png)<br>
    
-   <b>SELECT COUNT(passagem.id_passagem) AS passagens_vendidas, linha.desc_linha AS linha<br>
-   FROM passagem<br>
-   LEFT JOIN linha<br>
+   <b>SELECT COUNT(passagem.id_passagem) AS passagens_vendidas, linha.descricao_linha AS linha<br>
+   FROM PASSAGEM<br>
+   LEFT JOIN LINHA<br>
    ON passagem.numero_linha = linha.numero_linha<br>
-   GROUP BY linha.desc_linha<br>
+   GROUP BY linha.descricao_linha<br>
    ORDER BY passagens_vendidas desc;</b><br>
-   ![img](images/9.8/3.JPG)<br>
+   ![img](images/9.8/9.8.3.png)<br>
    
    <b>SELECT cartao.numero AS cartao, usuario.email AS enviar_email_para<br>
    FROM cartao<br>
