@@ -2,6 +2,39 @@
 Trabalho desenvolvido durante a disciplina de BD1
 
 # Sumário
+   1.[COMPONETES](#1-componetes)<br>
+   2.[INTRODUÇÃO E MOTIVAÇAO](#2introdução-e-motivaçao)<br>
+   3.[MINI-MUNDO](#)<br>
+   4.[RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)](#) <br>
+      4.1 [QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?](#) <br>
+      4.2 [TABELA DE DADOS DO SISTEMA:](#) <br>
+   5.[MODELO CONCEITUAL](#)<br>
+      5.1 [Validação do Modelo Conceitual](#)<br>
+      5.2 [DECISÕES DE PROJETO](#)<br>
+      5.3 [DESCRIÇÃO DOS DADOS](#)<br>
+   6.[MODELO LÓGICO](#)<br>
+   7.[MODELO FÍSICO](#)<br>
+   8.[INSERT APLICADO NAS TABELAS DO BANCO DE DADOS](#)<br>
+      8.1 [DETALHAMENTO DAS INFORMAÇÕES](#)<br>
+      8.2 [INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELAS E INSERÇÃO DOS DADOS](#)<br>
+      8.3 [INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS](#)<br>
+   9.[TABELAS E PRINCIPAIS CONSULTAS](#)<br>
+      9.1 [CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS](#)<br>
+      9.2 [CONSULTAS DAS TABELAS COM FILTROS WHERE](#)<br>
+      9.3 [CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS ](#)<br>
+      9.4 [CONSULTAS QUE USAM OPERADORES LIKE E DATAS](#)<br>
+      9.5 [ATUALIZAÇÃO E EXCLUSÃO DE DADOS](#)<br>
+      9.6 [CONSULTAS COM JUNÇÃO E ORDENAÇÃO](#)<br>
+      9.7 [CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO](#)<br>
+      9.8 [CONSULTAS COM LEFT E RIGHT JOIN ](#)<br>
+      9.9 [CONSULTAS COM SELF JOIN E VIEW](#)<br>
+      9.10 [SUBCONSULTAS](#)<br>
+   10.[ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL](#)<br>
+   11.[BACKUP COMPLETO DO BANCO DE DADOS POSTGRES](#)<br>
+   12.[TUTORIAL COMPLETO DE PASSOS PARA RESTAURACAO DO BANCO E EXECUCAO DE PROCEDIMENTOS ENVOLVIDOS NO TRABALHO PARA OBTENÇÃO DOS RESULTADOS](#)<br>
+   13.[DIFICULDADES ENCONTRADAS PELO GRUPO](#)<br>
+   14.[FORMATACAO NO GIT](#)<br>
+
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo:<br><br>
@@ -9,6 +42,7 @@ Ewerson Vieira Nascimento: ewersonv@gmail.com<br>
 Giuliano de Paulo Demoner: giuliano.demoner@gmail.com<br>
 Lorran Gabriel Araújo: lorrangabriel20@gmail.com<br>
 Marcos Antônio Carneiro de Paula: cardepaula@gmail.com<br>
+
 
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
 A bilhetagem eletrônica já é uma realidade nos transportes públicos do nosso estado a algum tempo, diversas pessoas fazem uso do seu cartão para se movimentar durante o dia-a-dia, seja de uso particular ou vinculado ao trabalho. Podemos dizer que a solução existente dá conta do recado e atende bem ao seu propósito, mas somente isso. Ainda temos que enfrentar diversos problemas com o uso do cartão como meio de pagamento, como a recarga em que temos que enfrentar uma fila enorme, taxas por perda ou quebra do cartão, complicado monitoramento de saldo e falta de segurança devido as fraudes.<br>
