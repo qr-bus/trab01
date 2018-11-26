@@ -480,9 +480,12 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    FROM PASSAGEM<br>
    INNER JOIN LINHA<br>
    ON(passagem.numero_linha = linha.numero_linha)<br>
-   WHERE passagem.id_usuario = 3</b><br>
+   WHERE passagem.id_usuario = 3<br>
+   ORDER BY passagem.data, passagem.hora;</b><br>
 
    ![img](images/9.6/9.6.b.3.png)<br>
+
+   
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
    
