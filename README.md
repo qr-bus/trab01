@@ -4,36 +4,37 @@ Trabalho desenvolvido durante a disciplina de BD1
 # Sumário
    1.[COMPONETES](#1-componetes)<br>
    2.[INTRODUÇÃO E MOTIVAÇAO](#2introdução-e-motivaçao)<br>
-   3.[MINI-MUNDO](#)<br>
-   4.[RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)](#) <br>
-      4.1 [QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?](#) <br>
-      4.2 [TABELA DE DADOS DO SISTEMA:](#) <br>
-   5.[MODELO CONCEITUAL](#)<br>
-      5.1 [Validação do Modelo Conceitual](#)<br>
-      5.2 [DECISÕES DE PROJETO](#)<br>
-      5.3 [DESCRIÇÃO DOS DADOS](#)<br>
-   6.[MODELO LÓGICO](#)<br>
-   7.[MODELO FÍSICO](#)<br>
-   8.[INSERT APLICADO NAS TABELAS DO BANCO DE DADOS](#)<br>
-      8.1 [DETALHAMENTO DAS INFORMAÇÕES](#)<br>
-      8.2 [INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELAS E INSERÇÃO DOS DADOS](#)<br>
-      8.3 [INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS](#)<br>
-   9.[TABELAS E PRINCIPAIS CONSULTAS](#)<br>
-      9.1 [CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS](#)<br>
-      9.2 [CONSULTAS DAS TABELAS COM FILTROS WHERE](#)<br>
-      9.3 [CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS ](#)<br>
-      9.4 [CONSULTAS QUE USAM OPERADORES LIKE E DATAS](#)<br>
-      9.5 [ATUALIZAÇÃO E EXCLUSÃO DE DADOS](#)<br>
-      9.6 [CONSULTAS COM JUNÇÃO E ORDENAÇÃO](#)<br>
-      9.7 [CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO](#)<br>
-      9.8 [CONSULTAS COM LEFT E RIGHT JOIN ](#)<br>
-      9.9 [CONSULTAS COM SELF JOIN E VIEW](#)<br>
-      9.10 [SUBCONSULTAS](#)<br>
-   10.[ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL](#)<br>
-   11.[BACKUP COMPLETO DO BANCO DE DADOS POSTGRES](#)<br>
-   12.[TUTORIAL COMPLETO DE PASSOS PARA RESTAURACAO DO BANCO E EXECUCAO DE PROCEDIMENTOS ENVOLVIDOS NO TRABALHO PARA OBTENÇÃO DOS RESULTADOS](#)<br>
-   13.[DIFICULDADES ENCONTRADAS PELO GRUPO](#)<br>
-   14.[FORMATACAO NO GIT](#)<br>
+   3.[MINI-MUNDO](#3mini-mundo)<br>
+   4.[RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)](#4rascunhos-básicos-da-interface-mockups) <br>
+      4.1 [QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?](#41-quais-perguntas-podem-ser-respondidas-com-o-sistema-proposto) <br>
+      4.2 [TABELA DE DADOS DO SISTEMA:](#42-tabela-de-dados-do-sistema) <br>
+   5.[MODELO CONCEITUAL](#5modelo-conceitual)<br>
+      5.1 [Validação do Modelo Conceitual](#51-validação-do-modelo-conceitual)<br>
+      5.2 [DECISÕES DE PROJETO](#52-decisões-de-projeto)<br>
+      5.3 [DESCRIÇÃO DOS DADOS](#53-descrição-dos-dados)<br>
+   6.[MODELO LÓGICO](#6modelo-lógico)<br>
+   7.[MODELO FÍSICO](#7modelo-físico)<br>
+   8.[INSERT APLICADO NAS TABELAS DO BANCO DE DADOS](#8insert-aplicado-nas-tabelas-do-banco-de-dados)<br>
+      8.1 [DETALHAMENTO DAS INFORMAÇÕES](#81-detalhamento-das-informações)<br>
+      8.2 [INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELAS E INSERÇÃO DOS DADOS](#82-inclusão-do-script-para-criação-de-tabelas-e-inserção-dos-dados)<br>
+      8.3 [INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS](#83-inclusão-do-script-para-exclusão-de-tabelas-existentes-criação-de-tabela-novas-e-inserção-dos-dados)<br>
+   9.[TABELAS E PRINCIPAIS CONSULTAS](#9tabelas-e-principais-consultas)<br>
+      9.1 [CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS](#91consultas-das-tabelas-com-todos-os-dados-inseridos-todas-)<br>
+      9.2 [CONSULTAS DAS TABELAS COM FILTROS WHERE](#92consultas-das-tabelas-com-filtros-where-mínimo-4)<br>
+      9.3 [CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS ](#93consultas-que-usam-operadores-lógicos-aritméticos-e-tabelas-ou-campos-renomeados-mínimo-11)<br>
+      9.4 [CONSULTAS QUE USAM OPERADORES LIKE E DATAS](#94consultas-que-usam-operadores-like-e-datas-mínimo-12-)<br>
+      9.5 [ATUALIZAÇÃO E EXCLUSÃO DE DADOS](#95atualização-e-exclusão-de-dados-mínimo-6)<br>
+      9.6 [CONSULTAS COM JUNÇÃO E ORDENAÇÃO](#96consultas-com-junção-e-ordenação-mínimo-6)<br>
+      9.7 [CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO](#97consultas-com-group-by-e-funções-de-agrupamento-mínimo-6)<br>
+      9.8 [CONSULTAS COM LEFT E RIGHT JOIN ](#98consultas-com-left-e-right-join-mínimo-4)<br>
+      9.9 [CONSULTAS COM SELF JOIN E VIEW](#99consultas-com-self-join-e-view-mínimo-6)<br>
+      9.10 [SUBCONSULTAS](#910subconsultas-mínimo-3)<br>
+   10.[ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL](#10atualização-da-documentação-dos-slides-para-apresentaçao-final-mínimo-6-e-máximo-10)<br>
+   11.[BACKUP COMPLETO DO BANCO DE DADOS POSTGRES](#11-backup-completo-do-banco-de-dados-postgres)<br>
+   12.[TUTORIAL COMPLETO DE PASSOS PARA RESTAURACAO DO BANCO E EXECUCAO DE PROCEDIMENTOS ENVOLVIDOS NO TRABALHO PARA OBTENÇÃO DOS RESULTADOS](#12tutorial-completo-de-passos-para-restauracao-do-banco-e-execucao-de-procedimentos-envolvidos-no-trabalho-para-obtenção-dos-resultados)<br>
+   13.[DIFICULDADES ENCONTRADAS PELO GRUPO](#13---dificuldades-encontradas-pelo-grupo)<br>
+   14.[FORMATACAO NO GIT](#14--formatacao-no-git-httpshelpgithubcomarticlesbasic-writing-and-formatting-syntax)<br>
+   [OBSERVAÇÕES IMPORTANTES](#observações-importantes)<br>
 
 
 ### 1. COMPONENTES<br>
