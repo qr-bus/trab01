@@ -2,7 +2,7 @@
 Trabalho desenvolvido durante a disciplina de BD1
 
 # Sumário
-   1.[COMPONETES](#1-componetes)<br>
+   1.[COMPONETES](#1-componentes)<br>
    2.[INTRODUÇÃO E MOTIVAÇAO](#2introdução-e-motivaçao)<br>
    3.[MINI-MUNDO](#3mini-mundo)<br>
    4.[RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)](#4rascunhos-básicos-da-interface-mockups) <br>
