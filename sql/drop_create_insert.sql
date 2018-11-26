@@ -55,7 +55,7 @@ CREATE TABLE HORARIO (
     numero_linha smallserial,
     id_tipo smallserial,
     data_inicio date,
-    hora_saida time AT TIME ZONE 'America/Sao_Paulo',
+    hora_saida time,
     desc_terminal varchar(150)
 );
 
