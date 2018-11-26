@@ -639,6 +639,20 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    
    ![img](img/usuarios_mes_valor.PNG)<br>
    
+   <b>CREATE VIEW numero_viagens_mes_usuario AS(<br>
+   SELECT usuario.nome,<br>
+   CONCAT(SUBSTRING(CAST(passagem.data AS VARCHAR), 1, 4), '/', SUBSTRING(CAST(passagem.data AS VARCHAR), 6, 2)) AS "Mes",<br>
+   COUNT(passagem.id_passagem) AS "Numero de viagens"<br>
+   FROM usuario<br>
+   INNER JOIN passagem<br>
+   ON usuario.id_usuario = passagem.id_usuario<br>
+   GROUP BY usuario.nome, "Mes"<br>
+   ORDER BY usuario.nome);<br>
+
+   SELECT * FROM numero_viagens_mes_usuario;</b><br>
+   
+   ![img](img/numero_viagens_mes_usuario.PNG)<br>
+   
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
