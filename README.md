@@ -56,56 +56,56 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 >## Marco de Entrega 02 em: (17/09/2018)<br>
 #### 5.3 DESCRIÇÃO DOS DADOS 
    <b>USUARIO:</b> Tabela que armazena informações relacionadas ao usuário do sistema.<br>
-   		id_usuario: id do usuário, gerado automaticamente.<br>
-		cpf: cpf do usuário.<br>
-		nome: nome completo do usuário.<br>
-		nascimento: data de nascimento do usuário.<br>
-		email: email do usuário.<br>
-		senha: senha do usuário.<br>
-		saldo: saldo do usuário para pagamento de passagens.<br>
+   - id_usuario: id do usuário, gerado automaticamente.<br>
+   - cpf: cpf do usuário.<br>
+   - nome: nome completo do usuário.<br>
+   - nascimento: data de nascimento do usuário.<br>
+   - email: email do usuário.<br>
+   - senha: senha do usuário.<br>
+   - saldo: saldo do usuário para pagamento de passagens.<br>
    <b>CARTAO:</b> Tabela que contém dados do cartão de passagem do usuário.<br>
-   		numero: número do cartão do usuário.<br>
-		titular: nome do titular do cartão.<br>
-		validade: data de validade presente no cartão.<br>
+   - numero: número do cartão do usuário.<br>
+   - titular: nome do titular do cartão.<br>
+   - validade: data de validade presente no cartão.<br>
    <b>PASSAGEM:</b> Tabela que armazena os pagamentos de passagens em datas e horarios específicos.<br>
-   		id_passagem: id da passagem, gerado automaticamente.<br>
-		numero_linha: linha utilizada pelo usuário.<br>
-		data: data em que o usuário pagou a passagem.<br>
-		horario: horário em que a passagem foi paga.<br>
-		valor: valor da passagem paga.<br>
+   - id_passagem: id da passagem, gerado automaticamente.<br>
+   - numero_linha: linha utilizada pelo usuário.<br>
+   - data: data em que o usuário pagou a passagem.<br>
+   - horario: horário em que a passagem foi paga.<br>
+   - valor: valor da passagem paga.<br>
    <b>LINHA:</b> Contém informações sobre a linha do ônibus.<br>
-   		numero_linha: número da linha.<br>
-		desc_linha: descrição (nome) da linha.<br>
+   - numero_linha: número da linha.<br>
+   - desc_linha: descrição (nome) da linha.<br>
    <b>HORÁRIO:</b> Contém dados sobre horarios das linhas.<br>
-   		id_horario: id da linha, gerado automaticamente.<br>
-		hora_saida: horário em que o ônibus sai do terminal.<br>
-		desc_terminal: nome do terminal que o ônibus sairá.<br>
-		data_inicio: data em que este horário começou a ser utilizado.<br>
+   - id_horario: id da linha, gerado automaticamente.<br>
+   - hora_saida: horário em que o ônibus sai do terminal.<br>
+   - desc_terminal: nome do terminal que o ônibus sairá.<br>
+   - data_inicio: data em que este horário começou a ser utilizado.<br>
    <b>TIPO_HORARIO:</b> Tabela que armazena os tipos de horário.<br>
-   		id_tipo: id do tipo de horário, gerado automaticamente.<br>
-		desc_horario: descrição do tipo (dias úteis, feriados, atípicos entre feriados ou fins de semana).<br>
+   - id_tipo: id do tipo de horário, gerado automaticamente.<br>
+   - desc_horario: descrição do tipo (dias úteis, feriados, atípicos entre feriados ou fins de semana).<br>
    <b>ITINERARIO:</b> Armazena informações sobre o sentido da linha (ida ou volta).<br>
-   		id_itinerario: id do itinerário atrelado a cada rua que a linha percorrerá, gerado automaticamente.<br>
-		sentido: informa o sentido que a linha percorrerá (ida ou volta).<br>
-		sequencia: cada rua pela qual o ônibus passará.<br>
+   - id_itinerario: id do itinerário atrelado a cada rua que a linha percorrerá, gerado automaticamente.<br>
+   - sentido: informa o sentido que a linha percorrerá (ida ou volta).<br>
+   - sequencia: cada rua pela qual o ônibus passará.<br>
    <b>ITINERARIO_PONTO</b> Faz o intermédio entre a entidade Intenario e a Ponto.<br>
-		id_intin_ponto: id do itinerario_ponto.<br>
-		pos_sequencia: posiçao na sequencia de pontos que o itinerário possui.<br>
+   - id_intin_ponto: id do itinerario_ponto.<br>
+   - pos_sequencia: posiçao na sequencia de pontos que o itinerário possui.<br>
    <b>PONTO:</b> Armazena as coordenas do ponto.<br>
-   		id_ponto: id do ponto, gerado automaticamente.<br>
-		latitude: latitude para posição geográfica do ponto.<br>
-		longitude: longitude para posição geográfica do ponto.<br>
+   - id_ponto: id do ponto, gerado automaticamente.<br>
+   - latitude: latitude para posição geográfica do ponto.<br>
+   - longitude: longitude para posição geográfica do ponto.<br>
    <b>LOGRADOURO:</b> Armazena informações sobre o logradouro (CEP, tipo e nome).<br>
-   		id_logradouro: id do logradouro, gerado automaticamente.<br>
-		cep: número CEP.<br>
-		desc_tipo: descrição do tipo de logradouro (rua, avenida, travessa...).<br>
-		desc_logradouro: nome do logradouro.<br>
+   - id_logradouro: id do logradouro, gerado automaticamente.<br>
+   - cep: número CEP.<br>
+   - desc_tipo: descrição do tipo de logradouro (rua, avenida, travessa...).<br>
+   - desc_logradouro: nome do logradouro.<br>
    <b>BAIRRO:</b> Armazena informações sobre o bairro (nome e ID).<br>
-   		id_bairro: id do bairro, gerado automaticamente.<br>
-		desc_bairro: nome do bairro.<br>
+   - id_bairro: id do bairro, gerado automaticamente.<br>
+   - desc_bairro: nome do bairro.<br>
    <b>CIDADE:</b> Armazena informações sobre a cidade (nome e ID).<br>
-   		id_cidade: id da cidade, gerado automaticamente.<br>
-		desc_cidade: nome da cidade.<br>
+   - id_cidade: id da cidade, gerado automaticamente.<br>
+   - desc_cidade: nome da cidade.<br>
 
 ### 6	MODELO LÓGICO<br>
    ![img](images/QR-Bus_-_modelo_logico.png) 
@@ -236,7 +236,8 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <b>cartao.numero = '1111222233335555') GROUP BY titular,valor_pagamento;</b><br>
    
    ![img](images/9.3/9.3.8.png) <br>
-   c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+   
+    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
    
    <b> 1 </b><br>
    <b> ALTER TABLE CIDADE RENAME TO MUNICIPIO; </b><br>
