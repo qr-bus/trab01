@@ -458,6 +458,47 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    ![img](images/9.6/9.6.a.1.png)<br>
 
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+
+   <b>SELECT itinerario.numero_linha as linha,<br>
+   itinerario_ponto.pos_sequencia,<br>
+   ponto.id_ponto, <br>
+   logradouro.desc_tipo,<br>
+   logradouro.desc_logradouro<br>
+   FROM ITINERARIO<br>
+   INNER JOIN ITINERARIO_PONTO<br>
+   ON (itinerario.id_itinerario = itinerario_ponto.id_itinerario)<br>
+   INNER JOIN PONTO<br>
+   ON (itinerario_ponto.id_ponto = ponto.id_ponto)<br>
+   INNER JOIN LOGRADOURO<br>
+   ON (ponto.id_logradouro = logradouro.id_logradouro)<br>
+   ORDER BY itinerario.numero_linha, itinerario_ponto.pos_sequencia;</b><br>
+
+   ![img](images/9.6/9.6.b.1.png)<br>
+
+   <b>SELECT linha.numero_linha as linha,<br>
+   horario.hora_saida,<br>
+   tipo_horario.desc_horario as "tipo horario"<br>
+   FROM HORARIO<br>
+   INNER JOIN TIPO_HORARIO<br>
+   ON(horario.id_tipo = tipo_horario.id_tipo)<br>
+   INNER JOIN LINHA<br>
+   ON (horario.numero_linha = linha.numero_linha);</b><br>
+
+   ![img](images/9.6/9.6.b.2.png)<br>
+
+   <b>SELECT passagem.data,<br>
+   passagem.hora,<br>
+   linha.numero_linha as "linha"<br>
+   FROM PASSAGEM<br>
+   INNER JOIN LINHA<br>
+   ON(passagem.numero_linha = linha.numero_linha)<br>
+   WHERE passagem.id_usuario = 3<br>
+   ORDER BY passagem.data, passagem.hora;</b><br>
+
+   ![img](images/9.6/9.6.b.3.png)<br>
+
+   
+
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
    
    <b>SELECT COUNT(cep), desc_tipo FROM logradouro GROUP BY desc_tipo;</b><br>
