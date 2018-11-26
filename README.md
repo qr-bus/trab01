@@ -588,14 +588,18 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join
-        b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+        
+   <b>SELECT A.numero_linha, B.numero_linha, A.destino<br>
+   FROM itinerario A, itinerario B<br>
+   WHERE A.numero_linha <> B.numero_linha<br>
+   AND A.destino = B.destino<br>
+   ORDER BY A.numero_linha<br>
+   LIMIT 10;<b>
    
-   <b>SELECT COUNT(a.id_passagem) AS passagens, a.data<br>
-   FROM passagem A, passagem B<br>
-   WHERE A.id_passagem <> B.id_passagem<br>
-   AND A.data = B.data<br>
-   GROUP BY a.data;</b><br>
-   ![img](images/9.9/1.JPG)<br>
+   ![img](img/mesmo_destino.PNG)
+ 
+     
+        b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
    
    <b>CREATE VIEW valor_total_recebido AS(<br>
    SELECT SUM(valor_pagamento) AS valor_total_recebido FROM pagamento);<br>
@@ -617,9 +621,23 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    INNER JOIN PONTO<br>
    ON ponto.id_logradouro = logradouro.id_logradouro);<br>
 
-   SELECT * FROM total_ruas_bairros_cidades_pontos;</b>
+   SELECT * FROM total_ruas_bairros_cidades_pontos;</b><br>
    
    ![img](img/total_ruas_bairros_cidades_pontos.PNG)<br>
+   
+   <b>CREATE VIEW usuarios_mes_valor AS(<br>
+   SELECT usuario.nome,<br>
+   CONCAT(SUBSTRING(CAST(passagem.data AS VARCHAR), 1, 4), '/', SUBSTRING(CAST(passagem.data AS VARCHAR), 6, 2)) AS "Mes",<br>
+   SUM(passagem.valor) AS "Valor mensal"<br>
+   FROM usuario<br>
+   INNER JOIN passagem<br>
+   ON usuario.id_usuario = passagem.id_usuario<br>
+   GROUP BY usuario.nome, "Mes"<br>
+   ORDER BY usuario.nome);<br>
+	   
+   SELECT * FROM usuarios_mes_valor;</b><br>
+   
+   ![img](img/usuarios_mes_valor.PNG)<br>
    
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
