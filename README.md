@@ -653,6 +653,16 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    
    ![img](img/numero_viagens_mes_usuario.PNG)<br>
    
+   <b>CREATE VIEW qtd_passagens_vendidas_dia AS(<br>
+   SELECT COUNT(a.id_passagem) AS "numero de passagens" , a.data<br>
+   FROM passagem A, passagem B<br>
+   WHERE A.id_passagem <> B.id_passagem<br>
+   AND A.data = B.data<br>
+   GROUP BY a.data);<br>
+
+   SELECT * FROM qtd_passagens_vendidas_dia;</b><br>
+   ![img](images/9.9/6.PNG)<br>
+   
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
