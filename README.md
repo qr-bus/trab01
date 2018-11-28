@@ -171,7 +171,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 >## Marco de Entrega 03 em: (27/09/18) <br>
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
-    OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
+    OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
 	SELECT * FROM BAIRRO;
@@ -376,17 +376,18 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 <b> 3 </b><br>
 <b> Antes </b><br>
 
-	SELECT * FROM pagamento;</b><br>
+	SELECT * FROM pagamento;
 ![img](images/9.5/3.1.JPG)<br>
    <b> DEPOIS </b><br>
    
-	UPDATE pagamento SET valor_pagamento = 150.00 WHERE data_pagamento = '2018-02-08' OR data_pagamento = '2018-06-08';
+	UPDATE pagamento SET valor_pagamento = 150.00 
+	WHERE data_pagamento = '2018-02-08' OR data_pagamento = '2018-06-08';
 ![img](images/9.5/3.2.JPG)<br>
 
    <b> 4 </b><br>
    <b> Antes </b><br>
    
-	SELECT * FROM passagem;</b><br>
+	SELECT * FROM passagem;
 ![img](images/9.5/4.1.JPG)<br>
    <b> DEPOIS </b><br>
 
@@ -406,11 +407,11 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <b> 6 </b><br>
    <b> Antes </b><br>
    
-	SELECT * FROM itinerario;</b><br>
+	SELECT * FROM itinerario;
 ![img](images/9.5/6.1.JPG)<br>
    <b> DEPOIS </b><br>
    
-	DELETE FROM itinerario WHERE numero_linha = 611;</b><br>
+	DELETE FROM itinerario WHERE numero_linha = 611;
 ![img](images/9.5/6.2.JPG)<br>
 
 >## Marco de Entrega 04 em: (18/10/2017)<br>
@@ -603,12 +604,13 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	SELECT * FROM total_ruas_bairros_cidades_pontos;
 ![img](img/total_ruas_bairros_cidades_pontos.PNG)<br>
 
-	CREATE VIEW usuarios_mes_valor AS(<br>
-	SELECT usuario.nome,<br>
-	CONCAT(SUBSTRING(CAST(passagem.data AS VARCHAR), 1, 4), '/', SUBSTRING(CAST(passagem.data AS VARCHAR), 6, 2)) AS "Mes",
+	CREATE VIEW usuarios_mes_valor AS(
+	SELECT usuario.nome,
+	CONCAT(SUBSTRING(CAST(passagem.data AS VARCHAR), 1, 4), '/', 
+		SUBSTRING(CAST(passagem.data AS VARCHAR), 6, 2)) AS "Mes",
 	SUM(passagem.valor) AS "Valor mensal"
 	FROM usuario
-	INNER JOIN passagem<br>
+	INNER JOIN passagem
 	ON usuario.id_usuario = passagem.id_usuario
 	GROUP BY usuario.nome, "Mes"
 	ORDER BY usuario.nome);
@@ -618,7 +620,8 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 
 	CREATE VIEW numero_viagens_mes_usuario AS(
 	SELECT usuario.nome,
-	CONCAT(SUBSTRING(CAST(passagem.data AS VARCHAR), 1, 4), '/', SUBSTRING(CAST(passagem.data AS VARCHAR), 6, 2)) AS "Mes",<br>
+	CONCAT(SUBSTRING(CAST(passagem.data AS VARCHAR), 1, 4), '/', 
+		SUBSTRING(CAST(passagem.data AS VARCHAR), 6, 2)) AS "Mes",
 	COUNT(passagem.id_passagem) AS "Numero de viagens"
 	FROM usuario
 	INNER JOIN passagem
