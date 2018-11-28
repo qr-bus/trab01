@@ -231,29 +231,45 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
    <b>a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not </b><br>
     
-	SELECT * FROM logradouro WHERE desc_logradouro = 'Rio Branco' OR id_bairro = '2';
+	SELECT * FROM logradouro 
+	WHERE desc_logradouro = 'Rio Branco' 
+	OR id_bairro = '2';
 ![img](images/9.3/9.3.1.png)
 
-	SELECT hora_saida, numero_linha FROM horario WHERE (hora_saida > '09:09:00' AND numero_linha = 507);
+	SELECT hora_saida, 
+	numero_linha 
+	FROM HORARIO 
+	WHERE (hora_saida > '09:09:00' AND numero_linha = 507);
 ![img](images/9.3/9.3.2.png)
 
-	SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00')
+	SELECT hora_saida, 
+	numero_linha 
+	FROM HORARIO WHERE ((hora_saida > '09:09:00')
 	AND (numero_linha = 507 OR  numero_linha = 815));
 ![img](images/9.3/9.3.3.png)
 
-	SELECT (desc_tipo|| '. '||desc_logradouro) FROM logradouro WHERE ((id_bairro = 4) OR (id_bairro = 7));
+	SELECT (desc_tipo|| '. '||desc_logradouro) 
+	FROM LOGRADOURO 
+	WHERE ((id_bairro = 4) 
+	OR (id_bairro = 7));
 
 ![img](images/9.3/9.3.4.png)
 
-	SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') AND (NOT numero_linha = 815));
+	SELECT hora_saida, numero_linha 
+	FROM HORARIO 
+	WHERE ((hora_saida > '09:09:00') 
+	AND (NOT numero_linha = 815));
 ![img](images/9.3/9.3.5.png) <br>
    
    
    
    <b>b) Criar no mínimo 3 consultas com operadores aritméticos </b><br>
     
-	SELECT numero_cartao,valor_pagamento,(valor_pagamento - 3.40) AS sobra
-	FROM PAGAMENTO WHERE (id_pagamento > 5 );
+	SELECT numero_cartao,
+	valor_pagamento,
+	(valor_pagamento - 3.40) AS sobra
+	FROM PAGAMENTO 
+	WHERE (id_pagamento > 5 );
 ![img](images/9.3/9.3.6.png) <br>
 
 	SELECT cartao.titular ,
@@ -378,32 +394,35 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <b> 1 </b><br>
    <b> Antes </b><br>
 
-	SELECT * FROM passagem;
+	SELECT * FROM PASSAGEM;
 ![img](images/9.5/1.1.JPG)<br>
    <b> DEPOIS </b><br>
 
-	UPDATE passagem SET valor = 1.70 WHERE hora = '07:30:00';
+	UPDATE passagem SET valor = 1.70 
+	WHERE hora = '07:30:00';
 ![img](images/9.5/1.2.JPG)<br>
 
    <b> 2 </b><br>
    <b> Antes </b><br>
    
-	SELECT * FROM cartao;
+	SELECT * FROM CARTAO;
 ![img](images/9.5/2.1.JPG)<br>
    <b> DEPOIS </b><br>
    
-	UPDATE cartao SET titular = 'Joao da Silva Junior' WHERE titular = 'Joao da Silva';
+	UPDATE CARTAO SET titular = 'Joao da Silva Junior' 
+	WHERE titular = 'Joao da Silva';
 ![img](images/9.5/2.2.JPG)<br>
 
 <b> 3 </b><br>
 <b> Antes </b><br>
 
-	SELECT * FROM pagamento;
+	SELECT * FROM PAGAMENTO;
 ![img](images/9.5/3.1.JPG)<br>
    <b> DEPOIS </b><br>
    
-	UPDATE pagamento SET valor_pagamento = 150.00 
-	WHERE data_pagamento = '2018-02-08' OR data_pagamento = '2018-06-08';
+	UPDATE PAGAMENTO SET valor_pagamento = 150.00 
+	WHERE data_pagamento = '2018-02-08' 
+	OR data_pagamento = '2018-06-08';
 ![img](images/9.5/3.2.JPG)<br>
 
    <b> 4 </b><br>
@@ -413,27 +432,30 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 ![img](images/9.5/4.1.JPG)<br>
    <b> DEPOIS </b><br>
 
-	DELETE FROM passagem WHERE data = '2018-10-09';
+	DELETE FROM PASSAGEM 
+	WHERE data = '2018-10-09';
 ![img](images/9.5/4.2.JPG)<br>
 
    <b> 5 </b><br>
    <b> Antes </b><br>
    
-	SELECT * FROM pagamento;
+	SELECT * FROM PAGAMENTO;
 ![img](images/9.5/5.1.JPG)<br>
    <b> DEPOIS </b><br>
    
-	DELETE FROM pagamento WHERE id_pagamento = 7;
+	DELETE FROM PAGAMENTO 
+	WHERE id_pagamento = 7;
 ![img](images/9.5/5.2.JPG)<br>
 
    <b> 6 </b><br>
    <b> Antes </b><br>
    
-	SELECT * FROM itinerario;
+	SELECT * FROM ITINERARIO;
 ![img](images/9.5/6.1.JPG)<br>
    <b> DEPOIS </b><br>
    
-	DELETE FROM itinerario WHERE numero_linha = 611;
+	DELETE FROM ITINERARIO 
+	WHERE numero_linha = 611;
 ![img](images/9.5/6.2.JPG)<br>
 
 >## Marco de Entrega 04 em: (18/10/2017)<br>
@@ -530,37 +552,47 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
    
-	SELECT COUNT(cep), desc_tipo FROM logradouro GROUP BY desc_tipo;
+	SELECT COUNT(cep),
+	desc_tipo 
+	FROM logradouro 
+	GROUP BY desc_tipo;
 ![img](images/9.7/9.7.1.png)<br>
 
-	SELECT COUNT(id_horario) as qtd_horarios, desc_terminal 
+	SELECT COUNT(id_horario) as qtd_horarios, 
+	desc_terminal 
 	FROM horario 
 	GROUP BY desc_terminal 
 	ORDER BY qtd_horarios desc;
 ![img](images/9.7/9.7.2.png)<br>
 
-	SELECT COUNT(id_passagem) as passagem_vendida, data 
+	SELECT COUNT(id_passagem) as passagem_vendida, 
+	data 
 	FROM passagem 
 	GROUP BY data;
 ![img](images/9.7/9.7.3.png)<br>
 
-	SELECT COUNT(id_itinerario) as onibus_com_mesmo_destino, destino 
+	SELECT COUNT(id_itinerario) as onibus_com_mesmo_destino, 
+	destino 
 	FROM itinerario 
 	GROUP BY destino;
 ![img](images/9.7/4.JPG)<br>
 
-	SELECT COUNT(id_bairro) as qtd_bairros, id_cidade 
+	SELECT COUNT(id_bairro) as qtd_bairros, 
+	id_cidade 
 	FROM bairro 
 	GROUP BY id_cidade;
 ![img](images/9.7/5.JPG)<br>
 
-	SELECT COUNT(id_pagamento) AS qtd_pagamento, valor_pagamento AS valor_pago 
+	SELECT COUNT(id_pagamento) AS qtd_pagamento, 
+	valor_pagamento AS valor_pago 
 	FROM pagamento 
 	GROUP BY valor_pago;
 ![img](images/9.7/6.JPG)<br>
    
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
-	SELECT COUNT(bairro.id_bairro), municipio.nome_municipio, municipio.id_municipio
+	SELECT COUNT(bairro.id_bairro), 
+	municipio.nome_municipio, 
+	municipio.id_municipio
 	FROM BAIRRO
 	LEFT JOIN MUNICIPIO
 	ON bairro.id_cidade = municipio.id_municipio
@@ -568,7 +600,8 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ORDER BY municipio.id_municipio;
 ![img](images/9.8/9.8.1.png)<br>
 
-	SELECT COUNT(logradouro.cep), bairro.desc_bairro
+	SELECT COUNT(logradouro.cep), 
+	bairro.desc_bairro
 	FROM LOGRADOURO
 	LEFT JOIN BAIRRO
 	ON logradouro.id_bairro = bairro.id_bairro
@@ -576,7 +609,8 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ORDER BY bairro.desc_bairro;
 ![img](images/9.8/9.8.2.png)<br>
 
-	SELECT COUNT(passagem.id_passagem) AS passagens_vendidas, linha.descricao_linha AS linha
+	SELECT COUNT(passagem.id_passagem) AS passagens_vendidas, 
+	linha.descricao_linha AS linha
 	FROM PASSAGEM
 	LEFT JOIN LINHA
 	ON passagem.numero_linha = linha.numero_linha
@@ -584,7 +618,8 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ORDER BY passagens_vendidas desc;
 ![img](images/9.8/9.8.3.png)<br>
 
-	SELECT cartao.numero AS cartao, usuario.email AS enviar_email_para
+	SELECT cartao.numero AS cartao, 
+	usuario.email AS enviar_email_para
 	FROM CARTAO
 	LEFT JOIN USUARIO
 	ON cartao.numero = usuario.numero_cartao
@@ -594,7 +629,9 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
    <b>a) Uma junção que envolva Self Join</b><br>
         
-	SELECT A.numero_linha, B.numero_linha, A.destino
+	SELECT A.numero_linha, 
+	B.numero_linha, 
+	A.destino
 	FROM itinerario A, itinerario B
 	WHERE A.numero_linha <> B.numero_linha
 	AND A.destino = B.destino
@@ -605,7 +642,8 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
   <b>b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho </b><br>
    
 	CREATE VIEW valor_total_recebido AS(
-	SELECT SUM(valor_pagamento) AS valor_total_recebido FROM pagamento);
+	SELECT SUM(valor_pagamento) AS valor_total_recebido 
+	FROM pagamento);
 
 	SELECT * FROM valor_total_recebido;
 ![img](img/valor_total_recebido.PNG)
