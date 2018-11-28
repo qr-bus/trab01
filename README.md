@@ -296,7 +296,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 ![img](images/9.3/9.3.c.3.1.png)<br>
       
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-    a) Criar outras 5 consultas que envolvam like ou ilike
+   <b>a) Criar outras 5 consultas que envolvam like ou ilike </b><br>
     
 	SELECT numero_linha FROM LINHA WHERE descricao_linha LIKE 'T.LARANJEIRAS%' 
 	OR descricao_linha LIKE '%T.ITAPARICA VIA T.CARAPINA%';
@@ -360,7 +360,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 ![img](images/9.5/1.1.JPG)<br>
    <b> DEPOIS </b><br>
 
-	UPDATE passagem SET valor = 1.70 WHERE hora = '07:30:00';</b><br>
+	UPDATE passagem SET valor = 1.70 WHERE hora = '07:30:00';
 ![img](images/9.5/1.2.JPG)<br>
 
    <b> 2 </b><br>
@@ -369,6 +369,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	SELECT * FROM cartao;
 ![img](images/9.5/2.1.JPG)<br>
    <b> DEPOIS </b><br>
+   
 	UPDATE cartao SET titular = 'Joao da Silva Junior' WHERE titular = 'Joao da Silva';
 ![img](images/9.5/2.2.JPG)<br>
 
@@ -378,6 +379,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	SELECT * FROM pagamento;</b><br>
 ![img](images/9.5/3.1.JPG)<br>
    <b> DEPOIS </b><br>
+   
 	UPDATE pagamento SET valor_pagamento = 150.00 WHERE data_pagamento = '2018-02-08' OR data_pagamento = '2018-06-08';
 ![img](images/9.5/3.2.JPG)<br>
 
@@ -397,6 +399,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	SELECT * FROM pagamento;
 ![img](images/9.5/5.1.JPG)<br>
    <b> DEPOIS </b><br>
+   
 	DELETE FROM pagamento WHERE id_pagamento = 7;
 ![img](images/9.5/5.2.JPG)<br>
 
