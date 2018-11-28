@@ -334,7 +334,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	SELECT titular,validade 
 	FROM CARTAO
 	WHERE((numero = '1111222233332222' ) 
-	OR (validade LIKE '%2022'));</b><br>
+	OR (validade LIKE '%2022'));
 ![img](images/9.4/9.4.a.2.png)<br>
 
 	SELECT titular,validade 
