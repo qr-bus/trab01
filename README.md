@@ -256,14 +256,25 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	FROM PAGAMENTO WHERE (id_pagamento > 5 );
 ![img](images/9.3/9.3.6.png) <br>
 
-	SELECT cartao.titular ,valor_pagamento,(valor_pagamento + 90.00) AS sobra FROM PAGAMENTO
-	INNER JOIN cartao ON (cartao.numero = '1111222233339999' OR cartao.numero = '1111222233338888')
+	SELECT cartao.titular ,
+	valor_pagamento,
+	(valor_pagamento + 90.00) AS sobra 
+	FROM PAGAMENTO
+	INNER JOIN CARTAO
+	ON (cartao.numero = '1111222233339999' 
+	OR cartao.numero = '1111222233338888')
 	GROUP BY titular,valor_pagamento;
 ![img](images/9.3/9.3.7.png) <br>
 
-	SELECT cartao.titular ,valor_pagamento,CAST((valor_pagamento / 3.40) AS DECIMAL(3,0)) AS numero_passagens
-	FROM PAGAMENTO INNER JOIN cartao ON (cartao.numero = '1111222233333333' OR cartao.numero = '1111222233338888' 
-	OR cartao.numero = '1111222233335555') GROUP BY titular,valor_pagamento;
+	SELECT cartao.titular ,
+	valor_pagamento,
+	CAST((valor_pagamento / 3.40) AS DECIMAL(3,0)) AS numero_passagens
+	FROM PAGAMENTO 
+	INNER JOIN CARTAO 
+	ON (cartao.numero = '1111222233333333' 
+	OR cartao.numero = '1111222233338888' 
+	OR cartao.numero = '1111222233335555') 
+	GROUP BY titular,valor_pagamento;
 ![img](images/9.3/9.3.8.png) <br>
    
    <b>c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas </b><br>
@@ -298,31 +309,42 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
    <b>a) Criar outras 5 consultas que envolvam like ou ilike </b><br>
     
-	SELECT numero_linha FROM LINHA WHERE descricao_linha LIKE 'T.LARANJEIRAS%' 
+	SELECT numero_linha 
+	FROM LINHA 
+	WHERE descricao_linha LIKE 'T.LARANJEIRAS%' 
 	OR descricao_linha LIKE '%T.ITAPARICA VIA T.CARAPINA%';
 ![img](images/9.4/9.4.a.1.png)<br>
 
-	SELECT titular,validade FROM cartao WHERE((numero = '1111222233332222' ) 
+	SELECT titular,validade 
+	FROM CARTAO
+	WHERE((numero = '1111222233332222' ) 
 	OR (validade LIKE '%2022'));</b><br>
 ![img](images/9.4/9.4.a.2.png)<br>
 
-	SELECT titular,validade FROM cartao WHERE((numero = '1111222233338888' ) 
+	SELECT titular,validade 
+	FROM CARTAO
+	WHERE((numero = '1111222233338888' ) 
 	OR (titular LIKE '%Fernandes') 
 	OR (titular LIKE 'A%'));
 ![img](images/9.4/9.4.a.3.png)<br>
 
-	SELECT desc_bairro FROM bairro WHERE ((id_cidade = 2) 
+	SELECT desc_bairro 
+	FROM BAIRRO 
+	WHERE ((id_cidade = 2) 
 	AND ( desc_bairro ILIKE 'jardim%'));
 ![img](images/9.4/9.4.a.4.png)<br>
 
-	SELECT nome, nascimento FROM USUARIO WHERE nome ILIKE 'J%' 
+	SELECT nome, nascimento 
+	FROM USUARIO 
+	WHERE nome ILIKE 'J%' 
 	OR nome ILIKE 'A%' 
 	ORDER BY nascimento DESC;
 ![img](images/9.4/9.4.a.5.JPG) <br>
     
    <b>b) Criar uma consulta para cada tipo de função data apresentada. </b><br>
 
-	SELECT numero_linha, age(current_date, horario.data_inicio) AS "Tempo sem modificar o horario"
+	SELECT numero_linha, 
+	age(current_date, horario.data_inicio) AS "Tempo sem modificar o horario"
 	FROM HORARIO
 	GROUP BY numero_linha, age(current_date, horario.data_inicio);
 ![img](images/9.4/9.4.b.1.png) <br>
