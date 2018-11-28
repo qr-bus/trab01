@@ -174,465 +174,468 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
-<b>SELECT * FROM BAIRRO;
-
+	SELECT * FROM BAIRRO;
 ![img](images/9.1/SELECT_*_FROM_BAIRRO.png)
 
-<b>SELECT * FROM CARTAO;
-
+	SELECT * FROM CARTAO;
 ![img](images/9.1/SELECT_*_FROM_CARTAO.png)
 
-<b>SELECT * FROM CIDADE;
-
+	SELECT * FROM CIDADE;
 ![img](images/9.1/SELECT_*_FROM_CIDADE.png)
 
-<b>SELECT * FROM HORARIO;
-
+	SELECT * FROM HORARIO;
 ![img](images/9.1/SELECT_*_FROM_HORARIO.png)
 
-<b>SELECT * FROM ITINERARIO;
-
+	SELECT * FROM ITINERARIO;
 ![img](images/9.1/SELECT_*_FROM_ITINERARIO.png)
 
-<b>SELECT * FROM ITINERARIO_PONTO;
-
+	SELECT * FROM ITINERARIO_PONTO;
 ![img](images/9.1/SELECT_*_FROM_ITINERARIO_PONTO.png)
 
-<b>SELECT * FROM LINHA;
-
+	SELECT * FROM LINHA;
 ![img](images/9.1/SELECT_*_FROM_LINHA.png)
 
-<b>SELECT * FROM LOGRADOURO;
-
+	SELECT * FROM LOGRADOURO;
 ![img](images/9.1/SELECT_*_FROM_LOGRADOURO.png)
 
-<b>SELECT * FROM PAGAMENTO;
-
+	SELECT * FROM PAGAMENTO;
 ![img](images/9.1/SELECT_*_FROM_PAGAMENTO.png)
 
-<b>SELECT * FROM PASSAGEM;
-
+	SELECT * FROM PASSAGEM;
 ![img](images/9.1/SELECT_*_FROM_PASSAGEM.png)
 
-<b>SELECT * FROM PONTO;
-
+	SELECT * FROM PONTO;
 ![img](images/9.1/SELECT_*_FROM_PONTO.png)
 
-<b>SELECT * FROM TIPO_HORARIO;
-
+	SELECT * FROM TIPO_HORARIO;
 ![img](images/9.1/SELECT_*_FROM_TIPO_HORARIO.png)
 
-<b>SELECT * FROM USUARIO;
-
+	SELECT * FROM USUARIO;
 ![img](images/9.1/SELECT_*_FROM_USUARIO.png)
 
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 
-   <b>SELECT * FROM logradouro WHERE desc_tipo = 'Avenida';</b>
+	SELECT * FROM logradouro WHERE desc_tipo = 'Avenida';
    ![img](images/9.2/9.2.1.png)
    
-   <b>SELECT * FROM itinerario WHERE destino = 'T.JACARAIPE';</b>
+	SELECT * FROM itinerario WHERE destino = 'T.JACARAIPE';
    ![img](images/9.2/9.2.2.JPG)
    
-   <b>SELECT * FROM horario WHERE hora_saida > '07:00:00' AND hora_saida < '07:50:00';</b>
+   	SELECT * FROM horario WHERE hora_saida > '07:00:00' AND hora_saida < '07:50:00';
    ![img](images/9.2/9.2.3.JPG)
    
-   <b>SELECT * FROM logradouro WHERE desc_tipo = 'Rua';</b>
+   	SELECT * FROM logradouro WHERE desc_tipo = 'Rua';
    ![img](images/9.2/9.2.4.JPG)
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
-    a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
+   <b>a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not </b><br>
     
-   <b>SELECT * FROM logradouro WHERE desc_logradouro = 'Rio Branco' OR id_bairro = '2';</b>
-   
-   ![img](images/9.3/9.3.1.png)
-   
-   <b>SELECT hora_saida, numero_linha FROM horario WHERE (hora_saida > '09:09:00' AND numero_linha = 507);</b>
-   
-   ![img](images/9.3/9.3.2.png)
-   
-   <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') </b><br>
-     <b>AND (numero_linha = 507 OR  numero_linha = 815));</b><br>
-   ![img](images/9.3/9.3.3.png)
-   
-   <b>SELECT (desc_tipo|| '. '||desc_logradouro) FROM logradouro WHERE ((id_bairro = 4) OR (id_bairro = 7));</b>
-   
-   ![img](images/9.3/9.3.4.png)
-   
-   <b>SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') AND (NOT numero_linha = 815));</b><br>
-   ![img](images/9.3/9.3.5.png) <br>
+	SELECT * FROM logradouro WHERE desc_logradouro = 'Rio Branco' OR id_bairro = '2';
+![img](images/9.3/9.3.1.png)
+
+	SELECT hora_saida, numero_linha FROM horario WHERE (hora_saida > '09:09:00' AND numero_linha = 507);
+![img](images/9.3/9.3.2.png)
+
+	SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00')
+	AND (numero_linha = 507 OR  numero_linha = 815));
+![img](images/9.3/9.3.3.png)
+
+	SELECT (desc_tipo|| '. '||desc_logradouro) FROM logradouro WHERE ((id_bairro = 4) OR (id_bairro = 7));
+
+![img](images/9.3/9.3.4.png)
+
+	SELECT hora_saida, numero_linha FROM horario WHERE ((hora_saida > '09:09:00') AND (NOT numero_linha = 815));
+![img](images/9.3/9.3.5.png) <br>
    
    
    
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
+   <b>b) Criar no mínimo 3 consultas com operadores aritméticos </b><br>
     
-   <b>SELECT numero_cartao,valor_pagamento,(valor_pagamento - 3.40) AS sobra<br>
-   FROM PAGAMENTO WHERE (id_pagamento > 5 );</b><br>
-   ![img](images/9.3/9.3.6.png) <br>
+	SELECT numero_cartao,valor_pagamento,(valor_pagamento - 3.40) AS sobra
+	FROM PAGAMENTO WHERE (id_pagamento > 5 );
+![img](images/9.3/9.3.6.png) <br>
+
+	SELECT cartao.titular ,valor_pagamento,(valor_pagamento + 90.00) AS sobra FROM PAGAMENTO
+	INNER JOIN cartao ON (cartao.numero = '1111222233339999' OR cartao.numero = '1111222233338888')
+	GROUP BY titular,valor_pagamento;
+![img](images/9.3/9.3.7.png) <br>
+
+	SELECT cartao.titular ,valor_pagamento,CAST((valor_pagamento / 3.40) AS DECIMAL(3,0)) AS numero_passagens
+	FROM PAGAMENTO INNER JOIN cartao ON (cartao.numero = '1111222233333333' OR cartao.numero = '1111222233338888' 
+	OR cartao.numero = '1111222233335555') GROUP BY titular,valor_pagamento;
+![img](images/9.3/9.3.8.png) <br>
    
-   <b>SELECT cartao.titular ,valor_pagamento,(valor_pagamento + 90.00) AS sobra FROM PAGAMENTO</b><br>
-   <b>INNER JOIN cartao ON (cartao.numero = '1111222233339999' OR cartao.numero = '1111222233338888')</b><br>
-   <b>GROUP BY titular,valor_pagamento;</b><br>
-   
-   ![img](images/9.3/9.3.7.png) <br>
-   
-   <b>SELECT cartao.titular ,valor_pagamento,CAST((valor_pagamento / 3.40) AS DECIMAL(3,0)) AS numero_passagens</b><br>
-   <b>FROM PAGAMENTO INNER JOIN cartao ON (cartao.numero = '1111222233333333' OR cartao.numero = '1111222233338888' OR </b><br>
-   <b>cartao.numero = '1111222233335555') GROUP BY titular,valor_pagamento;</b><br>
-   
-   ![img](images/9.3/9.3.8.png) <br>
-   
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+   <b>c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas </b><br>
    
    <b> 1 </b><br>
-   <b> ALTER TABLE CIDADE RENAME TO MUNICIPIO; </b><br>
-   <b> SELECT * FROM MUNICIPIO; </b><br>
-   ![img](img/rename_cidade.PNG)<br>
    
+	ALTER TABLE CIDADE RENAME TO MUNICIPIO;
+	SELECT * FROM MUNICIPIO;
+![img](img/rename_cidade.PNG)<br>
+
    <b> 2 </b><br>
    <b> Antes </b><br>
-   <b>SELECT * FROM linha;</b><br>
-   ![img](images/9.1/SELECT_*_FROM_LINHA.png)<br>
-   <b> DEPOIS </b><br>
-   <b> ALTER TABLE LINHA RENAME COLUMN desc_linha TO descricao_linha;</b><br>
-   ![img](images/9.3/9.3.c.2.2.png)<br>
    
+	SELECT * FROM linha;
+![img](images/9.1/SELECT_*_FROM_LINHA.png)<br>
+   <b> DEPOIS </b><br>
+   
+	ALTER TABLE LINHA RENAME COLUMN desc_linha TO descricao_linha;
+![img](images/9.3/9.3.c.2.2.png)<br>
+
    <b> 3 </b><br>
    <b> Antes </b><br>
-   <b>SELECT * FROM MUNICIPIO;</b><br>
-   ![img](images/9.1/SELECT_*_FROM_CIDADE.png)<br>
+   
+	SELECT * FROM MUNICIPIO;
+![img](images/9.1/SELECT_*_FROM_CIDADE.png)<br>
    <b> DEPOIS </b><br>
-   <b> ALTER TABLE MUNICIPIO RENAME COLUMN desc_cidade TO nome_municipio;</b><br>
-   <b> ALTER TABLE MUNICIPIO RENAME COLUMN id_cidade TO id_municipio;</b><br>
-   ![img](images/9.3/9.3.c.3.1.png)<br>
+   
+	ALTER TABLE MUNICIPIO RENAME COLUMN desc_cidade TO nome_municipio;
+	ALTER TABLE MUNICIPIO RENAME COLUMN id_cidade TO id_municipio;
+![img](images/9.3/9.3.c.3.1.png)<br>
       
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
-   <b>SELECT numero_linha FROM LINHA WHERE descricao_linha LIKE 'T.LARANJEIRAS%' OR descricao_linha LIKE '%T.ITAPARICA VIA T.CARAPINA%';</b><br>
-   ![img](images/9.4/9.4.a.1.png)<br>
-   
-   <b> SELECT titular,validade FROM cartao WHERE((numero = '1111222233332222' ) OR (validade LIKE '%2022'));</b><br>
-   ![img](images/9.4/9.4.a.2.png)<br>
-   
-   <b> SELECT titular,validade FROM cartao WHERE((numero = '1111222233338888' ) OR (titular LIKE '%Fernandes') OR (titular LIKE 'A%'));</b><br>
-   ![img](images/9.4/9.4.a.3.png)<br>
-   
-   <b> SELECT desc_bairro FROM bairro WHERE ((id_cidade = 2) AND ( desc_bairro ILIKE 'jardim%'));</b><br>
-   ![img](images/9.4/9.4.a.4.png)<br>
-   
-   <b> SELECT nome, nascimento FROM usuario WHERE nome ILIKE 'J%' OR nome ILIKE 'A%' order by nascimento desc;</b><br>
-   ![img](images/9.4/9.4.a.5.JPG) <br>
     
-    b) Criar uma consulta para cada tipo de função data apresentada.
+	SELECT numero_linha FROM LINHA WHERE descricao_linha LIKE 'T.LARANJEIRAS%' 
+	OR descricao_linha LIKE '%T.ITAPARICA VIA T.CARAPINA%';
+![img](images/9.4/9.4.a.1.png)<br>
 
-   <b>SELECT numero_linha, age(current_date, horario.data_inicio) as "Tempo sem modificar o horario"<br>
-   FROM HORARIO<br>
-   GROUP BY numero_linha, age(current_date, horario.data_inicio);</b><br>
+	SELECT titular,validade FROM cartao WHERE((numero = '1111222233332222' ) 
+	OR (validade LIKE '%2022'));</b><br>
+![img](images/9.4/9.4.a.2.png)<br>
 
-   ![img](images/9.4/9.4.b.1.png) <br>
+	SELECT titular,validade FROM cartao WHERE((numero = '1111222233338888' ) 
+	OR (titular LIKE '%Fernandes') 
+	OR (titular LIKE 'A%'));
+![img](images/9.4/9.4.a.3.png)<br>
 
-   <b>SELECT numero_linha,<br>
-   current_time(0) AS "hora atual",<br>
-   hora_saida AS "próximos horarios"<br>
-   FROM HORARIO<br>
-   WHERE numero_linha = 815 <br>
-   AND hora_saida > current_time(0);</b><br>
+	SELECT desc_bairro FROM bairro WHERE ((id_cidade = 2) 
+	AND ( desc_bairro ILIKE 'jardim%'));
+![img](images/9.4/9.4.a.4.png)<br>
 
-   ![img](images/9.4/9.4.b.2.png) <br>
+	SELECT nome, nascimento FROM USUARIO WHERE nome ILIKE 'J%' 
+	OR nome ILIKE 'A%' 
+	ORDER BY nascimento DESC;
+![img](images/9.4/9.4.a.5.JPG) <br>
+    
+   <b>b) Criar uma consulta para cada tipo de função data apresentada. </b><br>
 
-   <b>SELECT nome, <br>
-   nascimento,<br>
-   date_part('year', age(now(), nascimento)) AS idade<br>
-   FROM usuario;</b><br>
+	SELECT numero_linha, age(current_date, horario.data_inicio) AS "Tempo sem modificar o horario"
+	FROM HORARIO
+	GROUP BY numero_linha, age(current_date, horario.data_inicio);
+![img](images/9.4/9.4.b.1.png) <br>
 
-   ![img](images/9.4/9.4.b.3.png) <br>
+	SELECT numero_linha,
+	current_time(0) AS "hora atual",
+	hora_saida AS "próximos horarios"
+	FROM HORARIO
+	WHERE numero_linha = 815
+	AND hora_saida > current_time(0);
+![img](images/9.4/9.4.b.2.png) <br>
 
-   <b>SELECT usuario.nome, <br>
-   extract('month' FROM pagamento.data_pagamento) AS "Meses de compra passagem"<br>
-   FROM PAGAMENTO<br>
-   INNER JOIN CARTAO<br>
-   ON (cartao.numero = pagamento.numero_cartao)<br>
-   INNER JOIN USUARIO<br>
-   ON (usuario.numero_cartao = cartao.numero);</b><br>
+	SELECT nome,
+	nascimento,
+	date_part('year', age(now(), nascimento)) AS idade
+	FROM USUARIO;
+![img](images/9.4/9.4.b.3.png) <br>
 
-   ![img](images/9.4/9.4.b.4.png) <br>
-
-
+	SELECT usuario.nome,
+	extract('month' FROM pagamento.data_pagamento) AS "Meses de compra passagem"
+	FROM PAGAMENTO
+	INNER JOIN CARTAO
+	ON (cartao.numero = pagamento.numero_cartao)
+	INNER JOIN USUARIO
+	ON (usuario.numero_cartao = cartao.numero);
+![img](images/9.4/9.4.b.4.png) <br>
 
 
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
    
    <b> 1 </b><br>
    <b> Antes </b><br>
-   <b>SELECT * FROM passagem;</b><br>
-   ![img](images/9.5/1.1.JPG)<br>
+
+	SELECT * FROM passagem;
+![img](images/9.5/1.1.JPG)<br>
    <b> DEPOIS </b><br>
-   <b> UPDATE passagem SET valor = 1.70 WHERE hora = '07:30:00';</b><br>
-   ![img](images/9.5/1.2.JPG)<br>
-   
+
+	UPDATE passagem SET valor = 1.70 WHERE hora = '07:30:00';</b><br>
+![img](images/9.5/1.2.JPG)<br>
+
    <b> 2 </b><br>
    <b> Antes </b><br>
-   <b>SELECT * FROM cartao;</b><br>
-   ![img](images/9.5/2.1.JPG)<br>
-   <b> DEPOIS </b><br>
-   <b> UPDATE cartao SET titular = 'Joao da Silva Junior' WHERE titular = 'Joao da Silva';</b><br>
-   ![img](images/9.5/2.2.JPG)<br>
-
-   <b> 3 </b><br>
-   <b> Antes </b><br>
-   <b>SELECT * FROM pagamento;</b><br>
-   ![img](images/9.5/3.1.JPG)<br>
-   <b> DEPOIS </b><br>
-   <b> UPDATE pagamento SET valor_pagamento = 150.00 WHERE data_pagamento = '2018-02-08' OR data_pagamento = '2018-06-08';</b><br>
-   ![img](images/9.5/3.2.JPG)<br>
    
+	SELECT * FROM cartao;
+![img](images/9.5/2.1.JPG)<br>
+   <b> DEPOIS </b><br>
+	UPDATE cartao SET titular = 'Joao da Silva Junior' WHERE titular = 'Joao da Silva';
+![img](images/9.5/2.2.JPG)<br>
+
+<b> 3 </b><br>
+<b> Antes </b><br>
+
+	SELECT * FROM pagamento;</b><br>
+![img](images/9.5/3.1.JPG)<br>
+   <b> DEPOIS </b><br>
+	UPDATE pagamento SET valor_pagamento = 150.00 WHERE data_pagamento = '2018-02-08' OR data_pagamento = '2018-06-08';
+![img](images/9.5/3.2.JPG)<br>
+
    <b> 4 </b><br>
    <b> Antes </b><br>
-   <b>SELECT * FROM passagem;</b><br>
-   ![img](images/9.5/4.1.JPG)<br>
-   <b> DEPOIS </b><br>
-   <b> DELETE FROM passagem WHERE data = '2018-10-09';</b><br>
-   ![img](images/9.5/4.2.JPG)<br>
    
+	SELECT * FROM passagem;</b><br>
+![img](images/9.5/4.1.JPG)<br>
+   <b> DEPOIS </b><br>
+
+	DELETE FROM passagem WHERE data = '2018-10-09';
+![img](images/9.5/4.2.JPG)<br>
+
    <b> 5 </b><br>
    <b> Antes </b><br>
-   <b>SELECT * FROM pagamento;</b><br>
-   ![img](images/9.5/5.1.JPG)<br>
-   <b> DEPOIS </b><br>
-   <b> DELETE FROM pagamento WHERE id_pagamento = 7;</b><br>
-   ![img](images/9.5/5.2.JPG)<br>
    
+	SELECT * FROM pagamento;
+![img](images/9.5/5.1.JPG)<br>
+   <b> DEPOIS </b><br>
+	DELETE FROM pagamento WHERE id_pagamento = 7;
+![img](images/9.5/5.2.JPG)<br>
+
    <b> 6 </b><br>
    <b> Antes </b><br>
-   <b>SELECT * FROM itinerario;</b><br>
-   ![img](images/9.5/6.1.JPG)<br>
+   
+	SELECT * FROM itinerario;</b><br>
+![img](images/9.5/6.1.JPG)<br>
    <b> DEPOIS </b><br>
-   <b> DELETE FROM itinerario WHERE numero_linha = 611;</b><br>
-   ![img](images/9.5/6.2.JPG)<br>
+   
+	DELETE FROM itinerario WHERE numero_linha = 611;</b><br>
+![img](images/9.5/6.2.JPG)<br>
 
 >## Marco de Entrega 04 em: (18/10/2017)<br>
 
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
-        a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
+   <b>a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado </b><br>
 
    <b>JOIN COM TODAS AS TABELAS</b><br>
 
-   <b>SELECT usuario.nome,<br>
-   cartao.numero AS "Cartao de credito",<br>
-   pagamento.data_pagamento AS "Data recarga", <br>
-   passagem.data AS "Data da passagem",<br>
-   passagem.hora AS "Horario da passagem",<br>
-   linha.descricao_linha AS "Linha",<br>
-   horario.hora_saida,<br>
-   tipo_horario.desc_horario AS "Tipo de horario",<br>
-   itinerario.destino AS "Destino do onibus",<br>
-   itinerario_ponto.pos_sequencia,<br>
-   ponto.id_ponto,<br>
-   logradouro.desc_tipo AS "Itinerario - Tipo logradouro",<br>
-   logradouro.desc_logradouro AS "Itinerario - Nome logradouro",<br>
-   bairro.desc_bairro AS "Itinerario - Bairro", <br>
-   municipio.nome_municipio AS "Itinerario - Cidade"<br>
-   FROM USUARIO<br>
-   INNER JOIN CARTAO<br>
-   ON (usuario.numero_cartao = cartao.numero)<br>
-   INNER JOIN PAGAMENTO <br>
-   ON (cartao.numero = pagamento.numero_cartao)<br>
-   INNER JOIN PASSAGEM<br>
-   ON (passagem.id_usuario = usuario.id_usuario)<br>
-   INNER JOIN LINHA <br>
-   ON (passagem.numero_linha = linha.numero_linha)<br>
-   INNER JOIN HORARIO<br>
-   ON (linha.numero_linha = horario.numero_linha)<br>
-   INNER JOIN TIPO_HORARIO<br>
-   ON (horario.id_tipo = tipo_horario.id_tipo)<br>
-   INNER JOIN ITINERARIO<br>
-   ON (itinerario.numero_linha = linha.numero_linha)<br>
-   INNER JOIN ITINERARIO_PONTO <br>
-   ON (itinerario.id_itinerario = itinerario_ponto.id_itinerario)<br>
-   INNER JOIN PONTO<br>
-   ON (ponto.id_ponto = itinerario_ponto.id_ponto)<br>
-   INNER JOIN LOGRADOURO<br>
-   ON (ponto.id_logradouro = logradouro.id_logradouro)<br>
-   INNER JOIN BAIRRO<br>
-   ON (logradouro.id_bairro = bairro.id_bairro)<br>
-   INNER JOIN MUNICIPIO<br>
-   ON (bairro.id_cidade = municipio.id_municipio)<br>
-   WHERE passagem.hora = '12:30:00'<br>
-   AND horario.hora_saida = '12:25:00'<br>
-   AND ponto.id_ponto = 1</b><br>
-   ![img](images/9.6/9.6.a.1.png)<br>
+	SELECT usuario.nome,
+	cartao.numero AS "Cartao de credito",
+	pagamento.data_pagamento AS "Data recarga", 
+	passagem.data AS "Data da passagem",
+	passagem.hora AS "Horario da passagem",
+	linha.descricao_linha AS "Linha",
+	horario.hora_saida,<br>
+	tipo_horario.desc_horario AS "Tipo de horario",
+	itinerario.destino AS "Destino do onibus",
+	itinerario_ponto.pos_sequencia,
+	ponto.id_ponto,
+	logradouro.desc_tipo AS "Itinerario - Tipo logradouro",
+	logradouro.desc_logradouro AS "Itinerario - Nome logradouro",
+	bairro.desc_bairro AS "Itinerario - Bairro", 
+	municipio.nome_municipio AS "Itinerario - Cidade"
+	FROM USUARIO
+	INNER JOIN CARTAO
+	ON (usuario.numero_cartao = cartao.numero)
+	INNER JOIN PAGAMENTO 
+	ON (cartao.numero = pagamento.numero_cartao)
+	INNER JOIN PASSAGEM
+	ON (passagem.id_usuario = usuario.id_usuario)
+	INNER JOIN LINHA
+	ON (passagem.numero_linha = linha.numero_linha)
+	INNER JOIN HORARIO
+	ON (linha.numero_linha = horario.numero_linha)
+	INNER JOIN TIPO_HORARIO
+	ON (horario.id_tipo = tipo_horario.id_tipo)
+	INNER JOIN ITINERARIO
+	ON (itinerario.numero_linha = linha.numero_linha)
+	INNER JOIN ITINERARIO_PONTO
+	ON (itinerario.id_itinerario = itinerario_ponto.id_itinerario)
+	INNER JOIN PONTO
+	ON (ponto.id_ponto = itinerario_ponto.id_ponto)
+	INNER JOIN LOGRADOURO
+	ON (ponto.id_logradouro = logradouro.id_logradouro)
+	INNER JOIN BAIRRO
+	ON (logradouro.id_bairro = bairro.id_bairro)
+	INNER JOIN MUNICIPIO
+	ON (bairro.id_cidade = municipio.id_municipio)
+	WHERE passagem.hora = '12:30:00'
+	AND horario.hora_saida = '12:25:00'
+	AND ponto.id_ponto = 1
+![img](images/9.6/9.6.a.1.png)<br>
 
-        b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+   <b>b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho </b><br>
+	
 
-   <b>SELECT itinerario.numero_linha as linha,<br>
-   itinerario_ponto.pos_sequencia,<br>
-   ponto.id_ponto, <br>
-   logradouro.desc_tipo,<br>
-   logradouro.desc_logradouro<br>
-   FROM ITINERARIO<br>
-   INNER JOIN ITINERARIO_PONTO<br>
-   ON (itinerario.id_itinerario = itinerario_ponto.id_itinerario)<br>
-   INNER JOIN PONTO<br>
-   ON (itinerario_ponto.id_ponto = ponto.id_ponto)<br>
-   INNER JOIN LOGRADOURO<br>
-   ON (ponto.id_logradouro = logradouro.id_logradouro)<br>
-   ORDER BY itinerario.numero_linha, itinerario_ponto.pos_sequencia;</b><br>
+	SELECT itinerario.numero_linha as linha,
+	itinerario_ponto.pos_sequencia,
+	ponto.id_ponto,
+	logradouro.desc_tipo,
+	logradouro.desc_logradouro
+	FROM ITINERARIO
+	INNER JOIN ITINERARIO_PONTO
+	ON (itinerario.id_itinerario = itinerario_ponto.id_itinerario)
+	INNER JOIN PONTO
+	ON (itinerario_ponto.id_ponto = ponto.id_ponto)
+	INNER JOIN LOGRADOURO
+	ON (ponto.id_logradouro = logradouro.id_logradouro)
+	ORDER BY itinerario.numero_linha, itinerario_ponto.pos_sequencia;
+![img](images/9.6/9.6.b.1.png)<br>
 
-   ![img](images/9.6/9.6.b.1.png)<br>
+	SELECT linha.numero_linha as linha,
+	horario.hora_saida,
+	tipo_horario.desc_horario as "tipo horario"
+	FROM HORARIO
+	INNER JOIN TIPO_HORARIO
+	ON(horario.id_tipo = tipo_horario.id_tipo)
+	INNER JOIN LINHA<br>
+	ON (horario.numero_linha = linha.numero_linha);
+![img](images/9.6/9.6.b.2.png)<br>
 
-   <b>SELECT linha.numero_linha as linha,<br>
-   horario.hora_saida,<br>
-   tipo_horario.desc_horario as "tipo horario"<br>
-   FROM HORARIO<br>
-   INNER JOIN TIPO_HORARIO<br>
-   ON(horario.id_tipo = tipo_horario.id_tipo)<br>
-   INNER JOIN LINHA<br>
-   ON (horario.numero_linha = linha.numero_linha);</b><br>
-
-   ![img](images/9.6/9.6.b.2.png)<br>
-
-   <b>SELECT passagem.data,<br>
-   passagem.hora,<br>
-   linha.numero_linha as "linha"<br>
-   FROM PASSAGEM<br>
-   INNER JOIN LINHA<br>
-   ON(passagem.numero_linha = linha.numero_linha)<br>
-   WHERE passagem.id_usuario = 3<br>
-   ORDER BY passagem.data, passagem.hora;</b><br>
-
-   ![img](images/9.6/9.6.b.3.png)<br>
+	SELECT passagem.data,
+	passagem.hora,
+	linha.numero_linha as "linha"
+	FROM PASSAGEM
+	INNER JOIN LINHA
+	ON(passagem.numero_linha = linha.numero_linha)
+	WHERE passagem.id_usuario = 3<br>
+	ORDER BY passagem.data, passagem.hora;
+![img](images/9.6/9.6.b.3.png)<br>
 
    
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
    
-   <b>SELECT COUNT(cep), desc_tipo FROM logradouro GROUP BY desc_tipo;</b><br>
-   ![img](images/9.7/9.7.1.png)<br>
-   
-   <b>SELECT COUNT(id_horario) as qtd_horarios, desc_terminal FROM horario GROUP BY desc_terminal ORDER BY qtd_horarios desc;</b><br>
-   ![img](images/9.7/9.7.2.png)<br>
-   
-   <b>SELECT COUNT(id_passagem) as passagem_vendida, data FROM passagem GROUP BY data;</b><br>
-   ![img](images/9.7/9.7.3.png)<br>
-   
-   <b>SELECT COUNT(id_itinerario) as onibus_com_mesmo_destino, destino FROM itinerario GROUP BY destino;</b><br>
-   ![img](images/9.7/4.JPG)<br>
-   
-   <b>SELECT COUNT(id_bairro) as qtd_bairros, id_cidade FROM bairro GROUP BY id_cidade;</b><br>
-   ![img](images/9.7/5.JPG)<br>
-   
-   <b>SELECT COUNT(id_pagamento) AS qtd_pagamento, valor_pagamento AS valor_pago FROM pagamento GROUP BY valor_pago;</b><br>
-   ![img](images/9.7/6.JPG)<br>
+	SELECT COUNT(cep), desc_tipo FROM logradouro GROUP BY desc_tipo;
+![img](images/9.7/9.7.1.png)<br>
+
+	SELECT COUNT(id_horario) as qtd_horarios, desc_terminal 
+	FROM horario 
+	GROUP BY desc_terminal 
+	ORDER BY qtd_horarios desc;
+![img](images/9.7/9.7.2.png)<br>
+
+	SELECT COUNT(id_passagem) as passagem_vendida, data 
+	FROM passagem 
+	GROUP BY data;
+![img](images/9.7/9.7.3.png)<br>
+
+	SELECT COUNT(id_itinerario) as onibus_com_mesmo_destino, destino 
+	FROM itinerario 
+	GROUP BY destino;
+![img](images/9.7/4.JPG)<br>
+
+	SELECT COUNT(id_bairro) as qtd_bairros, id_cidade 
+	FROM bairro 
+	GROUP BY id_cidade;
+![img](images/9.7/5.JPG)<br>
+
+	SELECT COUNT(id_pagamento) AS qtd_pagamento, valor_pagamento AS valor_pago 
+	FROM pagamento 
+	GROUP BY valor_pago;
+![img](images/9.7/6.JPG)<br>
    
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
-   <b>SELECT COUNT(bairro.id_bairro), municipio.nome_municipio, municipio.id_municipio<br>
-   FROM BAIRRO<br>
-   LEFT JOIN MUNICIPIO<br>
-   ON bairro.id_cidade = municipio.id_municipio<br>
-   GROUP BY municipio.id_municipio<br>
-   ORDER BY municipio.id_municipio;</b><br>
-   ![img](images/9.8/9.8.1.png)<br>
-   
-   <b>SELECT COUNT(logradouro.cep), bairro.desc_bairro<br>
-   FROM LOGRADOURO<br>
-   LEFT JOIN BAIRRO<br>
-   ON logradouro.id_bairro = bairro.id_bairro<br>
-   GROUP BY bairro.desc_bairro<br>
-   ORDER BY bairro.desc_bairro;</b><br>
-   ![img](images/9.8/9.8.2.png)<br>
-   
-   <b>SELECT COUNT(passagem.id_passagem) AS passagens_vendidas, linha.descricao_linha AS linha<br>
-   FROM PASSAGEM<br>
-   LEFT JOIN LINHA<br>
-   ON passagem.numero_linha = linha.numero_linha<br>
-   GROUP BY linha.descricao_linha<br>
-   ORDER BY passagens_vendidas desc;</b><br>
-   ![img](images/9.8/9.8.3.png)<br>
-   
-   <b>SELECT cartao.numero AS cartao, usuario.email AS enviar_email_para<br>
-   FROM CARTAO<br>
-   LEFT JOIN USUARIO<br>
-   ON cartao.numero = usuario.numero_cartao<br>
-   GROUP BY cartao.numero, usuario.email;</b><br>
-   ![img](images/9.8/4.JPG)<br>
+	SELECT COUNT(bairro.id_bairro), municipio.nome_municipio, municipio.id_municipio
+	FROM BAIRRO
+	LEFT JOIN MUNICIPIO
+	ON bairro.id_cidade = municipio.id_municipio
+	GROUP BY municipio.id_municipio
+	ORDER BY municipio.id_municipio;
+![img](images/9.8/9.8.1.png)<br>
+
+	SELECT COUNT(logradouro.cep), bairro.desc_bairro
+	FROM LOGRADOURO
+	LEFT JOIN BAIRRO
+	ON logradouro.id_bairro = bairro.id_bairro
+	GROUP BY bairro.desc_bairro
+	ORDER BY bairro.desc_bairro;
+![img](images/9.8/9.8.2.png)<br>
+
+	SELECT COUNT(passagem.id_passagem) AS passagens_vendidas, linha.descricao_linha AS linha
+	FROM PASSAGEM
+	LEFT JOIN LINHA
+	ON passagem.numero_linha = linha.numero_linha
+	GROUP BY linha.descricao_linha
+	ORDER BY passagens_vendidas desc;
+![img](images/9.8/9.8.3.png)<br>
+
+	SELECT cartao.numero AS cartao, usuario.email AS enviar_email_para
+	FROM CARTAO
+	LEFT JOIN USUARIO
+	ON cartao.numero = usuario.numero_cartao
+	GROUP BY cartao.numero, usuario.email;
+![img](images/9.8/4.JPG)<br>
    
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
-        a) Uma junção que envolva Self Join
+   <b>a) Uma junção que envolva Self Join</b><br>
         
-   <b>SELECT A.numero_linha, B.numero_linha, A.destino<br>
-   FROM itinerario A, itinerario B<br>
-   WHERE A.numero_linha <> B.numero_linha<br>
-   AND A.destino = B.destino<br>
-   ORDER BY A.numero_linha<br>
-   LIMIT 10;<b>
-   
-   ![img](img/mesmo_destino.PNG)
- 
-     
-        b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
-   
-   <b>CREATE VIEW valor_total_recebido AS(<br>
-   SELECT SUM(valor_pagamento) AS valor_total_recebido FROM pagamento);<br>
+	SELECT A.numero_linha, B.numero_linha, A.destino
+	FROM itinerario A, itinerario B
+	WHERE A.numero_linha <> B.numero_linha
+	AND A.destino = B.destino
+	ORDER BY A.numero_linha
+	LIMIT 10;
+![img](img/mesmo_destino.PNG)
 
-   SELECT * FROM valor_total_recebido;</b><br>
+  <b>b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho </b><br>
    
-   ![img](img/valor_total_recebido.PNG)
-   
-   <b>CREATE VIEW total_ruas_bairros_cidades_pontos AS(<br>
-   SELECT COUNT(logradouro.id_logradouro) AS total_ruas,<br>
-   COUNT(bairro.id_bairro) AS total_bairros,<br>
-   COUNT(municipio.id_municipio) AS total_cidades,<br>
-   COUNT(ponto.id_ponto) AS total_pontos<br>
-   FROM LOGRADOURO<br>
-   RIGHT JOIN BAIRRO<br>
-   ON logradouro.id_bairro = bairro.id_bairro<br>
-   RIGHT JOIN MUNICIPIO<br>
-   ON bairro.id_cidade = municipio.id_municipio<br>
-   INNER JOIN PONTO<br>
-   ON ponto.id_logradouro = logradouro.id_logradouro);<br>
+	CREATE VIEW valor_total_recebido AS(
+	SELECT SUM(valor_pagamento) AS valor_total_recebido FROM pagamento);
 
-   SELECT * FROM total_ruas_bairros_cidades_pontos;</b><br>
-   
-   ![img](img/total_ruas_bairros_cidades_pontos.PNG)<br>
-   
-   <b>CREATE VIEW usuarios_mes_valor AS(<br>
-   SELECT usuario.nome,<br>
-   CONCAT(SUBSTRING(CAST(passagem.data AS VARCHAR), 1, 4), '/', SUBSTRING(CAST(passagem.data AS VARCHAR), 6, 2)) AS "Mes",<br>
-   SUM(passagem.valor) AS "Valor mensal"<br>
-   FROM usuario<br>
-   INNER JOIN passagem<br>
-   ON usuario.id_usuario = passagem.id_usuario<br>
-   GROUP BY usuario.nome, "Mes"<br>
-   ORDER BY usuario.nome);<br>
-	   
-   SELECT * FROM usuarios_mes_valor;</b><br>
-   
-   ![img](img/usuarios_mes_valor.PNG)<br>
-   
-   <b>CREATE VIEW numero_viagens_mes_usuario AS(<br>
-   SELECT usuario.nome,<br>
-   CONCAT(SUBSTRING(CAST(passagem.data AS VARCHAR), 1, 4), '/', SUBSTRING(CAST(passagem.data AS VARCHAR), 6, 2)) AS "Mes",<br>
-   COUNT(passagem.id_passagem) AS "Numero de viagens"<br>
-   FROM usuario<br>
-   INNER JOIN passagem<br>
-   ON usuario.id_usuario = passagem.id_usuario<br>
-   GROUP BY usuario.nome, "Mes"<br>
-   ORDER BY usuario.nome);<br>
+	SELECT * FROM valor_total_recebido;
+![img](img/valor_total_recebido.PNG)
 
-   SELECT * FROM numero_viagens_mes_usuario;</b><br>
-   
-   ![img](img/numero_viagens_mes_usuario.PNG)<br>
-   
-   <b>CREATE VIEW qtd_passagens_vendidas_dia AS(<br>
-   SELECT COUNT(a.id_passagem) AS "numero de passagens" , a.data<br>
-   FROM passagem A, passagem B<br>
-   WHERE A.id_passagem <> B.id_passagem<br>
-   AND A.data = B.data<br>
-   GROUP BY a.data);<br>
+	CREATE VIEW total_ruas_bairros_cidades_pontos AS(
+	SELECT COUNT(logradouro.id_logradouro) AS total_ruas,
+	COUNT(bairro.id_bairro) AS total_bairros,
+	COUNT(municipio.id_municipio) AS total_cidades,
+	COUNT(ponto.id_ponto) AS total_pontos
+	FROM LOGRADOURO
+	RIGHT JOIN BAIRRO
+	ON logradouro.id_bairro = bairro.id_bairro
+	RIGHT JOIN MUNICIPIO
+	ON bairro.id_cidade = municipio.id_municipio
+	INNER JOIN PONTO
+	ON ponto.id_logradouro = logradouro.id_logradouro);
 
-   SELECT * FROM qtd_passagens_vendidas_dia;</b><br>
-   ![img](images/9.9/6.PNG)<br>
+	SELECT * FROM total_ruas_bairros_cidades_pontos;
+![img](img/total_ruas_bairros_cidades_pontos.PNG)<br>
+
+	CREATE VIEW usuarios_mes_valor AS(<br>
+	SELECT usuario.nome,<br>
+	CONCAT(SUBSTRING(CAST(passagem.data AS VARCHAR), 1, 4), '/', SUBSTRING(CAST(passagem.data AS VARCHAR), 6, 2)) AS "Mes",
+	SUM(passagem.valor) AS "Valor mensal"
+	FROM usuario
+	INNER JOIN passagem<br>
+	ON usuario.id_usuario = passagem.id_usuario
+	GROUP BY usuario.nome, "Mes"
+	ORDER BY usuario.nome);
+
+	SELECT * FROM usuarios_mes_valor;
+![img](img/usuarios_mes_valor.PNG)<br>
+
+	CREATE VIEW numero_viagens_mes_usuario AS(
+	SELECT usuario.nome,
+	CONCAT(SUBSTRING(CAST(passagem.data AS VARCHAR), 1, 4), '/', SUBSTRING(CAST(passagem.data AS VARCHAR), 6, 2)) AS "Mes",<br>
+	COUNT(passagem.id_passagem) AS "Numero de viagens"
+	FROM usuario
+	INNER JOIN passagem
+	ON usuario.id_usuario = passagem.id_usuario
+	GROUP BY usuario.nome, "Mes"
+	ORDER BY usuario.nome);
+
+	SELECT * FROM numero_viagens_mes_usuario;
+
+![img](img/numero_viagens_mes_usuario.PNG)<br>
+
+	CREATE VIEW qtd_passagens_vendidas_dia AS(
+	SELECT COUNT(a.id_passagem) AS "numero de passagens" , a.data
+	FROM passagem A, passagem B
+	WHERE A.id_passagem <> B.id_passagem
+	AND A.data = B.data
+	GROUP BY a.data);
+
+	SELECT * FROM qtd_passagens_vendidas_dia;
+![img](images/9.9/6.PNG)<br>
    
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
