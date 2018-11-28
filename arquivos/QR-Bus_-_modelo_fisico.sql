@@ -38,7 +38,7 @@ CREATE TABLE LINHA (
 
 CREATE TABLE HORARIO (
     id_horario smallserial PRIMARY KEY,
-    numero_linha smallserial,
+    id_itinerario smallserial,
     id_tipo smallserial,
     data_inicio date,
     hora_saida time,
@@ -75,7 +75,6 @@ CREATE TABLE PASSAGEM (
     id_passagem smallserial PRIMARY KEY,
     id_usuario smallserial,
     numero_linha smallserial,
-    id_pagamento serial,
     data date,
     hora time,
     valor money
@@ -112,8 +111,8 @@ ALTER TABLE BAIRRO ADD CONSTRAINT FK_BAIRRO_2
     REFERENCES CIDADE (id_cidade);
  
 ALTER TABLE HORARIO ADD CONSTRAINT FK_HORARIO_2
-    FOREIGN KEY (numero_linha)
-    REFERENCES LINHA (numero_linha);
+    FOREIGN KEY (id_itinerario)
+    REFERENCES ITINERARIO (id_itinerario);
  
 ALTER TABLE HORARIO ADD CONSTRAINT FK_HORARIO_3
     FOREIGN KEY (id_tipo)
@@ -138,10 +137,6 @@ ALTER TABLE PASSAGEM ADD CONSTRAINT FK_PASSAGEM_2
 ALTER TABLE PASSAGEM ADD CONSTRAINT FK_PASSAGEM_3
     FOREIGN KEY (numero_linha)
     REFERENCES LINHA (numero_linha);
- 
-ALTER TABLE PASSAGEM ADD CONSTRAINT FK_PASSAGEM_4
-    FOREIGN KEY (id_pagamento)
-    REFERENCES PAGAMENTO (id_pagamento);
  
 ALTER TABLE PONTO ADD CONSTRAINT FK_PONTO_1
     FOREIGN KEY (id_logradouro)

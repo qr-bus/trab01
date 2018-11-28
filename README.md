@@ -416,35 +416,6 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
         a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
 
-   <b>INSERT PARA O PRÓXIMO JOIN</b><br>
-
-   <b>INSERT INTO PASSAGEM (id_passagem, id_usuario, numero_linha, id_pagamento, data, hora, valor)<br>
-    VALUES (11,3,507,10,'2018-10-15','12:30:00', 3.40),<br>
-    (12,3,507,10,'2018-10-15','18:00:00', 3.40),<br>
-    (13,3,507,10,'2018-10-16','12:30:00', 3.40),<br>
-    (14,3,507,10,'2018-10-16','18:00:00', 3.40),<br>
-    (15,3,507,10,'2018-10-17','12:30:00', 3.40),<br>
-    (16,3,507,10,'2018-10-17','18:00:00', 3.40),<br>
-    (17,3,507,10,'2018-10-18','12:30:00', 3.40),<br>
-    (18,3,507,10,'2018-10-18','18:00:00', 3.40),<br>
-    (19,3,507,10,'2018-10-19','12:30:00', 3.40),<br>
-    (20,3,507,10,'2018-10-19','18:00:00', 3.40);<br>
-
-   INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, numero_linha, desc_terminal)<br>
-    VALUES (67,'10:30:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
-    (68,'10:50:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
-    (69,'11:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
-    (70,'11:25:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
-    (71,'11:40:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
-    (72,'11:55:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
-    (73,'12:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
-    (74,'12:25:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
-    (75,'12:40:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
-    (76,'12:55:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
-    (77,'13:10:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
-    (78,'13:25:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS'),<br>
-    (79,'13:45:00',1,'2017-10-15',507,'TERMINAL LARANJEIRAS');</b><br>
-
    <b>JOIN COM TODAS AS TABELAS</b><br>
 
    <b>SELECT usuario.nome,<br>
