@@ -704,6 +704,35 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 ![img](images/9.9/6.PNG)<br>
    
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
+
+	SELECT nome, cpf, CONCAT(desc_tipo,' ', desc_logradouro) AS "mora em", saldo
+	FROM usuario
+	INNER JOIN logradouro
+	ON usuario.id_logradouro = logradouro.id_logradouro
+	WHERE usuario.id_usuario NOT IN (SELECT id_usuario FROM passagem)
+	ORDER BY nome;
+![img](images/9.10/9.10_1.PNG)<br>
+
+	SELECT linha.numero_linha, desc_linha, hora_saida, desc_terminal, desc_horario
+	FROM horario
+	INNER JOIN itinerario
+	ON horario.id_itinerario = itinerario.id_itinerario
+	INNER JOIN linha
+	ON itinerario.numero_linha = linha.numero_linha
+	INNER JOIN tipo_horario
+	ON horario.id_tipo = tipo_horario.id_tipo
+	WHERE horario.id_tipo IN (SELECT id_tipo FROM tipo_horario WHERE id_tipo = 1)
+	ORDER BY numero_linha;
+![img](images/9.10/9.10_2.PNG)<br>
+
+	SELECT hora_saida, desc_terminal, desc_horario
+	FROM horario
+	INNER JOIN tipo_horario
+	ON horario.id_tipo = tipo_horario.id_tipo
+	WHERE horario.id_tipo IN (SELECT id_tipo FROM tipo_horario WHERE id_tipo <> 3)
+	ORDER BY hora_saida;
+![img](images/9.10/9.10_3.PNG)<br>
+
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
 ### 11 Backup completo do banco de dados postgres 
