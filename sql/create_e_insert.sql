@@ -1,3 +1,4 @@
+
 /* criacao de estruturas */
 CREATE TABLE USUARIO (
     id_usuario smallserial PRIMARY KEY,
@@ -66,6 +67,7 @@ CREATE TABLE ITINERARIO (
 CREATE TABLE PAGAMENTO (
     id_pagamento serial PRIMARY KEY,
     numero_cartao char(16),
+    id_usuario smallserial,
     valor_pagamento decimal,
     data_pagamento date
 );
@@ -92,8 +94,7 @@ CREATE TABLE ITINERARIO_PONTO (
     id_ponto smallserial,
     pos_sequencia integer
 );
-
-/* adicionar chaves estrangeiras */
+ 
 ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_2
     FOREIGN KEY (numero_cartao)
     REFERENCES CARTAO (numero);
@@ -130,6 +131,10 @@ ALTER TABLE PAGAMENTO ADD CONSTRAINT FK_PAGAMENTO_2
     FOREIGN KEY (numero_cartao)
     REFERENCES CARTAO (numero);
  
+ALTER TABLE PAGAMENTO ADD CONSTRAINT FK_PAGAMENTO_3
+    FOREIGN KEY (id_usuario)
+    REFERENCES USUARIO (id_usuario);
+ 
 ALTER TABLE PASSAGEM ADD CONSTRAINT FK_PASSAGEM_2
     FOREIGN KEY (id_usuario)
     REFERENCES USUARIO (id_usuario);
@@ -149,6 +154,7 @@ ALTER TABLE ITINERARIO_PONTO ADD CONSTRAINT FK_ITINERARIO_PONTO_1
 ALTER TABLE ITINERARIO_PONTO ADD CONSTRAINT FK_ITINERARIO_PONTO_2
     FOREIGN KEY (id_ponto)
     REFERENCES PONTO (id_ponto);
+
 
 
 ---- Insercao de dados ----
@@ -433,17 +439,17 @@ UPDATE USUARIO SET numero_cartao='1111222233338888' WHERE id_usuario=9;
 UPDATE USUARIO SET numero_cartao='1111222233339999' WHERE id_usuario=10;
 
 /* pagamento */
-INSERT INTO PAGAMENTO (id_pagamento,numero_cartao, valor_pagamento, data_pagamento)
-    VALUES(1,'1111222233332222',100.00,'2018-01-08' ),
-    (2,'1111222233332222',100.00,'2018-02-08' ),
-    (3,'1111222233332222',100.00,'2018-03-08' ),
-    (4,'1111222233332222',100.00,'2018-04-08' ),
-    (5,'1111222233332222',100.00,'2018-05-08' ),
-    (6,'1111222233332222',100.00,'2018-06-08' ),
-    (7,'1111222233332222',100.00,'2018-07-08' ),
-    (8,'1111222233332222',100.00,'2018-08-08' ),
-    (9,'1111222233332222',100.00,'2018-09-08' ),
-    (10,'1111222233332222',100.00,'2018-10-08' );
+INSERT INTO PAGAMENTO (id_pagamento,numero_cartao, id_usuario, valor_pagamento, data_pagamento)
+    VALUES(1,'1111222233332222',3,100.00,'2018-01-08' ),
+    (2,'1111222233332222',3,100.00,'2018-02-08' ),
+    (3,'1111222233332222',3,100.00,'2018-03-08' ),
+    (4,'1111222233332222',3,100.00,'2018-04-08' ),
+    (5,'1111222233332222',3,100.00,'2018-05-08' ),
+    (6,'1111222233332222',3,100.00,'2018-06-08' ),
+    (7,'1111222233332222',3,100.00,'2018-07-08' ),
+    (8,'1111222233332222',3,100.00,'2018-08-08' ),
+    (9,'1111222233332222',3,100.00,'2018-09-08' ),
+    (10,'1111222233332222',3,100.00,'2018-10-08' );
 
 /* passagem */
 INSERT INTO PASSAGEM (id_passagem, id_usuario, numero_linha, data, hora, valor)
@@ -467,3 +473,4 @@ INSERT INTO PASSAGEM (id_passagem, id_usuario, numero_linha, data, hora, valor)
     (18,3,507,'2018-10-18','18:00:00', 3.40),
     (19,3,507,'2018-10-19','12:30:00', 3.40),
     (20,3,507,'2018-10-19','18:00:00', 3.40);
+

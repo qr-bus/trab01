@@ -67,6 +67,7 @@ CREATE TABLE ITINERARIO (
 CREATE TABLE PAGAMENTO (
     id_pagamento serial PRIMARY KEY,
     numero_cartao char(16),
+    id_usuario smallserial,
     valor_pagamento decimal,
     data_pagamento date
 );
@@ -93,8 +94,7 @@ CREATE TABLE ITINERARIO_PONTO (
     id_ponto smallserial,
     pos_sequencia integer
 );
-
-/* adicionar chaves estrangeiras */ 
+ 
 ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_2
     FOREIGN KEY (numero_cartao)
     REFERENCES CARTAO (numero);
@@ -130,6 +130,10 @@ ALTER TABLE ITINERARIO ADD CONSTRAINT FK_ITINERARIO_2
 ALTER TABLE PAGAMENTO ADD CONSTRAINT FK_PAGAMENTO_2
     FOREIGN KEY (numero_cartao)
     REFERENCES CARTAO (numero);
+ 
+ALTER TABLE PAGAMENTO ADD CONSTRAINT FK_PAGAMENTO_3
+    FOREIGN KEY (id_usuario)
+    REFERENCES USUARIO (id_usuario);
  
 ALTER TABLE PASSAGEM ADD CONSTRAINT FK_PASSAGEM_2
     FOREIGN KEY (id_usuario)
