@@ -748,6 +748,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
         d) realizar qualquer procedimento executado pelo grupo que desenvolveu o trabalho
         
 ### 13   DIFICULDADES ENCONTRADAS PELO GRUPO<br>
+   As maiores dificuldades que encontramos foram relacionadas à montagem do modelo conceitual e, eventualmente, o modelo lógico. Ficamos em dúvida em vários momentos sobre a necessidade de algumas tabelas e certos relacionamentos e realizamos mudanças nos dois modelos até a última semana antes da entrega deste trabalho. Além disso, outra tarefa que demandou tempo e rendeu diversas dúvidas foi a elaboração de relatórios, pois no início não sabíamos o que seria gerado apenas por aquilo que desenvolvemos e o que deveria ser entregue em conjunto com uma API ou serviço externo, de terceiros, integrado ao nosso projeto.
 >## Marco de Entrega Final em: (08/11/2018)<br>
         
 ### 14  FORMATACAO NO GIT: https://help.github.com/articles/basic-writing-and-formatting-syntax/
