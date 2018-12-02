@@ -530,6 +530,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 ![img](images/9.6/9.6.b.1.png)<br>
 
 	SELECT linha.numero_linha as linha,
+	itinerario.destino,
 	horario.hora_saida,
 	tipo_horario.desc_horario as "tipo horario"
 	FROM HORARIO
@@ -551,6 +552,34 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ORDER BY passagem.data, passagem.hora;
 ![img](images/9.6/9.6.b.3.png)<br>
 
+	SELECT pagamento.data_pagamento,
+	pagamento.valor_pagamento,
+	cartao.numero AS cartao,
+	cartao.titular AS titular_cartao,
+	usuario.nome AS usuario
+	FROM PAGAMENTO
+	INNER JOIN CARTAO
+	ON(pagamento.numero_cartao = cartao.numero)
+	INNER JOIN USUARIO
+	ON(usuario.id_usuario = pagamento.id_usuario)
+	ORDER BY pagamento.data_pagamento;
+![img](images/9.6/9.6.b.4.png)<br>
+
+	SELECT CONCAT(logradouro.desc_tipo, 
+		' ', 
+		logradouro.desc_logradouro) AS logradouro,
+	logradouro.cep as "CEP",
+	bairro.desc_bairro AS bairro,
+	municipio.nome_municipio AS cidade
+	FROM LOGRADOURO
+	INNER JOIN BAIRRO
+	ON(logradouro.id_bairro = bairro.id_bairro)
+	INNER JOIN MUNICIPIO
+	ON (bairro.id_cidade = municipio.id_municipio)
+	INNER JOIN USUARIO
+	ON(usuario.id_logradouro = logradouro.id_logradouro)
+	WHERE usuario.id_usuario = 3;
+![img](images/9.6/9.6.b.5.png)<br>
    
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
