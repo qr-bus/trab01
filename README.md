@@ -237,15 +237,15 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 ![img](images/9.3/9.3.1.png)
 
 	SELECT hora_saida, 
-	numero_linha 
+	id_itinerario 
 	FROM HORARIO 
-	WHERE (hora_saida > '09:09:00' AND numero_linha = 507);
+	WHERE (hora_saida > '09:09:00' AND id_itinerario = 1);
 ![img](images/9.3/9.3.2.png)
 
 	SELECT hora_saida, 
-	numero_linha 
+	id_itinerario 
 	FROM HORARIO WHERE ((hora_saida > '09:09:00')
-	AND (numero_linha = 507 OR  numero_linha = 815));
+	AND (id_itinerario = 1 OR  id_itinerario = 3));
 ![img](images/9.3/9.3.3.png)
 
 	SELECT (desc_tipo|| '. '||desc_logradouro) 
@@ -255,10 +255,11 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 
 ![img](images/9.3/9.3.4.png)
 
-	SELECT hora_saida, numero_linha 
+	SELECT hora_saida, id_itinerario 
 	FROM HORARIO 
 	WHERE ((hora_saida > '09:09:00') 
-	AND (NOT numero_linha = 815));
+	AND (NOT id_itinerario = 3 
+	AND NOT id_itinerario = 4));
 ![img](images/9.3/9.3.5.png) <br>
    
    
@@ -299,7 +300,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    
 	ALTER TABLE CIDADE RENAME TO MUNICIPIO;
 	SELECT * FROM MUNICIPIO;
-![img](img/rename_cidade.PNG)<br>
+![img](images/9.3/rename_cidade.PNG)<br>
 
    <b> 2 </b><br>
    <b> Antes </b><br>
@@ -359,17 +360,17 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
     
    <b>b) Criar uma consulta para cada tipo de função data apresentada. </b><br>
 
-	SELECT numero_linha, 
+	SELECT id_itinerario, 
 	age(current_date, horario.data_inicio) AS "Tempo sem modificar o horario"
 	FROM HORARIO
-	GROUP BY numero_linha, age(current_date, horario.data_inicio);
+	GROUP BY id_itinerario, age(current_date, horario.data_inicio);
 ![img](images/9.4/9.4.b.1.png) <br>
 
-	SELECT numero_linha,
+	SELECT id_itinerario,
 	current_time(0) AS "hora atual",
 	hora_saida AS "próximos horarios"
 	FROM HORARIO
-	WHERE numero_linha = 815
+	WHERE id_itinerario = 4
 	AND hora_saida > current_time(0);
 ![img](images/9.4/9.4.b.2.png) <br>
 
@@ -417,35 +418,35 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 <b> Antes </b><br>
 
 	SELECT * FROM PAGAMENTO;
-![img](images/9.5/3.1.JPG)<br>
+![img](images/9.5/3.1.png)<br>
    <b> DEPOIS </b><br>
    
 	UPDATE PAGAMENTO SET valor_pagamento = 150.00 
 	WHERE data_pagamento = '2018-02-08' 
 	OR data_pagamento = '2018-06-08';
-![img](images/9.5/3.2.JPG)<br>
+![img](images/9.5/3.2.png)<br>
 
    <b> 4 </b><br>
    <b> Antes </b><br>
    
 	SELECT * FROM passagem;
-![img](images/9.5/4.1.JPG)<br>
+![img](images/9.5/4.1.png)<br>
    <b> DEPOIS </b><br>
 
 	DELETE FROM PASSAGEM 
 	WHERE data = '2018-10-09';
-![img](images/9.5/4.2.JPG)<br>
+![img](images/9.5/4.2.png)<br>
 
    <b> 5 </b><br>
    <b> Antes </b><br>
    
 	SELECT * FROM PAGAMENTO;
-![img](images/9.5/5.1.JPG)<br>
+![img](images/9.5/5.1.png)<br>
    <b> DEPOIS </b><br>
    
 	DELETE FROM PAGAMENTO 
 	WHERE id_pagamento = 7;
-![img](images/9.5/5.2.JPG)<br>
+![img](images/9.5/5.2.png)<br>
 
    <b> 6 </b><br>
    <b> Antes </b><br>
@@ -471,7 +472,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	passagem.data AS "Data da passagem",
 	passagem.hora AS "Horario da passagem",
 	linha.descricao_linha AS "Linha",
-	horario.hora_saida,<br>
+	horario.hora_saida,
 	tipo_horario.desc_horario AS "Tipo de horario",
 	itinerario.destino AS "Destino do onibus",
 	itinerario_ponto.pos_sequencia,
@@ -489,14 +490,14 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ON (passagem.id_usuario = usuario.id_usuario)
 	INNER JOIN LINHA
 	ON (passagem.numero_linha = linha.numero_linha)
-	INNER JOIN HORARIO
-	ON (linha.numero_linha = horario.numero_linha)
-	INNER JOIN TIPO_HORARIO
-	ON (horario.id_tipo = tipo_horario.id_tipo)
 	INNER JOIN ITINERARIO
 	ON (itinerario.numero_linha = linha.numero_linha)
 	INNER JOIN ITINERARIO_PONTO
 	ON (itinerario.id_itinerario = itinerario_ponto.id_itinerario)
+	INNER JOIN HORARIO
+	ON (itinerario.id_itinerario = horario.id_itinerario)
+	INNER JOIN TIPO_HORARIO
+	ON (horario.id_tipo = tipo_horario.id_tipo)
 	INNER JOIN PONTO
 	ON (ponto.id_ponto = itinerario_ponto.id_ponto)
 	INNER JOIN LOGRADOURO
@@ -507,7 +508,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ON (bairro.id_cidade = municipio.id_municipio)
 	WHERE passagem.hora = '12:30:00'
 	AND horario.hora_saida = '12:25:00'
-	AND ponto.id_ponto = 1
+	AND ponto.id_ponto = 1;
 ![img](images/9.6/9.6.a.1.png)<br>
 
    <b>b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho </b><br>
@@ -534,8 +535,10 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	FROM HORARIO
 	INNER JOIN TIPO_HORARIO
 	ON(horario.id_tipo = tipo_horario.id_tipo)
-	INNER JOIN LINHA<br>
-	ON (horario.numero_linha = linha.numero_linha);
+	INNER JOIN ITINERARIO
+	ON(itinerario.id_itinerario = horario.id_itinerario)
+	INNER JOIN LINHA
+	ON (itinerario.numero_linha = linha.numero_linha);
 ![img](images/9.6/9.6.b.2.png)<br>
 
 	SELECT passagem.data,
@@ -544,7 +547,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	FROM PASSAGEM
 	INNER JOIN LINHA
 	ON(passagem.numero_linha = linha.numero_linha)
-	WHERE passagem.id_usuario = 3<br>
+	WHERE passagem.id_usuario = 3
 	ORDER BY passagem.data, passagem.hora;
 ![img](images/9.6/9.6.b.3.png)<br>
 
@@ -571,11 +574,11 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	GROUP BY data;
 ![img](images/9.7/9.7.3.png)<br>
 
-	SELECT COUNT(id_itinerario) as onibus_com_mesmo_destino, 
+	SELECT COUNT(id_itinerario) as "Itinerario com mesmo destino", 
 	destino 
 	FROM itinerario 
 	GROUP BY destino;
-![img](images/9.7/4.JPG)<br>
+![img](images/9.7/4.png)<br>
 
 	SELECT COUNT(id_bairro) as qtd_bairros, 
 	id_cidade 
@@ -587,7 +590,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	valor_pagamento AS valor_pago 
 	FROM pagamento 
 	GROUP BY valor_pago;
-![img](images/9.7/6.JPG)<br>
+![img](images/9.7/6.png)<br>
    
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
 	SELECT COUNT(bairro.id_bairro), 
@@ -637,7 +640,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	AND A.destino = B.destino
 	ORDER BY A.numero_linha
 	LIMIT 10;
-![img](img/mesmo_destino.PNG)
+![img](images/9.9/mesmo_destino.PNG)
 
   <b>b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho </b><br>
    
@@ -646,7 +649,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	FROM pagamento);
 
 	SELECT * FROM valor_total_recebido;
-![img](img/valor_total_recebido.PNG)
+![img](images/9.9/valor_total_recebido.PNG)
 
 	CREATE VIEW total_ruas_bairros_cidades_pontos AS(
 	SELECT COUNT(logradouro.id_logradouro) AS total_ruas,
@@ -662,7 +665,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ON ponto.id_logradouro = logradouro.id_logradouro);
 
 	SELECT * FROM total_ruas_bairros_cidades_pontos;
-![img](img/total_ruas_bairros_cidades_pontos.PNG)<br>
+![img](images/9.9/total_ruas_bairros_cidades_pontos.PNG)<br>
 
 	CREATE VIEW usuarios_mes_valor AS(
 	SELECT usuario.nome,
@@ -676,7 +679,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ORDER BY usuario.nome);
 
 	SELECT * FROM usuarios_mes_valor;
-![img](img/usuarios_mes_valor.PNG)<br>
+![img](images/9.9/usuarios_mes_valor.png)<br>
 
 	CREATE VIEW numero_viagens_mes_usuario AS(
 	SELECT usuario.nome,
@@ -691,7 +694,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 
 	SELECT * FROM numero_viagens_mes_usuario;
 
-![img](img/numero_viagens_mes_usuario.PNG)<br>
+![img](images/9.9/numero_viagens_mes_usuario.png)<br>
 
 	CREATE VIEW qtd_passagens_vendidas_dia AS(
 	SELECT COUNT(a.id_passagem) AS "numero de passagens" , a.data
@@ -701,7 +704,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	GROUP BY a.data);
 
 	SELECT * FROM qtd_passagens_vendidas_dia;
-![img](images/9.9/6.PNG)<br>
+![img](images/9.9/6.png)<br>
    
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 
@@ -711,9 +714,9 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ON usuario.id_logradouro = logradouro.id_logradouro
 	WHERE usuario.id_usuario NOT IN (SELECT id_usuario FROM passagem)
 	ORDER BY nome;
-![img](images/9.10/9.10_1.PNG)<br>
+![img](images/9.10/9.10_1.png)<br>
 
-	SELECT linha.numero_linha, desc_linha, hora_saida, desc_terminal, desc_horario
+	SELECT linha.numero_linha, descricao_linha, hora_saida, desc_terminal, desc_horario
 	FROM horario
 	INNER JOIN itinerario
 	ON horario.id_itinerario = itinerario.id_itinerario
@@ -723,7 +726,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ON horario.id_tipo = tipo_horario.id_tipo
 	WHERE horario.id_tipo IN (SELECT id_tipo FROM tipo_horario WHERE id_tipo = 1)
 	ORDER BY numero_linha;
-![img](images/9.10/9.10_2.PNG)<br>
+![img](images/9.10/9.10_2.png)<br>
 
 	SELECT hora_saida, desc_terminal, desc_horario
 	FROM horario
@@ -731,7 +734,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ON horario.id_tipo = tipo_horario.id_tipo
 	WHERE horario.id_tipo IN (SELECT id_tipo FROM tipo_horario WHERE id_tipo <> 3)
 	ORDER BY hora_saida;
-![img](images/9.10/9.10_3.PNG)<br>
+![img](images/9.10/9.10_3.png)<br>
 
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
