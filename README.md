@@ -783,6 +783,12 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
         b) executar todas as consultas presentes no trabalho
         c) executar códigos que tenham sido construídos para o trabalho 
         d) realizar qualquer procedimento executado pelo grupo que desenvolveu o trabalho
+   Para restaurar o banco, siga os passos a seguir:
+   1 - Crie um novo database no PGAdmin
+   2 - Clique com o botão direito no banco criado e em seguida clique em "Restore..."
+   3 - Em "Filename" escolha o arquivo de backup que deseja utilizar (se necessário, habilite o checkbox "Show hidden files and folders?")
+   4 - Por fim clique em "Restore"
+   5 - Para realizar as consultas que fizemos neste trabalho, execute as queries apresentadas no item 9.
         
 ### 13   DIFICULDADES ENCONTRADAS PELO GRUPO<br>
    As maiores dificuldades que encontramos foram relacionadas à montagem do modelo conceitual e, eventualmente, o modelo lógico. Ficamos em dúvida em vários momentos sobre a necessidade de algumas tabelas e certos relacionamentos e realizamos mudanças nos dois modelos até a última semana antes da entrega deste trabalho. Além disso, outra tarefa que demandou tempo e rendeu diversas dúvidas foi a elaboração de relatórios, pois no início não sabíamos o que seria gerado apenas por aquilo que desenvolvemos e o que deveria ser entregue em conjunto com uma API ou serviço externo, de terceiros, integrado ao nosso projeto.
