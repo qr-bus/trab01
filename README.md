@@ -778,7 +778,8 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <b>Link para o arquivo de restauração:</b><br>
    https://github.com/qr-bus/trab01/blob/master/arquivos/QR_Bus.backup<br><br>
    
-   Grupo que realizou o teste: Controle de Frequência.<br><br>
+   <br> Testado por: </b>
+   Controle de Frequência.<br><br>
    
 ### 12	TUTORIAL COMPLETO DE PASSOS PARA RESTAURACAO DO BANCO E EXECUCAO DE PROCEDIMENTOS ENVOLVIDOS NO TRABALHO PARA OBTENÇÃO DOS RESULTADOS<br>
         a) Outros grupos deverão ser capazes de restaurar o banco 
