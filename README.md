@@ -772,7 +772,10 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
         (Em Dump Options #1 Habilitar opções Don't Save Owner e Privilege)
     b) antes de postar o arquivo no git o mesmo deve ser testado/restaurado por outro grupo de alunos/dupla
     c) informar aqui o grupo de alunos/dupla que realizou o teste.
-
+   
+   <b>Link para o arquivo de restauração:</b><br>
+   https://github.com/qr-bus/trab01/blob/master/arquivos/backup_QR-Bus<br>
+   
 ### 12	TUTORIAL COMPLETO DE PASSOS PARA RESTAURACAO DO BANCO E EXECUCAO DE PROCEDIMENTOS ENVOLVIDOS NO TRABALHO PARA OBTENÇÃO DOS RESULTADOS<br>
         a) Outros grupos deverão ser capazes de restaurar o banco 
         b) executar todas as consultas presentes no trabalho
