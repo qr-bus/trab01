@@ -768,6 +768,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 ![img](images/9.10/9.10_3.png)<br>
 
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
+[Link para a apresentação](https://docs.google.com/presentation/d/1qLvVW3Y84sbjyjuljIzk2_0y7113NCFTn3HmHlKMst4/edit?usp=sharing)
 
 ### 11 Backup completo do banco de dados postgres 
     a) deve ser realizado no formato "backup" 
