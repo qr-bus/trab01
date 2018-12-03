@@ -776,10 +776,10 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
     c) informar aqui o grupo de alunos/dupla que realizou o teste.
    
    <b>Link para o arquivo de restauração:</b><br>
-   https://github.com/qr-bus/trab01/blob/master/arquivos/QR_Bus.backup<br><br>
+   https://github.com/qr-bus/trab01/blob/master/arquivos/QR_Bus.backup<br>
    
-   <br> Testado por: </b>
-   Controle de Frequência.<br><br>
+   <b> Testado por: </b> <br>
+   [Controle de Frequência](https://github.com/ControleFrequencia/trab01)<br>
    
 ### 12	TUTORIAL COMPLETO DE PASSOS PARA RESTAURACAO DO BANCO E EXECUCAO DE PROCEDIMENTOS ENVOLVIDOS NO TRABALHO PARA OBTENÇÃO DOS RESULTADOS<br>
         a) Outros grupos deverão ser capazes de restaurar o banco 
@@ -789,18 +789,18 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	
    Para restaurar o banco, siga os passos a seguir: <br>
    <b> 1 - </b> Crie um novo database no pgAdmin <br>
-   ![img] (images/12/1.png)<br>
-   ![img] (images/12/2.png)<br>
+   ![img](images/12/1.png)<br>
+   ![img](images/12/2.png)<br>
    
    <b> 2 - </b> Clique com o botão direito no banco criado e em seguida clique em "Restore..." <br>
-   ![img] (images/12/3.png)<br>
+   ![img](images/12/3.png)<br>
    
    <b> 3 - </b> Em "Filename" digite o caminho do arquivo de backup que deseja utilizar ou localize-o pelo explorador de arquivos (se necessário, habilite o checkbox "Show hidden files and folders?") <br>
-   ![img] (images/12/4.png)<br>
-   ![img] (images/12/5.png)<br>
+   ![img](images/12/4.png)<br>
+   ![img](images/12/5.png)<br>
    
    <b> 4 - </b> Por fim clique em "Restore" <br>
-   ![img] (images/12/6.png)<br>
+   ![img](images/12/6.png)<br>
    
    <b> 5 - </b> Para realizar as consultas que fizemos neste trabalho, execute as <i>queries</i> apresentadas no item 9. <br>
         
