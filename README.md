@@ -67,7 +67,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 * Relatório de linhas que passam por um determinado logradouro.
 * Relatório direcionado ao usuário para controle de seu saldo, com quantidade de viagens feitas por dia/semana/mês, valor de cada viagem e gasto total no período definido.
 
-![img](arquivos/Qr-bus.ipynb)
+[Relatorios Jupyter](arquivos/Qr-bus .ipynb)
       
  
 #### 4.2 TABELA DE DADOS DO SISTEMA:
