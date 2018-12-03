@@ -788,8 +788,8 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
         c) executar códigos que tenham sido construídos para o trabalho 
         d) realizar qualquer procedimento executado pelo grupo que desenvolveu o trabalho
 	
-   Para restaurar o banco, siga os passos a seguir: <br>
-   <b> 1 - </b> Crie um novo database no pgAdmin <br><br>
+   Para restaurar o banco, siga os passos a seguir: <br><br>
+   <b> 1 - </b> Crie um novo database no pgAdmin <br>
    
    ![img](images/12/1.png)<br>
    ![img](images/12/2.png)<br><br>
@@ -797,7 +797,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <b> 2 - </b> Clique com o botão direito no banco criado e em seguida clique em "Restore..." <br><br>
    ![img](images/12/3.png)<br><br>
    
-   <b> 3 - </b> Em "Filename" digite o caminho do arquivo de backup que deseja utilizar ou localize-o pelo explorador de arquivos (se necessário, habilite o checkbox "Show hidden files and folders?") <br><br>
+   <b> 3 - </b> Em "Filename" digite o caminho do arquivo de backup que deseja utilizar ou localize-o pelo explorador de arquivos (se necessário, habilite o checkbox "Show hidden files and folders?") <br>
    
    ![img](images/12/4.png)<br>
    ![img](images/12/5.png)<br><br>
