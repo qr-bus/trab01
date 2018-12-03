@@ -63,7 +63,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    <b>A Empresa QR-Bus precisa inicialmente dos seguintes relatórios:</b>
 * Relatório que informe ao usuário seu histórico de viagens, com dias e horários em que usou o sistema, assim como as linhas utilizadas.
 * Relatório que informe as linhas mais utilizadas e as menos utilizadas (por todos os usuários) dependendo do horário.
-* Lista direcionada ao usuário informando as opções de linhas para sair de sua origem à seu destino.
+* Relatorio direcionado ao usuário contendo as opções de linhas para sair de sua origem.
 * Relatório de linhas que passam por um determinado logradouro.
 * Relatório direcionado ao usuário para controle de seu saldo, com quantidade de viagens feitas por dia/semana/mês, valor de cada viagem e gasto total no período definido.
 
