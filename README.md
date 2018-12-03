@@ -776,10 +776,9 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
     c) informar aqui o grupo de alunos/dupla que realizou o teste.
    
    <b>Link para o arquivo de restauração:</b><br>
-   https://github.com/qr-bus/trab01/blob/master/arquivos/QR_Bus_backup<br>
+   https://github.com/qr-bus/trab01/blob/master/arquivos/QR_Bus.backup<br><br>
    
-   <b> Testado por: </b>
-   Controle de Frequência (Bruna, Mayanara, Daniela, Leoni) <br>
+   Grupo que realizou o teste: Controle de Frequência.<br><br>
    
 ### 12	TUTORIAL COMPLETO DE PASSOS PARA RESTAURACAO DO BANCO E EXECUCAO DE PROCEDIMENTOS ENVOLVIDOS NO TRABALHO PARA OBTENÇÃO DOS RESULTADOS<br>
         a) Outros grupos deverão ser capazes de restaurar o banco 
@@ -788,11 +787,21 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
         d) realizar qualquer procedimento executado pelo grupo que desenvolveu o trabalho
 	
    Para restaurar o banco, siga os passos a seguir: <br>
-   <b> 1 - </b> Crie um novo database no PGAdmin <br>
+   <b> 1 - </b> Crie um novo database no pgAdmin <br>
+   ![img] (images/12/1.png)<br>
+   ![img] (images/12/2.png)<br>
+   
    <b> 2 - </b> Clique com o botão direito no banco criado e em seguida clique em "Restore..." <br>
-   <b> 3 - </b> Em "Filename" escolha o arquivo de backup que deseja utilizar (se necessário, habilite o checkbox "Show hidden files and folders?") <br>
+   ![img] (images/12/3.png)<br>
+   
+   <b> 3 - </b> Em "Filename" digite o caminho do arquivo de backup que deseja utilizar ou localize-o pelo explorador de arquivos (se necessário, habilite o checkbox "Show hidden files and folders?") <br>
+   ![img] (images/12/4.png)<br>
+   ![img] (images/12/5.png)<br>
+   
    <b> 4 - </b> Por fim clique em "Restore" <br>
-   <b> 5 - </b> Para realizar as consultas que fizemos neste trabalho, execute as queries apresentadas no item 9. <br>
+   ![img] (images/12/6.png)<br>
+   
+   <b> 5 - </b> Para realizar as consultas que fizemos neste trabalho, execute as <i>queries</i> apresentadas no item 9. <br>
         
 ### 13   DIFICULDADES ENCONTRADAS PELO GRUPO<br>
    As maiores dificuldades que encontramos foram relacionadas à montagem do modelo conceitual e, eventualmente, o modelo lógico. Ficamos em dúvida em vários momentos sobre a necessidade de algumas tabelas e certos relacionamentos e realizamos mudanças nos dois modelos até a última semana antes da entrega deste trabalho. Além disso, outra tarefa que demandou tempo e rendeu diversas dúvidas foi a elaboração de relatórios, pois no início não sabíamos o que seria gerado apenas por aquilo que desenvolvemos e o que deveria ser entregue em conjunto com uma API ou serviço externo, de terceiros, integrado ao nosso projeto.
