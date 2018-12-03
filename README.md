@@ -3,7 +3,7 @@ Trabalho desenvolvido durante a disciplina de BD1
 
 # Sumário
 - [1.COMPONENTES](#1-componentes)<br>
-- [2.INTRODUÇÃO E MOTIVAÇAO](#2introdução-e-motivaçao)<br>
+- [2.INTRODUÇÃO E MOTIVAÇÃO](#2introdução-e-motivação)<br>
 - [3.MINI-MUNDO](#3mini-mundo)<br>
 - [4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)](#4rascunhos-básicos-da-interface-mockups) <br>
   - [4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?](#41-quais-perguntas-podem-ser-respondidas-com-o-sistema-proposto) <br>
@@ -789,19 +789,21 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
         d) realizar qualquer procedimento executado pelo grupo que desenvolveu o trabalho
 	
    Para restaurar o banco, siga os passos a seguir: <br>
-   <b> 1 - </b> Crie um novo database no pgAdmin <br>
+   <b> 1 - </b> Crie um novo database no pgAdmin <br><br>
+   
    ![img](images/12/1.png)<br>
-   ![img](images/12/2.png)<br>
+   ![img](images/12/2.png)<br><br>
    
-   <b> 2 - </b> Clique com o botão direito no banco criado e em seguida clique em "Restore..." <br>
-   ![img](images/12/3.png)<br>
+   <b> 2 - </b> Clique com o botão direito no banco criado e em seguida clique em "Restore..." <br><br>
+   ![img](images/12/3.png)<br><br>
    
-   <b> 3 - </b> Em "Filename" digite o caminho do arquivo de backup que deseja utilizar ou localize-o pelo explorador de arquivos (se necessário, habilite o checkbox "Show hidden files and folders?") <br>
+   <b> 3 - </b> Em "Filename" digite o caminho do arquivo de backup que deseja utilizar ou localize-o pelo explorador de arquivos (se necessário, habilite o checkbox "Show hidden files and folders?") <br><br>
+   
    ![img](images/12/4.png)<br>
-   ![img](images/12/5.png)<br>
+   ![img](images/12/5.png)<br><br>
    
-   <b> 4 - </b> Por fim clique em "Restore" <br>
-   ![img](images/12/6.png)<br>
+   <b> 4 - </b> Por fim clique em "Restore" <br><br>
+   ![img](images/12/6.png)<br><br>
    
    <b> 5 - </b> Para realizar as consultas que fizemos neste trabalho, execute as <i>queries</i> apresentadas no [item 9](#9tabelas-e-principais-consultas). <br>
         
