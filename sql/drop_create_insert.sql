@@ -197,7 +197,12 @@ INSERT INTO BAIRRO (id_bairro, desc_bairro, id_cidade)
     (7,'Laranjeiras',3),
     (8,'Planalto Serrano',3),
     (9,'Itaquari',4),
-    (10,'Campo Grande',4);
+    (10,'Campo Grande',4),
+    (11,'Manguinhos',3),
+    (12,'Morada de Laranjeiras',3),
+    (13,'Laranjeiras II',3),
+    (14,'Colina de Laranjeiras',3),
+    (15,'Parque Res. Laranjeiras',3);
 
 
 /* logradouro */
@@ -211,7 +216,14 @@ INSERT INTO LOGRADOURO (id_logradouro, cep, desc_tipo, desc_logradouro, id_bairr
     (7,'29200485','Rua','Três',7),
     (8,'29001407','Rua','Ayrton Senna',7),
     (9,'29582471','Rua','Humberto Pereira',6),
-    (10,'29269962','Travessa','Belina',10);
+    (10,'29269962','Travessa','Belina',10),
+    (11,'29173087','Rua','Ifes',11),
+    (12,'29166933','Avenida','Paulo Pereira Gomes',12),
+    (13,'29165915','Rua','Trevo de Laranjeiras II',13),
+    (14,'29165777','Rua','A2',12),
+    (15,'29169000','Avenida','Civit',7),
+    (16,'29172123','Rodovia','Norte/Sul',14),
+    (17,'29165680','Avenida','Eudes Scherrer de Souza',15);
 
 /* ponto */
 INSERT INTO PONTO (id_ponto,id_logradouro,longitude, latitude)
