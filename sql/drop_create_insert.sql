@@ -202,7 +202,9 @@ INSERT INTO BAIRRO (id_bairro, desc_bairro, id_cidade)
     (12,'Morada de Laranjeiras',3),
     (13,'Laranjeiras II',3),
     (14,'Colina de Laranjeiras',3),
-    (15,'Parque Res. Laranjeiras',3);
+	(15,'Chácara Parreiral',3),
+	(16,'Jardim Limoeiro',3),
+	(17,'Camará',3);
 
 
 /* logradouro */
@@ -223,7 +225,15 @@ INSERT INTO LOGRADOURO (id_logradouro, cep, desc_tipo, desc_logradouro, id_bairr
     (14,'29165777','Rua','A2',12),
     (15,'29169000','Avenida','Civit',7),
     (16,'29172123','Rodovia','Norte/Sul',14),
-    (17,'29165680','Avenida','Eudes Scherrer de Souza',15);
+    (17,'29165680','Avenida','Eudes Scherrer de Souza',15),
+	(18,'29165680','Terminal','Laranjeiras',7),
+	(19,'29165155','Avenida','Primeira Avenida',7),
+	(20,'29165130','Avenida','Central',7),
+	(21,'29165260','Rua','Carlos Gomes',7),
+	(22,'29164380','Rua','Evaristo da Veiga',15),
+	(23,'29164140','Rodovia','ES-010',16),
+	(24,'29164140','Rodovia','ES-010',17), /* pequeno trecho em Camará */
+	(25,'29166630','Avenida','dos Sabiás',12);
 
 /* ponto */
 INSERT INTO PONTO (id_ponto,id_logradouro,longitude, latitude)
@@ -236,7 +246,22 @@ INSERT INTO PONTO (id_ponto,id_logradouro,longitude, latitude)
     (7, 5, -20.29821,-40.30000),
     (8, 5, -20.29897,-40.29951),
     (9, 5, -20.30258,-40.29828),
-    (10, 5, -20.30220,-40.29821);
+    (10, 5, -20.30220,-40.29821),
+	(11, 18, -20.19351,-40.25567), /*terminal de laranjeiras */
+	(12, 19, -20.19550,-40.25575),
+	(13, 20, -20.19945,-40.25268),
+	(14, 21, -20.20188,-40.25429),
+	(14, 21, -20.20304,-40.25330),
+	(15, 22, -20.20479,-40.24732),
+	(16, 22, -20.20417,-40.24511),
+	(17, 23, -20.20619,-40.24173),
+	(18, 23, -20.20576,-40.23635),
+	(19, 23, -20.20597,-40.23096),
+	(20, 24, -20.20552,-40.22734),
+	(21, 24, -20.20527,-40.22347),
+	(22, 24, -20.20250,-40.21768),
+	(23, 25, -20.20042,-40.21796),
+	(24, 25, -20.19814,-40.21830); /* ponto ifes */
 
 /* tipo_horario */
 INSERT INTO TIPO_HORARIO (id_tipo, desc_horario)
@@ -256,7 +281,8 @@ INSERT INTO LINHA (numero_linha, desc_linha)
     (551,'T.JACARAIPE/T.ITAPARICA VIA T.CARAPINA/3ª PONTE'),
     (501,'T.JACARAIPE/T.ITAPARICA VIA T.CARAPINA/3ª PONTE/T.VILA VELHA'),
     (560,'T.LARANJEIRAS/T.ITAPARICA VIA CAMBURI/3ª PONTE'),
-    (520,'T.CARAPINA/T.VILA VELHA VIA RETA DA PENHA/3ª PONTE');
+    (520,'T.CARAPINA/T.VILA VELHA VIA RETA DA PENHA/3ª PONTE'),
+    (830,'CHÁCARA PARREIRAL/T.LARANJEIRAS VIA PARQ.RESIDENCIAL LARANJEIRAS');
 
 /* itinerario */
 INSERT INTO ITINERARIO (id_itinerario, numero_linha, destino, sentido)
@@ -277,7 +303,9 @@ INSERT INTO ITINERARIO (id_itinerario, numero_linha, destino, sentido)
     (15, 560, 'T.LARANJEIRAS',1),
     (16, 560, 'T.ITAPARICA',2),
     (17, 520, 'T.CARAPINA',1),
-    (18, 520, 'T.VILA VELHA',2);
+    (18, 520, 'T.VILA VELHA',2),
+    (19, 830, 'T.LARANJEIRAS',1),
+	(20, 830, 'CHÁCARA PARREIRAL,2);
 
 /* horario */
 /* 815 */
@@ -419,7 +447,71 @@ INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, id_itinerari
     (168,'18:15:00',1,'2017-10-15',2,'TERMINAL IBES'),
     (169,'18:35:00',1,'2017-10-15',2,'TERMINAL IBES'),
     (170,'18:55:00',1,'2017-10-15',2,'TERMINAL IBES');
+     
+     
 
+/* 830 */
+INSERT INTO HORARIO (id_horario, hora_saida, id_tipo , data_inicio, id_itinerario, desc_terminal)
+    VALUES(171,'05:15:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(172,'06:00:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(173,'06:26:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(174,'06:52:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(175,'07:05:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(176,'07:31:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(177,'07:57:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(178,'08:23:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(179,'08:40:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(180,'09:40:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(181,'10:40:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(182,'11:40:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(183,'12:00:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(184,'12:40:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(185,'13:30:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(186,'14:30:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(187,'15:00:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(188,'16:00:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(189,'16:45:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(190,'17:15:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(191,'17:30:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(192,'18:00:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(193,'18:30:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(194,'19:00:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(195,'19:30:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(196,'20:30:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(197,'21:30:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(198,'22:30:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(199,'23:10:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(200,'00:00:00',1,'2016-12-25',5,'CHACARA PARREIRAL'),
+	(201,'04:50:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(202,'05:40:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(203,'06:30:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(204,'07:25:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(205,'07:50:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(206,'08:40:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(207,'09:40:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(208,'10:40:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(209,'11:10:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(210,'11:50:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(211,'12:30:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(212,'13:30:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(213,'14:00:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(214,'15:00:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(215,'16:00:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(216,'16:30:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(217,'16:45:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(218,'17:15:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(219,'17:45:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(220,'18:15:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(221,'18:30:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(222,'19:00:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(223,'19:30:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(224,'20:30:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(225,'21:00:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(226,'22:00:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS'),
+	(227,'23:10:00',1,'2016-12-25',6,'TERMINAL LARANJEIRAS');
+
+     
+     
 /* itinerario_ponto */
 INSERT INTO ITINERARIO_PONTO (id_intin_ponto, id_itinerario, id_ponto, pos_sequencia)
     VALUES (1, 1, 1, 15),
@@ -431,7 +523,21 @@ INSERT INTO ITINERARIO_PONTO (id_intin_ponto, id_itinerario, id_ponto, pos_seque
     (7, 9, 4, 10),
     (8, 9, 6, 11),
     (9, 9, 8, 12),
-    (10, 9, 10, 13);
+    (10, 9, 10, 13),
+    (11, 20, 11, 1),
+	(12, 20, 12, 2),
+	(13, 20, 13, 3),
+	(14, 20, 14, 4),
+	(15, 20, 15, 5),
+	(16, 20, 16, 6),
+	(17, 20, 17, 7),
+	(18, 20, 18, 8),
+	(19, 20, 19, 9),
+	(20, 20, 20, 10),
+	(21, 20, 21, 11),
+	(22, 20, 22, 12),
+	(23, 20, 23, 13),
+	(24, 20, 24, 14);
 
 /* usuario */
 INSERT INTO USUARIO (id_usuario, cpf, nome, nascimento, email, senha, id_logradouro, saldo)
