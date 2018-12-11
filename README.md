@@ -300,29 +300,26 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    
    <b> 1 </b><br>
    
-	ALTER TABLE CIDADE RENAME TO MUNICIPIO;
-	SELECT * FROM MUNICIPIO;
-![img](images/9.3/rename_cidade.PNG)<br>
+	SELECT id_cidade, 
+	desc_cidade AS cidade 
+	FROM CIDADE;
+![img](images/9.3/9.3.c.1.png)<br>
 
    <b> 2 </b><br>
-   <b> Antes </b><br>
    
-	SELECT * FROM linha;
-![img](images/9.1/SELECT_*_FROM_LINHA.png)<br>
-   <b> DEPOIS </b><br>
-   
-	ALTER TABLE LINHA RENAME COLUMN desc_linha TO descricao_linha;
+	SELECT numero_linha AS linha,
+	desc_linha AS "Descricao linha" 
+	FROM linha;
 ![img](images/9.3/9.3.c.2.2.png)<br>
 
    <b> 3 </b><br>
-   <b> Antes </b><br>
    
-	SELECT * FROM MUNICIPIO;
-![img](images/9.1/SELECT_*_FROM_CIDADE.png)<br>
-   <b> DEPOIS </b><br>
-   
-	ALTER TABLE MUNICIPIO RENAME COLUMN desc_cidade TO nome_municipio;
-	ALTER TABLE MUNICIPIO RENAME COLUMN id_cidade TO id_municipio;
+	SELECT id_pagamento,
+	numero_cartao AS cartao,
+	id_usuario,
+	valor_pagamento as recarga,
+	data_pagamento as "dia da recarga"
+	FROM PAGAMENTO;
 ![img](images/9.3/9.3.c.3.1.png)<br>
       
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
