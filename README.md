@@ -566,16 +566,16 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 ![img](images/9.6/9.6.b.4.png)<br>
 
 	SELECT CONCAT(logradouro.desc_tipo, 
-		' ', 
-		logradouro.desc_logradouro) AS logradouro,
+	' ', 
+	logradouro.desc_logradouro) AS logradouro,
 	logradouro.cep as "CEP",
 	bairro.desc_bairro AS bairro,
-	municipio.nome_municipio AS cidade
+	cidade.desc_cidade AS cidade
 	FROM LOGRADOURO
 	INNER JOIN BAIRRO
 	ON(logradouro.id_bairro = bairro.id_bairro)
-	INNER JOIN MUNICIPIO
-	ON (bairro.id_cidade = municipio.id_municipio)
+	INNER JOIN CIDADE
+	ON (bairro.id_cidade = cidade.id_cidade)
 	INNER JOIN USUARIO
 	ON(usuario.id_logradouro = logradouro.id_logradouro)
 	WHERE usuario.id_usuario = 3;
@@ -623,13 +623,13 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
 	SELECT COUNT(bairro.id_bairro), 
-	municipio.nome_municipio, 
-	municipio.id_municipio
+	cidade.desc_cidade, 
+	cidade.id_cidade
 	FROM BAIRRO
-	LEFT JOIN MUNICIPIO
-	ON bairro.id_cidade = municipio.id_municipio
-	GROUP BY municipio.id_municipio
-	ORDER BY municipio.id_municipio;
+	LEFT JOIN CIDADE
+	ON bairro.id_cidade = cidade.id_cidade
+	GROUP BY cidade.id_cidade
+	ORDER BY cidade.id_cidade;
 ![img](images/9.8/9.8.1.png)<br>
 
 	SELECT COUNT(logradouro.cep), 
