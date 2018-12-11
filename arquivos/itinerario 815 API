@@ -1,0 +1,128 @@
+﻿[
+  {
+    "Linha": "0815",
+    "Sentido": "I",
+    "Sequencia": 1,
+    "Tipo": "D",
+    "Desc_Via": "IFES                          ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "I",
+    "Sequencia": 2,
+    "Tipo": "D",
+    "Desc_Via": "AV. PAULO PEREIRA GOMES       ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "I",
+    "Sequencia": 3,
+    "Tipo": "D",
+    "Desc_Via": "TREVO DE LARANJEIRAS II       ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "I",
+    "Sequencia": 4,
+    "Tipo": "D",
+    "Desc_Via": "RUA A2                        ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "I",
+    "Sequencia": 5,
+    "Tipo": "D",
+    "Desc_Via": "AV. CIVIT                     ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "I",
+    "Sequencia": 6,
+    "Tipo": "D",
+    "Desc_Via": "RODOVIA NORTE/SUL             ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "I",
+    "Sequencia": 7,
+    "Tipo": "D",
+    "Desc_Via": "TERMINAL LARANJEIRAS          ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "V",
+    "Sequencia": 1,
+    "Tipo": "D",
+    "Desc_Via": "TERMINAL LARANJEIRAS          ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "V",
+    "Sequencia": 2,
+    "Tipo": "D",
+    "Desc_Via": "RODOVIA NORTE/SUL             ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "V",
+    "Sequencia": 3,
+    "Tipo": "D",
+    "Desc_Via": "AV. CIVIT                     ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "V",
+    "Sequencia": 4,
+    "Tipo": "D",
+    "Desc_Via": "RUA A2                        ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "V",
+    "Sequencia": 5,
+    "Tipo": "D",
+    "Desc_Via": "TREVO DE LARANJEIRAS II       ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "V",
+    "Sequencia": 6,
+    "Tipo": "D",
+    "Desc_Via": "AV. PAULO PEREIRA GOMES       ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  },
+  {
+    "Linha": "0815",
+    "Sentido": "V",
+    "Sequencia": 7,
+    "Tipo": "D",
+    "Desc_Via": "IFES                          ",
+    "Descricao_Linha": "IFES / T. LARANJEIRAS",
+    "Mensagem": "Processamento sem Erro"
+  }
+]
