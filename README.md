@@ -226,10 +226,10 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
    ![img](images/9.2/9.2.2.JPG)
    
    	SELECT * FROM horario WHERE hora_saida > '07:00:00' AND hora_saida < '07:50:00';
-   ![img](images/9.2/9.2.3.JPG)
+   ![img](images/9.2/9.2.3.png)
    
    	SELECT * FROM logradouro WHERE desc_tipo = 'Rua';
-   ![img](images/9.2/9.2.4.JPG)
+   ![img](images/9.2/9.2.4.png)
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
    <b>a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not </b><br>
@@ -255,7 +255,6 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	FROM LOGRADOURO 
 	WHERE ((id_bairro = 4) 
 	OR (id_bairro = 7));
-
 ![img](images/9.3/9.3.4.png)
 
 	SELECT hora_saida, id_itinerario 
@@ -328,8 +327,8 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
     
 	SELECT numero_linha 
 	FROM LINHA 
-	WHERE descricao_linha LIKE 'T.LARANJEIRAS%' 
-	OR descricao_linha LIKE '%T.ITAPARICA VIA T.CARAPINA%';
+	WHERE desc_linha LIKE 'T.LARANJEIRAS%' 
+	OR desc_linha LIKE '%T.ITAPARICA VIA T.CARAPINA%';
 ![img](images/9.4/9.4.a.1.png)<br>
 
 	SELECT titular,validade 
@@ -471,7 +470,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	pagamento.data_pagamento AS "Data recarga", 
 	passagem.data AS "Data da passagem",
 	passagem.hora AS "Horario da passagem",
-	linha.descricao_linha AS "Linha",
+	linha.desc_linha AS "Linha",
 	horario.hora_saida,
 	tipo_horario.desc_horario AS "Tipo de horario",
 	itinerario.destino AS "Destino do onibus",
@@ -480,7 +479,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	logradouro.desc_tipo AS "Itinerario - Tipo logradouro",
 	logradouro.desc_logradouro AS "Itinerario - Nome logradouro",
 	bairro.desc_bairro AS "Itinerario - Bairro", 
-	municipio.nome_municipio AS "Itinerario - Cidade"
+	cidade.desc_cidade AS "Itinerario - Cidade"
 	FROM USUARIO
 	INNER JOIN CARTAO
 	ON (usuario.numero_cartao = cartao.numero)
@@ -504,8 +503,8 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ON (ponto.id_logradouro = logradouro.id_logradouro)
 	INNER JOIN BAIRRO
 	ON (logradouro.id_bairro = bairro.id_bairro)
-	INNER JOIN MUNICIPIO
-	ON (bairro.id_cidade = municipio.id_municipio)
+	INNER JOIN CIDADE
+	ON (bairro.id_cidade = cidade.id_cidade)
 	WHERE passagem.hora = '12:30:00'
 	AND horario.hora_saida = '12:25:00'
 	AND ponto.id_ponto = 1;
@@ -622,6 +621,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 ![img](images/9.7/6.png)<br>
    
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
+
 	SELECT COUNT(bairro.id_bairro), 
 	cidade.desc_cidade, 
 	cidade.id_cidade
@@ -642,11 +642,11 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 ![img](images/9.8/9.8.2.png)<br>
 
 	SELECT COUNT(passagem.id_passagem) AS passagens_vendidas, 
-	linha.descricao_linha AS linha
+	linha.desc_linha AS linha
 	FROM PASSAGEM
 	LEFT JOIN LINHA
 	ON passagem.numero_linha = linha.numero_linha
-	GROUP BY linha.descricao_linha
+	GROUP BY linha.desc_linha
 	ORDER BY passagens_vendidas desc;
 ![img](images/9.8/9.8.3.png)<br>
 
@@ -680,21 +680,21 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	SELECT * FROM valor_total_recebido;
 ![img](images/9.9/valor_total_recebido.PNG)
 
-	CREATE VIEW total_ruas_bairros_cidades_pontos AS(
-	SELECT COUNT(logradouro.id_logradouro) AS total_ruas,
-	COUNT(bairro.id_bairro) AS total_bairros,
-	COUNT(municipio.id_municipio) AS total_cidades,
-	COUNT(ponto.id_ponto) AS total_pontos
-	FROM LOGRADOURO
-	RIGHT JOIN BAIRRO
-	ON logradouro.id_bairro = bairro.id_bairro
-	RIGHT JOIN MUNICIPIO
-	ON bairro.id_cidade = municipio.id_municipio
-	INNER JOIN PONTO
-	ON ponto.id_logradouro = logradouro.id_logradouro);
-
-	SELECT * FROM total_ruas_bairros_cidades_pontos;
-![img](images/9.9/total_ruas_bairros_cidades_pontos.PNG)<br>
+	CREATE VIEW total_locais_com_pontos AS(
+	SELECT COUNT(DISTINCT ponto.id_ponto) AS total_pontos,
+	COUNT (DISTINCT logradouro.id_logradouro) AS total_ruas,
+	COUNT(DISTINCT bairro.id_bairro) AS total_bairros,
+	COUNT(DISTINCT cidade.id_cidade) AS total_cidades
+	FROM PONTO
+	INNER JOIN LOGRADOURO
+	ON (ponto.id_logradouro = logradouro.id_logradouro)
+	INNER JOIN BAIRRO
+	ON (logradouro.id_bairro = bairro.id_bairro)
+	INNER JOIN CIDADE
+	ON (bairro.id_cidade = cidade.id_cidade));
+ 
+	SELECT * FROM total_locais_com_pontos;
+![img](images/9.9/total_locais_com_pontos.png)<br>
 
 	CREATE VIEW usuarios_mes_valor AS(
 	SELECT usuario.nome,
@@ -745,7 +745,7 @@ O sistema proposto conterá as informacões aqui detalhadas. Dos usuários serã
 	ORDER BY nome;
 ![img](images/9.10/9.10_1.png)<br>
 
-	SELECT linha.numero_linha, descricao_linha, hora_saida, desc_terminal, desc_horario
+	SELECT linha.numero_linha, desc_linha, hora_saida, desc_terminal, desc_horario
 	FROM horario
 	INNER JOIN itinerario
 	ON horario.id_itinerario = itinerario.id_itinerario
